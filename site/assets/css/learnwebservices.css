@@ -1,0 +1,112 @@
+code {
+  color: #f05f40;
+}
+
+a {
+  color: #f05f40;
+}
+
+a:hover {
+  color: #f05f40;
+}
+
+
+hr {
+  border-width: 3px;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  max-width: 50px;
+}
+
+#menu h1 {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #f05f40;
+  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+
+#menu nav a {
+  font-size: .9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+
+
+header {
+  background-color: #f05f40;
+  padding: 4rem 0;
+  color: #fff;
+  text-align: center;
+}
+
+header h1 {
+  text-transform: uppercase;
+}
+
+header hr {
+  border-color: #fff;
+}
+
+header p {
+  color: rgba(255,255,255,.7);
+  font-size: 1.5rem;
+}
+
+.container h1 {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.container hr {
+  border-color: #f05f40;
+}
+
+.highlighted-wsdl {
+  padding: 20px;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.highlighted-wsdl a {
+  padding: 5px;
+  border: 1px #f05f40 solid;
+}
+
+.copy-button {
+  cursor: pointer;
+}
+
+footer {
+  padding-top: 1rem;
+}
+
+#menu nav a {
+  vertical-align: middle;
+}
+
+#menu nav a.github-icon {
+  font-size: 2rem;
+}
+
+.github-desc {
+  padding-bottom: 5px;
+}
+
+.github-icon {
+  color: #000000;
+  font-size: 2rem;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.demo-image {
+  text-align: center;
+  padding: 20px;
+}
+
+.demo-image img {
+  border: 1px #f05f40 solid;
+  padding: 10px;
+}

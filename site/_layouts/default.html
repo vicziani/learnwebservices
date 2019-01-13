@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Learn webservices</title>
+
+  <meta name="author" lang="hu" content="Viczián István"/>
+  <meta name="description" content="Ingyenes, publikus példa SOAP webszolgáltatások.">
+
+
+  <meta property="og:locale" content="hu_HU" />
+  <meta property="og:url" content="http://learnwebservices.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Learn webservices" />
+  <meta property="og:description" content="Ingyenes, publikus példa SOAP webszolgáltatások." />
+
+  <meta name="robots" content="index, follow"/>
+  <meta name="revisit-after" content="5 days"/>
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/syntax.css">
+  <link rel="stylesheet" href="assets/css/learnwebservices.css">
+  <link rel="stylesheet" href="assets/css/lightbox.min.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+  <div id="menu" class="d-flex flex-column flex-md-row align-items-center p-3">
+    <h1 class="my-0 mr-md-auto">Learn webservices</h1>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-3 text-dark" href="#bevezetés">Bevezetés</a>
+      <a class="p-3 text-dark" href="#példák">Példák</a>
+      <a class="p-2 text-dark github-icon" href="https://github.com/vicziani/learnwebservices" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+    </nav>
+  </div>
+
+      <header>
+        <h1>Learn webservices</h1>
+
+        <hr />
+
+      <p>
+        Ingyenes, publikus példa SOAP webszolgáltatások, tanuláshoz
+      </p>
+    </header>
+
+
+    <div class="container">
+
+      {{content}}
+
+    </div>
+
+  <footer class="footer bg-light">
+      <div class="container">
+          <p class="text-muted small text-center">Készítette: Viczián István - <a href="http://jtechlog.hu">http://jtechlog.hu</a></p>
+            <p class="text-muted small text-center">
+            Kód <a href="https://raw.githubusercontent.com//master/LICENSE.txt">Apache License, Version 2</a> licensz alatt.
+            <br/>
+            Weboldal <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY SA 4.0</a> licensz alatt.
+          </p>
+
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+    <script>
+   var clipboard = new ClipboardJS('.copy-button');
+   clipboard.on('success', function(event) {
+     event.clearSelection();
+   });
+   </script>
+
+   <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+
+<script>
+ lightbox.option({
+     'resizeDuration': 200,
+     'fadeDuration': 200,
+     'imageFadeDuration': 200,
+     'albumLabel': "Kép %1 / %2"
+   });
+</script>
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-478386-10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-478386-10');
+</script>
+
+
+</body>
+
+</html>
