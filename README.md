@@ -1,7 +1,7 @@
 # Repository for learnwebservices.com site
 
 This repository contains the source of the http://learnwebservices.com site.
-Static pages ar in the `site` directory, and generated with Jekyll.
+Static pages are in the `site` directory, and generated with Jekyll.
 
 There are a Spring Boot server application (`lwsapp`) serves the SOAP webservices.
 
