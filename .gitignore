@@ -1,0 +1,10 @@
+_site
+
+.idea
+target
+*.iml
+
+node_modules
+
+*.egg-info
+venv
