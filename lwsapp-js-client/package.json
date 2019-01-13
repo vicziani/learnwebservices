@@ -1,0 +1,9 @@
+{
+  "name": "lwapp-js-client",
+  "version": "1.0.0",
+  "description": "JavaScript SOAP client",
+  "main": "client.js",
+  "dependencies": {
+	"soap": "0.25.0"
+  }
+}
