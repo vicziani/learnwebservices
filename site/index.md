@@ -181,3 +181,18 @@ soap.createClient(url, function(err, client) {
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Node.js kliens elérhető a GitHubon.</p>
+
+## Hívása .NET Core keretrendszerrel C# nyelven
+
+{% highlight csharp %}
+HelloEndpointClient proxy = new HelloEndpointClient();
+var request = new helloRequest
+{
+    Name = "John Doe"
+};
+var response = await proxy.SayHelloAsync(request);
+Console.WriteLine(response.Body.HelloResponse.Message);
+{% endhighlight %}
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+Egy példa C# kliens elérhető a GitHubon.</p>

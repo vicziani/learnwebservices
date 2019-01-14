@@ -10,3 +10,4 @@ The repository contains clients with different technologies:
 * `lwsapp-jaxwsri-client` - Java JAX-RS RI client
 * `lwsapp-python-client` - Python client with Zeep
 * `lwsapp-js-client` - Node.js client with SOAP
+* `SoapClient` - .NET Core client with C#
