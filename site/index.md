@@ -65,7 +65,7 @@ modern programokból is csatlakozni kell.
       <td>Celsius és Fahrenheit váltás</td>
       <td>
         <span class="highlighted-wsdl">
-        <a id="highlighted-wsdl-temp" href="http://www.learnwebservices.com/services/temperature?WSDL">http://www.learnwebservices.com/services/temperature?WSDL</a>  
+        <a id="highlighted-wsdl-temp" href="http://www.learnwebservices.com/services/tempconverter?wsdl">http://www.learnwebservices.com/services/tempconverter?wsdl</a>  
         <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-temp"></i>  
         </span>
       </td>
