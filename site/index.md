@@ -19,7 +19,7 @@ webszolgáltatás:
 ## Az oldal célja
 
 Ez az oldal azért jött létre, hogy ingyenes, publikus példa SOAP
-webszolgáltatásokat biztosítson, tanuláshoz, oktatáshoz,
+webszolgáltatásokat biztosítson tanuláshoz, oktatáshoz,
 kísérletezéshez. Az itt található webszolgáltatások kitűnőek a
 technológia bemutatásához és megismeréséhez, különböző eszközök és
 keretrendszerek teszteléséhez. Ezen webszolgáltatásokat lehet használni
@@ -28,7 +28,8 @@ hosszú távon megmaradjanak.
 Az oldalon ezen kívül megtalálhatóak
 különböző programozási nyelven implementált kliens programok
 (forráskóddal együtt), melyek jó kiindulási alapot biztosíthatnak a
-technológia használatba vételéhez.
+technológia használatba vételéhez. Gyakran frissítem ezeket, ahogy kijönnek
+a nyelvek és keretrendszerek új verziói.
 
 ## Webszolgáltatásokról
 
