@@ -114,6 +114,22 @@ A név alapján változó üzenetet a `Message` tag tartalmazza.
 </soap:Envelope>
 {% endhighlight %}
 
+### Hibakezelés
+
+Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üzenetet küldünk be, un. SOAP faultot kapunk.
+
+{% highlight xml %}
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Client</faultcode>
+         <faultstring>Unmarshalling Error: Unexpected '&lt;' character in element (missing closing '>'?)
+ at [row,col {unknown-source}]: [6,13]</faultstring>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
+{% endhighlight %}
+
 ## Hívása SoapUI használatával
 
 SoapUI használatával a [hivatalos dokumentáció](https://www.soapui.org/soap-and-wsdl/getting-started.html) alapján létre
