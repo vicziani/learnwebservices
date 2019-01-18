@@ -18,22 +18,6 @@ hr {
   max-width: 50px;
 }
 
-#menu h1 {
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #f05f40;
-  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-}
-
-#menu nav a {
-  font-size: .9rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-}
-
-
 header {
   background-color: #f05f40;
   padding-top: 2rem;
@@ -83,11 +67,15 @@ footer {
   padding-top: 1rem;
 }
 
-#menu nav a {
+.right-menu-item {
   vertical-align: middle;
+  font-size: .9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
 }
 
-#menu nav a.github-icon {
+.github-icon {
   font-size: 2rem;
 }
 
@@ -112,7 +100,15 @@ footer {
   padding: 10px;
 }
 
-#last-updated {
+.logo {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #f05f40;
+  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+
+.last-updated {
   text-align: right;
   font-size: 1rem;
   padding-right: 3rem;
