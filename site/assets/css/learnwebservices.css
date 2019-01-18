@@ -49,18 +49,21 @@ header p {
 }
 
 .highlighted-wsdl {
-  padding: 20px;
   font-size: 1.25rem;
   text-align: center;
+  border: 1px #f05f40 solid;
+  margin-right: 20px;
 }
 
 .highlighted-wsdl a {
   padding: 5px;
-  border: 1px #f05f40 solid;
 }
 
 .copy-button {
+  font-size: 1.25rem;
   cursor: pointer;
+  vertical-align: middle;
+  padding: 5px;
 }
 
 footer {

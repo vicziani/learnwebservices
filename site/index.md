@@ -11,9 +11,15 @@ layout: default
 Ha szükséged van gyorsan kipróbálni valamit, itt egy WSDL, és mögötte egy működő SOAP
 webszolgáltatás:
 
-<div class="highlighted-wsdl">
-  <a id="highlighted-wsdl-hello" href="http://www.learnwebservices.com/services/hello?WSDL">http://www.learnwebservices.com/services/hello?WSDL</a>  
-  <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-hello"></i>  
+<div class="container">
+<div class="row justify-content-md-center">
+<div class="col-xs-6 highlighted-wsdl">
+  <a id="highlighted-wsdl-hello" class="text-wrap" href="http://www.learnwebservices.com/services/hello?WSDL">http://www.learnwebservices.com/services/hello?WSDL</a>  
+</div>
+  <div class="col-xs-6">
+    <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-hello"></i>  
+  </div>
+</div>
 </div>
 
 ## Az oldal célja
@@ -63,12 +69,18 @@ modern programokból is csatlakozni kell.
   </thead>-->
   <tbody>
     <tr>
-      <td>Celsius és Fahrenheit váltás</td>
+      <td class="align-middle">Celsius és Fahrenheit váltás</td>
       <td>
-        <span class="highlighted-wsdl">
-        <a id="highlighted-wsdl-temp" href="http://www.learnwebservices.com/services/tempconverter?wsdl">http://www.learnwebservices.com/services/tempconverter?wsdl</a>  
-        <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-temp"></i>  
-        </span>
+        <div class="container">
+        <div class="row justify-content-md-center">
+        <div class="col-xs-6 highlighted-wsdl">
+          <a id="highlighted-wsdl-temp" class="text-wrap" href="http://www.learnwebservices.com/services/tempconverter?wsdl">http://www.learnwebservices.com/services/tempconverter?wsdl</a>  
+        </div>
+          <div class="col-xs-6">
+            <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-hello"></i>  
+          </div>
+        </div>
+        </div>        
       </td>
     </tr>
 </tbody>
@@ -138,11 +150,11 @@ címet, majd kiválasztani bal oldalon a `SayHello` operációt, és megnyitni a
 megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit request_ gombot.
 
 <div class="demo-image">
-  <a href="images/soapui-create.png" data-lightbox="post-images"><img src="images/soapui-create_500x.png" title="Projekt létrehozása" /></a>
+  <a href="images/soapui-create.png" data-lightbox="post-images"><img src="images/soapui-create_500x.png" title="Projekt létrehozása" class="img-fluid"/></a>
 </div>
 
 <div class="demo-image">
-  <a href="images/soapui-run.png" data-lightbox="post-images"><img src="images/soapui-run_500x.png" title="Futtatás" /></a>
+  <a href="images/soapui-run.png" data-lightbox="post-images"><img src="images/soapui-run_500x.png" title="Futtatás" class="img-fluid"/></a>
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
