@@ -18,6 +18,8 @@ webszolgáltatás:
 </div>
   <div class="col-xs-6">
     <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-hello"></i>  
+    <span id="online-badge" class="badge badge-success d-none">Online</span>
+    <span id="offline-badge" class="badge badge-danger d-none">Offline</span>
   </div>
 </div>
 </div>
@@ -193,6 +195,62 @@ print(client.service.SayHello(request))
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Python kliens elérhető a GitHubon.</p>
+
+## Vanilla JS
+
+A webszolgáltatást böngészőből is meg lehet hívni, ha ugyanazon a domainen van, vagy be van állítva a
+Cross-Origin Resource Sharing (CORS).
+
+{% highlight javascript %}
+var url = "http://localhost:8080/services/hello";
+var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header/>
+    <soapenv:Body>
+       <SayHello xmlns="http://learnwebservices.com/services/hello">
+          <HelloRequest>
+             <Name>John Doe</Name>
+          </HelloRequest>
+       </SayHello>
+    </soapenv:Body>
+ </soapenv:Envelope>`;
+
+ var fetchData = {
+    method: 'POST',
+    body: request
+ };
+
+ fetch(url, fetchData)
+   .then(function(response) {
+     return response.text();
+   })
+   .then(function(xml) {
+       var xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+       console.log(xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent);
+   })
+   .catch(function(error) {
+     console.log("Error calling webservice: " + error);
+   });
+{% endhighlight %}
+
+Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás.
+
+<div id="webservice-error-div" class="alert alert-danger d-none" role="alert">
+  A webszolgáltatás nem elérhető!
+</div>
+<form id="hello-form">
+ <div class="form-row">
+    <div class="col-sm mb-3">
+      <input id="hello-name-input" type="text" placeholder="Írd be a neved!" class="form-control" />
+    </div>
+    <div class="col-sm mb-3">
+      <input id="hello-message-input" type="text" readonly="readonly" class="form-control" />
+    </div>    
+    <div class="col-sm mb-3">
+    <button type="submit" class="btn btn-primary">Hívd meg a webszolgáltatást!</button>
+  </div>    
+</div>
+
+</form>
 
 ## Hívása Node.js esetén
 
