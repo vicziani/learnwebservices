@@ -1,0 +1,10 @@
+{
+  "name": "lwapp-vanillajs-client",
+  "version": "1.0.0",
+  "description": "Vanilla JS SOAP client",
+  "main": "app.js",
+  "dependencies": {
+	   "node-fetch": "2.3.0",
+     "xmldom": "0.1.27"
+  }
+}
