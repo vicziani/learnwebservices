@@ -22,13 +22,12 @@ The repository contains clients with different technologies:
 
 ## About the author
 
-This site was developed by Viczián István, the author of the http://jtechlog.hu blog.
+This site was developed by István Viczián, the author of the http://jtechlog.hu blog.
 
 ## Licence
 
-The source code of the sample SOAP server and client applications appear on the learnwebservices.com site
-(everything in this repository, except the `site` directory)
-are licensed under MIT License.
+The source codes of the SOAP server example and the client application examples above
+are available on the learnwebservices.com site (everything in this repository, except the `site` directory) are licensed under MIT License.
 
 The textual content of the learnwebservices.com site
 (the content of the `site` directory) is licensed under

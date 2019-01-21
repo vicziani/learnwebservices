@@ -2,17 +2,16 @@
 layout: default
 ---
 
-# Bevezetés
+# Introduction
 
 <hr />
 
 ## TL;DR
 
-Ha szükséged van gyorsan kipróbálni valamit, itt egy WSDL, és mögötte egy működő SOAP
-webszolgáltatás:
+If you want a simple, online web service, here is a WSDL for it:
 
 <div class="container">
-<div class="row justify-content-md-center">
+<div class="row justify-content-md-center mb-4 mt-4">
 <div class="col-xs-6 highlighted-wsdl">
   <a id="highlighted-wsdl-hello" class="text-wrap" href="http://www.learnwebservices.com/services/hello?WSDL">http://www.learnwebservices.com/services/hello?WSDL</a>  
 </div>
@@ -24,43 +23,28 @@ webszolgáltatás:
 </div>
 </div>
 
-## Az oldal célja
+## Purpose of this site
 
-Ez az oldal azért jött létre, hogy ingyenes, publikus példa SOAP
-webszolgáltatásokat biztosítson tanuláshoz, oktatáshoz,
-kísérletezéshez. Az itt található webszolgáltatások kitűnőek a
-technológia bemutatásához és megismeréséhez, különböző eszközök és
-keretrendszerek teszteléséhez. Ezen webszolgáltatásokat lehet használni
-dokumentációkban, példákban, tutoriálokban, videókban, hisz célom, hogy
-hosszú távon megmaradjanak.
-Az oldalon ezen kívül megtalálhatóak
-különböző programozási nyelven implementált kliens programok
-(forráskóddal együtt), melyek jó kiindulási alapot biztosíthatnak a
-technológia használatba vételéhez. Gyakran frissítem ezeket, ahogy kijönnek
-a nyelvek és keretrendszerek új verziói.
+Creating this site has two purposes. One is to provide some free, public, SOAP web services examples for learning, prototyping, teaching, testing, demonstrating tools, libraries or technologies. You may use these web services in blog posts, tutorials, videos. I would like to operate this website for reference in the long run.
 
-## Webszolgáltatásokról
+The second purpose is to present client applications examples in different programming languages, using with different libraries. You can find the source code of the examples on GitHub what I am going to  update regularly for  the latest versions.
 
-A SOAP webszolgáltatások alkalmazások közötti adatcserére valók. XML és
-főleg HTTP(S) technológiákra támaszkodnak. Ezért ember és számítógép
-által is könnyen értelmezhetőek, valamint a legtöbb platformon
-használhatóak, ezért különösen alkalmasak különböző platformon és
-programozási nyelven fejlesztett alkalmazások együttműködésére. A SOAP
-webszolgáltatások az OASIS és W3C szabványügyi szervezetek által
-karbantartott szabányokon nyugszanak. WS-I szervezet több profilt
-fejlesztett ki a különböző implementációk együttműködésének segítségére.
-A SOAP egy XML alapú üzenetformátum, mely egy SOAP borítékot definiál,
-melyben az üzenetek utaznak. A WSDL szintén egy XML alapú interfészleíró
-nyelv. A SOAP webszolgáltatásokat a modernebb, egyszerűbben használható
-RESTful webszolgáltatások kezdik kiszorítani. Azonban még történeti
-jelleggel sok helyen találhatóak SOAP webszolgáltatások, melyekhez
-modern programokból is csatlakozni kell.
 
-# Példák
+## About SOAP web services
+
+SOAP web services may be considered as best practices to exchange data between different applications, based on XML and mostly HTTP(S) protocol. Because of the formats and protocols are text based, they are readable by most of the applications and by humans as well. Web services became very popular, and easy to use on any platform and with any programming language.
+
+SOAP web services are based on OASIS and W3C standards, and the  WS-I organization provides some useful profiles to increase interoperability.
+
+SOAP is a messaging protocol specifying an XML-based message format. This is called the SOAP envelope, encapsulating the message content. The WSDL format is based on XML as well, and specifies the interface - how to call the service, and what are the input and output formats.
+
+Sometime the SOAP web services are considered legacy solutions today, because the RESTful web services are becoming increasingly popular. Also  this is true, but the SOAP web services will be along for a long time.
+
+# Examples
 
 <hr />
 
-## További webszolgáltatások
+## Other provided web services
 
 <table class="table table-borderless table-striped">
   <!--<thead>
@@ -71,7 +55,7 @@ modern programokból is csatlakozni kell.
   </thead>-->
   <tbody>
     <tr>
-      <td class="align-middle">Celsius és Fahrenheit váltás</td>
+      <td class="align-middle">Celsius to Fahrenheit converter</td>
       <td>
         <div class="container">
         <div class="row justify-content-md-center">
@@ -88,17 +72,12 @@ modern programokból is csatlakozni kell.
 </tbody>
 </table>
 
-## Egy példa webszolgáltatás
+## An example web service
 
-Egy SOAP webszolgáltatás található `http://www.learnwebservices.com/services/hello`
-címen, mely egy nevet vár, és egy üdvözlőszöveget ad vissza.
+You may find an operating web service at the `http://www.learnwebservices.com/services/hello` URL that accepts a name, and gives back a welcome message. (The service accepts only POST HTTP requests so you may not use it in a browser directly.)
+The WSDL file that specifies the interface is available at http://www.learnwebservices.com/services/hello?WSDL URL. (Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document.) The appropriate WSDL document is [available here](wsdl.html) in readable format.
 
-A SOAP webszolgáltatás WSDL dokumentuma elérhető a [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) címen.
-(A WSDL dokumentum egy XML dokumentum, melyet a Firefox nem jelenít meg, csak a _View Page Source_ menüpontra kattintva.) A WSDL állomány
-olvasható formában [itt található](wsdl.html).
-
-A címre a következő formátumban kell posztolni egy XML dokumentumot (a WSDL-ben leírtaknak megfelelően).
-A `Name` tag értéke tetszőlegesen módosítható.
+The WSDL specifies the format of the request message. The content of the `Name` tag may be freely rewritten.
 
 {% highlight xml %}
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
@@ -113,8 +92,8 @@ A `Name` tag értéke tetszőlegesen módosítható.
 </soapenv:Envelope>
 {% endhighlight %}
 
-Ennek hatására a SOAP webszolgáltatás a következő válaszüzenetet adja vissza.
-A név alapján változó üzenetet a `Message` tag tartalmazza.
+This is the response provided by the web service. The `Message` tag contains the
+response message based on the request.
 
 {% highlight xml %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -128,9 +107,9 @@ A név alapján változó üzenetet a `Message` tag tartalmazza.
 </soap:Envelope>
 {% endhighlight %}
 
-### Hibakezelés
+### Error handling
 
-Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üzenetet küldünk be, un. SOAP faultot kapunk.
+In case a web service fails to process the SOAP message, it returns a SOAP fault.
 
 {% highlight xml %}
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -144,30 +123,26 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 </soap:Envelope>
 {% endhighlight %}
 
-## Hívása SoapUI használatával
+## Calling web service with SoapUI
 
-SoapUI használatával a [hivatalos dokumentáció](https://www.soapui.org/soap-and-wsdl/getting-started.html) alapján létre
-kell hozni egy új SOAP projektet, és a _Initial WSDL_ beviteli mezőben megadni a [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL)
-címet, majd kiválasztani bal oldalon a `SayHello` operációt, és megnyitni a `Request 1` példa kérést. A nevet
-megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit request_ gombot.
-
-<div class="demo-image">
-  <a href="images/soapui-create.png" data-lightbox="post-images"><img src="images/soapui-create_500x.png" title="Projekt létrehozása" class="img-fluid"/></a>
-</div>
+To [call the web service with SoapUI](https://www.soapui.org/soap-and-wsdl/getting-started.html), create a new SOAP project in the application,
+and paste the URL of the WSDL document (`http://www.learnwebservices.com/services/hello?WSDL`) into the _Initial WSDL_
+input field.
+SoapUI will process the WSDL file, and generate an example request. On the left side of the panel choose the `SayHello` operation, then the
+`Request 1` example request. Give a name value in the `Name` tag (replacing the `?` sign), then press the _Submit request_ button.
 
 <div class="demo-image">
-  <a href="images/soapui-run.png" data-lightbox="post-images"><img src="images/soapui-run_500x.png" title="Futtatás" class="img-fluid"/></a>
+  <img src="images/soapui.gif" title="Call web service in SoapUI" class="img-fluid"/>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa SoapUI projekt elérhető a GitHubon.</p>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
+The SoapUI project is available on GitHub.</p>
 
-## Hívása Javaban
+## Java client
 
-A SOAP webszolgáltatás Javaban is hívható, valamelyik webszolgáltatás keretrendszer felhasználásával.
-Ebből az egyik a [JAX-WS RI](https://javaee.github.io/metro-jax-ws/).
-
-Ennek használatával a következőképp hívható a SOAP webszolgáltatás:
+There are numerous web service frameworks for Java. One of them is the
+[JAX-WS RI](https://javaee.github.io/metro-jax-ws/) project and
+the following source code demonstrates calling the web service using this library.
 
 {% highlight java %}
 URL url = new URL("http://www.learnwebservices.com/services/hello?wsdl");
@@ -179,12 +154,12 @@ HelloResponse response = port.sayHello(request);
 System.out.println(response.getMessage());
 {% endhighlight %}
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Java kliens elérhető a GitHubon.</p>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+The source code is available on GitHub.</p>
 
-## Hívása Pythonban
+## Python client
 
-Használható a [Zeep](https://github.com/mvantellingen/python-zeep) keretrendszer.
+The following source code uses the [Zeep](https://github.com/mvantellingen/python-zeep) framework to call the web service.
 
 {% highlight python %}
 wsdl = 'http://www.learnwebservices.com/services/hello?wsdl'
@@ -193,13 +168,13 @@ request = {'Name': 'John Doe'}
 print(client.service.SayHello(request))
 {% endhighlight %}
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Python kliens elérhető a GitHubon.</p>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+The source code is available on GitHub.</p>
 
 ## Vanilla JS
 
-A webszolgáltatást böngészőből is meg lehet hívni, ha ugyanazon a domainen van, vagy be van állítva a
-Cross-Origin Resource Sharing (CORS).
+It is possible to call a web service from JavaScript running in the browser when it is in the same domain, or the
+Cross-Origin Resource Sharing (CORS) is properly configured.
 
 {% highlight javascript %}
 var url = "http://localhost:8080/services/hello";
@@ -232,29 +207,31 @@ var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/
    });
 {% endhighlight %}
 
-Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás.
+You can try this online by pressing the submit button below.
 
 <div id="webservice-error-div" class="alert alert-danger d-none" role="alert">
-  A webszolgáltatás nem elérhető!
+  A web service is not available!
 </div>
 <form id="hello-form">
  <div class="form-row">
     <div class="col-sm mb-3">
-      <input id="hello-name-input" type="text" placeholder="Írd be a neved!" class="form-control" />
+      <input id="hello-name-input" type="text" placeholder="Your name" class="form-control" />
     </div>
     <div class="col-sm mb-3">
       <input id="hello-message-input" type="text" readonly="readonly" class="form-control" />
     </div>    
     <div class="col-sm mb-3">
-    <button type="submit" class="btn btn-primary">Hívd meg a webszolgáltatást!</button>
+    <button type="submit" class="btn btn-primary">Call the web service!</button>
   </div>    
 </div>
-
 </form>
 
-## Hívása Node.js esetén
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+The source code is available on GitHub.</p>
 
-Használható a [SOAP](https://github.com/vpulim/node-soap#readme) projekt.
+## Node.js client
+
+The following source code demonstrates how to call a web service with Node.js and [SOAP](https://github.com/vpulim/node-soap#readme) package.
 
 {% highlight javascript %}
 var soap = require('soap');
@@ -267,10 +244,12 @@ soap.createClient(url, function(err, client) {
 });
 {% endhighlight %}
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Node.js kliens elérhető a GitHubon.</p>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+The source code is available on GitHub.</p>
 
-## Hívása .NET Core keretrendszerrel C# nyelven
+## C# client with .NET Core
+
+The following source code demonstrates how to call a web service with .NET Core using C# language.
 
 {% highlight csharp %}
 HelloEndpointClient proxy = new HelloEndpointClient();
@@ -282,5 +261,5 @@ var response = await proxy.SayHelloAsync(request);
 Console.WriteLine(response.Body.HelloResponse.Message);
 {% endhighlight %}
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa C# kliens elérhető a GitHubon.</p>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Source on GitHub"><i class="fab fa-github"></i></a>
+The source code is available on GitHub.</p>

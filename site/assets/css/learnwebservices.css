@@ -111,9 +111,17 @@ footer {
   font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
 }
 
-.last-updated {
+.last-updated p {
   text-align: right;
   font-size: 1rem;
-  padding-right: 3rem;
+  color: #ffffff;
+}
+
+.language-menu {
+  text-align: left;
+}
+
+.language-menu a {
+  font-size: 1rem;
   color: #ffffff;
 }
