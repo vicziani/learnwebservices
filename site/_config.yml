@@ -1,4 +1,5 @@
 # Site settings
+url: "http://www.learnwebservices.com"
 
 # Build settings
 markdown: kramdown
