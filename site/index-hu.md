@@ -100,7 +100,7 @@ olvasható formában [itt található](wsdl.html).
 A címre a következő formátumban kell posztolni egy XML dokumentumot (a WSDL-ben leírtaknak megfelelően).
 A `Name` tag értéke tetszőlegesen módosítható.
 
-{% highlight xml %}
+```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
    <soapenv:Header/>
    <soapenv:Body>
@@ -111,12 +111,12 @@ A `Name` tag értéke tetszőlegesen módosítható.
       </SayHello>
    </soapenv:Body>
 </soapenv:Envelope>
-{% endhighlight %}
+```
 
 Ennek hatására a SOAP webszolgáltatás a következő válaszüzenetet adja vissza.
 A név alapján változó üzenetet a `Message` tag tartalmazza.
 
-{% highlight xml %}
+```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <SayHelloResponse xmlns="http://learnwebservices.com/services/hello">
@@ -126,13 +126,13 @@ A név alapján változó üzenetet a `Message` tag tartalmazza.
       </SayHelloResponse>
    </soap:Body>
 </soap:Envelope>
-{% endhighlight %}
+```
 
 ### Hibakezelés
 
 Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üzenetet küldünk be, un. SOAP faultot kapunk.
 
-{% highlight xml %}
+```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <soap:Fault>
@@ -142,7 +142,7 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
       </soap:Fault>
    </soap:Body>
 </soap:Envelope>
-{% endhighlight %}
+```
 
 ## Hívása SoapUI használatával
 
@@ -165,7 +165,7 @@ Ebből az egyik a [JAX-WS RI](https://javaee.github.io/metro-jax-ws/).
 
 Ennek használatával a következőképp hívható a SOAP webszolgáltatás:
 
-{% highlight java %}
+```java
 URL url = new URL("http://www.learnwebservices.com/services/hello?wsdl");
 HelloEndpointService service = new HelloEndpointService(url);
 HelloEndpoint port = service.getHelloEndpointPort();
@@ -173,7 +173,7 @@ HelloRequest request = new HelloRequest();
 request.setName("John Doe");
 HelloResponse response = port.sayHello(request);
 System.out.println(response.getMessage());
-{% endhighlight %}
+```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Java kliens elérhető a GitHubon.</p>
@@ -182,12 +182,12 @@ Egy példa Java kliens elérhető a GitHubon.</p>
 
 Használható a [Zeep](https://github.com/mvantellingen/python-zeep) keretrendszer.
 
-{% highlight python %}
+```python
 wsdl = 'http://www.learnwebservices.com/services/hello?wsdl'
 client = zeep.Client(wsdl=wsdl)
 request = {'Name': 'John Doe'}
 print(client.service.SayHello(request))
-{% endhighlight %}
+```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Python kliens elérhető a GitHubon.</p>
@@ -197,7 +197,7 @@ Egy példa Python kliens elérhető a GitHubon.</p>
 A webszolgáltatást böngészőből is meg lehet hívni, ha ugyanazon a domainen van, vagy be van állítva a
 Cross-Origin Resource Sharing (CORS).
 
-{% highlight javascript %}
+```javascript
 var url = "http://localhost:8080/services/hello";
 var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     <soapenv:Header/>
@@ -226,7 +226,7 @@ var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/
    .catch(function(error) {
      console.log("Error calling webservice: " + error);
    });
-{% endhighlight %}
+```
 
 Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás.
 
@@ -254,7 +254,7 @@ Egy példa Node.js kliens elérhető a GitHubon.</p>
 
 Használható a [SOAP](https://github.com/vpulim/node-soap#readme) projekt.
 
-{% highlight javascript %}
+```javascript
 var soap = require('soap');
 var url = 'http://www.learnwebservices.com/services/hello?wsdl';
 var args = {HelloRequest: {Name: 'John Doe'}};
@@ -263,14 +263,14 @@ soap.createClient(url, function(err, client) {
         console.log(result.HelloResponse.Message);
     });
 });
-{% endhighlight %}
+```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Node.js kliens SOAP keretrendszerrel elérhető a GitHubon.</p>
 
 ## Hívása .NET Core keretrendszerrel C# nyelven
 
-{% highlight csharp %}
+```csharp
 HelloEndpointClient proxy = new HelloEndpointClient();
 var request = new helloRequest
 {
@@ -278,7 +278,7 @@ var request = new helloRequest
 };
 var response = await proxy.SayHelloAsync(request);
 Console.WriteLine(response.Body.HelloResponse.Message);
-{% endhighlight %}
+```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa C# kliens elérhető a GitHubon.</p>

@@ -79,7 +79,7 @@ The WSDL file that specifies the interface is available at http://www.learnwebse
 
 The WSDL specifies the format of the request message. The content of the `Name` tag may be freely rewritten.
 
-{% highlight xml %}
+```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
    <soapenv:Header/>
    <soapenv:Body>
@@ -90,12 +90,12 @@ The WSDL specifies the format of the request message. The content of the `Name` 
       </SayHello>
    </soapenv:Body>
 </soapenv:Envelope>
-{% endhighlight %}
+```
 
 This is the response provided by the web service. The `Message` tag contains the
 response message based on the request.
 
-{% highlight xml %}
+```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <SayHelloResponse xmlns="http://learnwebservices.com/services/hello">
@@ -105,13 +105,13 @@ response message based on the request.
       </SayHelloResponse>
    </soap:Body>
 </soap:Envelope>
-{% endhighlight %}
+```
 
 ### Error handling
 
 In case a web service fails to process the SOAP message, it returns a SOAP fault.
 
-{% highlight xml %}
+```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
       <soap:Fault>
@@ -121,7 +121,7 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
       </soap:Fault>
    </soap:Body>
 </soap:Envelope>
-{% endhighlight %}
+```
 
 ## Calling web service with SoapUI
 
@@ -144,7 +144,7 @@ There are numerous web service frameworks for Java. One of them is the
 [JAX-WS RI](https://javaee.github.io/metro-jax-ws/) project and
 the following source code demonstrates calling the web service using this library.
 
-{% highlight java %}
+```java
 URL url = new URL("http://www.learnwebservices.com/services/hello?wsdl");
 HelloEndpointService service = new HelloEndpointService(url);
 HelloEndpoint port = service.getHelloEndpointPort();
@@ -152,7 +152,7 @@ HelloRequest request = new HelloRequest();
 request.setName("John Doe");
 HelloResponse response = port.sayHello(request);
 System.out.println(response.getMessage());
-{% endhighlight %}
+```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
@@ -161,12 +161,12 @@ The source code is available on GitHub.</p>
 
 The following source code uses the [Zeep](https://github.com/mvantellingen/python-zeep) framework to call the web service.
 
-{% highlight python %}
+```python
 wsdl = 'http://www.learnwebservices.com/services/hello?wsdl'
 client = zeep.Client(wsdl=wsdl)
 request = {'Name': 'John Doe'}
 print(client.service.SayHello(request))
-{% endhighlight %}
+```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
@@ -176,7 +176,7 @@ The source code is available on GitHub.</p>
 It is possible to call a web service from JavaScript running in the browser when it is in the same domain, or the
 Cross-Origin Resource Sharing (CORS) is properly configured.
 
-{% highlight javascript %}
+```javascript
 var url = "http://localhost:8080/services/hello";
 var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     <soapenv:Header/>
@@ -205,7 +205,7 @@ var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/
    .catch(function(error) {
      console.log("Error calling webservice: " + error);
    });
-{% endhighlight %}
+```
 
 You can try this online by pressing the submit button below.
 
@@ -233,7 +233,7 @@ The source code is available on GitHub.</p>
 
 The following source code demonstrates how to call a web service with Node.js and [SOAP](https://github.com/vpulim/node-soap#readme) package.
 
-{% highlight javascript %}
+```javascript
 var soap = require('soap');
 var url = 'http://www.learnwebservices.com/services/hello?wsdl';
 var args = {HelloRequest: {Name: 'John Doe'}};
@@ -242,7 +242,7 @@ soap.createClient(url, function(err, client) {
         console.log(result.HelloResponse.Message);
     });
 });
-{% endhighlight %}
+```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
@@ -251,7 +251,7 @@ The source code is available on GitHub.</p>
 
 The following source code demonstrates how to call a web service with .NET Core using C# language.
 
-{% highlight csharp %}
+```csharp
 HelloEndpointClient proxy = new HelloEndpointClient();
 var request = new helloRequest
 {
@@ -259,7 +259,7 @@ var request = new helloRequest
 };
 var response = await proxy.SayHelloAsync(request);
 Console.WriteLine(response.Body.HelloResponse.Message);
-{% endhighlight %}
+```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>

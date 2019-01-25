@@ -3,3 +3,7 @@ url: "http://www.learnwebservices.com"
 
 # Build settings
 markdown: kramdown
+
+kramdown:
+  input: GFM
+  hard_wrap: false
