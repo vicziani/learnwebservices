@@ -2,7 +2,7 @@
 layout: default-hu
 ---
 
-# Bevezetés
+# Bevezetés {#bevezetes}
 
 <hr />
 
@@ -56,7 +56,7 @@ RESTful webszolgáltatások kezdik kiszorítani. Azonban még történeti
 jelleggel sok helyen találhatóak SOAP webszolgáltatások, melyekhez
 modern programokból is csatlakozni kell.
 
-# Példák
+# Példák {#peldak}
 
 <hr />
 
@@ -95,7 +95,7 @@ címen, mely egy nevet vár, és egy üdvözlőszöveget ad vissza.
 
 A SOAP webszolgáltatás WSDL dokumentuma elérhető a [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) címen.
 (A WSDL dokumentum egy XML dokumentum, melyet a Firefox nem jelenít meg, csak a _View Page Source_ menüpontra kattintva.) A WSDL állomány
-olvasható formában [itt található](wsdl.html).
+olvasható formában [itt található](wsdl-hu.html).
 
 A címre a következő formátumban kell posztolni egy XML dokumentumot (a WSDL-ben leírtaknak megfelelően).
 A `Name` tag értéke tetszőlegesen módosítható.
