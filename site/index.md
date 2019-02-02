@@ -63,7 +63,7 @@ Sometime the SOAP web services are considered legacy solutions today, because th
           <a id="highlighted-wsdl-temp" class="text-wrap" href="http://www.learnwebservices.com/services/tempconverter?wsdl">http://www.learnwebservices.com/services/tempconverter?wsdl</a>  
         </div>
           <div class="col-xs-6">
-            <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-hello"></i>  
+            <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-temp"></i>  
           </div>
         </div>
         </div>        
