@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Példa WSDL fájl
+# Example WSDL file
 
 <hr />
 
