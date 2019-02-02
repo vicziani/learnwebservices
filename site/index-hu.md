@@ -158,6 +158,23 @@ megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit reques
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa SoapUI projekt elérhető a GitHubon.</p>
 
+## CURL
+
+Tipp: ez az oldal letölthető a curl használatával is a `curl www.learnwebservices.com` paranccsal.
+
+A webszolgáltatás a curl segítségével is meghívható a következő módon. Egyrészt `POST` metódust kell használni,
+majd meg kell adni, hogy a tartalom típusa XML, végül a http kérés törzsében az elküldendő
+SOAP kérést.
+
+```
+curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
+  --data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
+  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
+  <HelloRequest><Name>John Doe</Name></HelloRequest> \
+  </SayHello></soapenv:Body></soapenv:Envelope>' \
+  http://www.learnwebservices.com/services/hello
+```
+
 ## Hívása Javaban
 
 A SOAP webszolgáltatás Javaban is hívható, valamelyik webszolgáltatás keretrendszer felhasználásával.

@@ -138,6 +138,21 @@ SoapUI will process the WSDL file, and generate an example request. On the left 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
 The SoapUI project is available on GitHub.</p>
 
+## CURL
+
+Tip: try this site with the `curl www.learnwebservices.com` command.
+
+Use the following command to call the web service with curl.
+
+```
+curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
+  --data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
+  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
+  <HelloRequest><Name>John Doe</Name></HelloRequest> \
+  </SayHello></soapenv:Body></soapenv:Envelope>' \
+  http://www.learnwebservices.com/services/hello
+```
+
 ## Java client
 
 There are numerous web service frameworks for Java. One of them is the

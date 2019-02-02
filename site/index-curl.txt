@@ -1,0 +1,24 @@
+ _                                          _                           _
+| |                                        | |                         (_)
+| |     ___  __ _ _ __ _ __   __      _____| |__    ___  ___ _ ____   ___  ___ ___  ___
+| |    / _ \/ _` | '__| '_ \  \ \ /\ / / _ \ '_ \  / __|/ _ \ '__\ \ / / |/ __/ _ \/ __|
+| |___|  __/ (_| | |  | | | |  \ V  V /  __/ |_) | \__ \  __/ |   \ V /| | (_|  __/\__ \
+|______\___|\__,_|_|  |_| |_|   \_/\_/ \___|_.__/  |___/\___|_|    \_/ |_|\___\___||___/
+
+Learn web services http://www.learnwebservices.com
+
+If you want a simple, online web service, here are some WSDL:
+
+  http://www.learnwebservices.com/services/hello?WSDL
+
+  http://www.learnwebservices.com/services/hello?WSDL
+
+Use the following command to call the web service with curl:
+
+$ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
+  --data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
+  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
+  <HelloRequest><Name>John Doe</Name></HelloRequest> \
+  </SayHello></soapenv:Body></soapenv:Envelope>' \
+  http://www.learnwebservices.com/services/hello
+
