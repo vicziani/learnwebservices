@@ -195,6 +195,21 @@ System.out.println(response.getMessage());
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Java kliens elérhető a GitHubon.</p>
 
+## JMeter
+
+Az Apache JMeter használható SOAP webszolgáltatások terheléses tesztelésére is.
+
+Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter projektet létrehozni!
+
+<div class="demo-image">
+  <a href="images/jmeter-anim.gif" data-lightbox="learnwebservices">
+    <img src="images/jmeter.png" title="JMeter for performance testing of SOAP web services" class="img-fluid"/>
+  </a>
+</div>
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
+A JMeter projekt elérhető GitHubon.</p>
+
 ## Hívása Pythonban
 
 Használható a [Zeep](https://github.com/mvantellingen/python-zeep) keretrendszer.

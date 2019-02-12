@@ -172,6 +172,21 @@ System.out.println(response.getMessage());
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
 
+## JMeter
+
+Apache JMeter may be used to test performance of SOAP web services.
+
+Click on the picture to view the full animation that shows how to create a JMeter project.
+
+<div class="demo-image">
+  <a href="images/jmeter-anim.gif" data-lightbox="learnwebservices">
+    <img src="images/jmeter.png" title="JMeter for performance testing of SOAP web services" class="img-fluid"/>
+  </a>
+</div>
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
+The JMeter project is available on GitHub.</p>
+
 ## Python client
 
 The following source code uses the [Zeep](https://github.com/mvantellingen/python-zeep) framework to call the web service.
