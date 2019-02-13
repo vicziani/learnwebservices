@@ -5,6 +5,7 @@
 ### Added
 
 - Add last modified date and version number to the top of the main page that links to the `CHANGELOG.md` file on GitHub
+- Spring Web Services client
 
 ## [1.1.0] - 2019-02-12
 

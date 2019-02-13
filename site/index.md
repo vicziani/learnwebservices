@@ -162,11 +162,11 @@ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   http://www.learnwebservices.com/services/hello
 ```
 
-## Java client
+## Java client with JAX-WS RI
 
-There are numerous web service frameworks for Java. One of them is the
-[JAX-WS RI](https://javaee.github.io/metro-jax-ws/) project and
-the following source code demonstrates calling the web service using this library.
+The following source code demonstrates calling the web service using 
+[JAX-WS RI](https://javaee.github.io/metro-jax-ws/) library and
+[jaxws-maven-plugin](https://www.mojohaus.org/jaxws-maven-plugin/) Maven plugin.
 
 ```java
 URL url = new URL("http://www.learnwebservices.com/services/hello?wsdl");
@@ -179,6 +179,27 @@ System.out.println(response.getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+The source code is available on GitHub.</p>
+
+## Java client with Spring Web Services
+
+The following source code demonstrates calling the web service using 
+[Spring Web Services](https://spring.io/projects/spring-ws) library and
+[maven-jaxb2-plugin](https://github.com/highsource/maven-jaxb2-plugin) Maven plugin.
+
+```java
+HelloRequest helloRequest = new HelloRequest();
+helloRequest.setName("John Doe");
+SayHello sayHello = new SayHello();
+sayHello.setHelloRequest(helloRequest);
+
+JAXBElement<SayHelloResponse> response = (JAXBElement<SayHelloResponse>)
+        webServiceTemplate.marshalSendAndReceive(new ObjectFactory().createSayHello(sayHello));
+
+System.out.println(response.getValue().getHelloResponse().getMessage());
+```
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
 
 ## JMeter

@@ -184,12 +184,10 @@ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   http://www.learnwebservices.com/services/hello
 ```
 
-## Hívása Javaban
+## Hívása Javaban JAX-WS RI-vel
 
-A SOAP webszolgáltatás Javaban is hívható, valamelyik webszolgáltatás keretrendszer felhasználásával.
-Ebből az egyik a [JAX-WS RI](https://javaee.github.io/metro-jax-ws/).
-
-Ennek használatával a következőképp hívható a SOAP webszolgáltatás:
+SOAP webszolgáltatás meghívása Javaban [JAX-WS RI](https://javaee.github.io/metro-jax-ws/) library-vel,
+[jaxws-maven-plugin](https://www.mojohaus.org/jaxws-maven-plugin/) Maven pluginnel.
 
 ```java
 URL url = new URL("http://www.learnwebservices.com/services/hello?wsdl");
@@ -202,6 +200,26 @@ System.out.println(response.getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+Egy példa Java kliens elérhető a GitHubon.</p>
+
+## Hívása Javaban Spring Web Services-zel
+
+Javaban [Spring Web Services](https://spring.io/projects/spring-ws) library-vel, JAX-B marshallerrel,
+[maven-jaxb2-plugin](https://github.com/highsource/maven-jaxb2-plugin) Maven pluginnel.
+
+```java
+HelloRequest helloRequest = new HelloRequest();
+helloRequest.setName("John Doe");
+SayHello sayHello = new SayHello();
+sayHello.setHelloRequest(helloRequest);
+
+JAXBElement<SayHelloResponse> response = (JAXBElement<SayHelloResponse>)
+        webServiceTemplate.marshalSendAndReceive(new ObjectFactory().createSayHello(sayHello));
+
+System.out.println(response.getValue().getHelloResponse().getMessage());
+```
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Java kliens elérhető a GitHubon.</p>
 
 ## JMeter
