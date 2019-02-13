@@ -2,6 +2,15 @@
 layout: default-hu
 ---
 
+<div class="pt-3 text-right">
+<a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
+Utolsó frissítés dátuma: 
+<span class="text-nowrap font-weight-bold">2019. február 13.</span>, 
+Verzió 
+<span class="text-nowrap font-weight-bold">1.1.1</span>
+</a>
+</div>
+
 # Bevezetés {#bevezetes}
 
 <hr />

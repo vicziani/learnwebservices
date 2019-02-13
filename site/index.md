@@ -2,6 +2,15 @@
 layout: default
 ---
 
+<div class="pt-3 text-right">
+<a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
+Last update: 
+<span class="text-nowrap font-weight-bold">February 13, 2019</span>, 
+Version 
+<span class="text-nowrap font-weight-bold">1.1.1</span>
+</a>
+</div>
+
 # Introduction
 
 <hr />
@@ -75,7 +84,7 @@ Sometime the SOAP web services are considered legacy solutions today, because th
 ## An example web service
 
 You may find an operating web service at the `http://www.learnwebservices.com/services/hello` URL that accepts a name, and gives back a welcome message. (The service accepts only POST HTTP requests so you may not use it in a browser directly.)
-The WSDL file that specifies the interface is available at http://www.learnwebservices.com/services/hello?WSDL URL. (Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document.) The appropriate WSDL document is [available here](wsdl.html) in readable format.
+The WSDL file that specifies the interface is available at [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) URL. (Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document.) The appropriate WSDL document is [available here](wsdl.html) in readable format.
 
 The WSDL specifies the format of the request message. The content of the `Name` tag may be freely rewritten.
 
@@ -126,7 +135,7 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
 ## Calling web service with SoapUI
 
 To [call the web service with SoapUI](https://www.soapui.org/soap-and-wsdl/getting-started.html), create a new SOAP project in the application,
-and paste the URL of the WSDL document (`http://www.learnwebservices.com/services/hello?WSDL`) into the _Initial WSDL_
+and paste the URL of the WSDL document [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) into the _Initial WSDL_
 input field.
 SoapUI will process the WSDL file, and generate an example request. On the left side of the panel choose the `SayHello` operation, then the
 `Request 1` example request. Give a name value in the `Name` tag (replacing the `?` sign), then press the _Submit request_ button.

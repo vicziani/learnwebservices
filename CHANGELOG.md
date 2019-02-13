@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.1] - 2019-02-13
+
+### Added
+
+- Add last modified date and version number to the top of the main page that links to the `CHANGELOG.md` file on GitHub
+
 ## [1.1.0] - 2019-02-12
 
 ### Added
