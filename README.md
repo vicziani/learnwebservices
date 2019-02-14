@@ -13,10 +13,13 @@ There are a Spring Boot server application (`lwsapp`) serves the SOAP webservice
 
 The repository contains clients with different technologies:
 
+* `lwsapp-cxf-client` - Java CXF client
 * `lwsapp-jaxwsri-client` - Java JAX-RS RI client
+* `lwsapp-jmeter-project` - JMeter project file
 * `lwsapp-js-client` - Node.js client with SOAP library
 * `lwsapp-python-client` - Python client with Zeep
 * `lwsapp-soapui-project` - SoapUI project
+* `lwsapp-springws-client` - Java Spring Web Services client
 * `lwsapp-vanillajs-client` - Vanilla JS client in pure JavaScript (Node.js)
 * `SoapClient` - .NET Core client with C#
 
