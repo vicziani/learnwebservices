@@ -13,6 +13,7 @@ There are a Spring Boot server application (`lwsapp`) serves the SOAP webservice
 
 The repository contains clients with different technologies:
 
+* `lwsapp-axis2-client` - Java Axis2 client
 * `lwsapp-cxf-client` - Java CXF client
 * `lwsapp-jaxwsri-client` - Java JAX-RS RI client
 * `lwsapp-jmeter-project` - JMeter project file

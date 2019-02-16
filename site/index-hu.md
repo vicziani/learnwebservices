@@ -5,9 +5,9 @@ layout: default-hu
 <div class="pt-3 text-right">
 <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
 Utolsó frissítés dátuma: 
-<span class="text-nowrap font-weight-bold">2019. február 13.</span>, 
+<span class="text-nowrap font-weight-bold">2019. február 17.</span>, 
 Verzió 
-<span class="text-nowrap font-weight-bold">1.1.1</span>
+<span class="text-nowrap font-weight-bold">1.1.2</span>
 </a>
 </div>
 
@@ -184,10 +184,14 @@ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   http://www.learnwebservices.com/services/hello
 ```
 
-## Hívása Javaban JAX-WS RI-vel
+## Hívása Javaban JAX-WS RI-vel vagy CXF-fel
 
 SOAP webszolgáltatás meghívása Javaban [JAX-WS RI](https://javaee.github.io/metro-jax-ws/) library-vel,
 [jaxws-maven-plugin](https://www.mojohaus.org/jaxws-maven-plugin/) Maven pluginnel.
+
+A kód ugyanez [CXF](http://cxf.apache.org) library-vel és
+[cxf-codegen-plugin](http://cxf.apache.org/docs/maven-cxf-codegen-plugin-wsdl-to-java.html)
+Maven pluginnel.
 
 ```java
 URL url = new URL("http://www.learnwebservices.com/services/hello?wsdl");
@@ -200,7 +204,10 @@ System.out.println(response.getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Java kliens elérhető a GitHubon.</p>
+Egy példa Java JAX-WS RI kliens elérhető a GitHubon.</p>
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+Egy példa Java CXF kliens elérhető a GitHubon.</p>
 
 ## Hívása Javaban Spring Web Services-zel
 
@@ -220,7 +227,42 @@ System.out.println(response.getValue().getHelloResponse().getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Java kliens elérhető a GitHubon.</p>
+Egy példa Java Spring Web Services kliens elérhető a GitHubon.</p>
+
+## Hívás Apache Axis2/Java library-vel
+
+A következő kód mutatja be, hogy kell webszolgáltatást hívni
+[Apache Axis2/Java](http://axis.apache.org/axis2/java/core/index.html) library,
+Axis2 Databinding Framework és
+[axis2-wsdl2code-maven-plugin](https://axis.apache.org/axis2/java/core/tools/maven-plugins/axis2-wsdl2code-maven-plugin/index.html) Maven plugin
+használatával.
+
+```java
+HelloEndpointServiceStub stub =
+        new HelloEndpointServiceStub();
+
+HelloEndpointServiceStub.HelloRequest helloRequest = 
+        new HelloEndpointServiceStub.HelloRequest();
+helloRequest.setName("John Doe");
+
+HelloEndpointServiceStub.SayHello sayHello = 
+        new HelloEndpointServiceStub.SayHello();
+sayHello.setHelloRequest(helloRequest);
+
+HelloEndpointServiceStub.SayHelloE sayHelloE = 
+        new HelloEndpointServiceStub.SayHelloE();
+sayHelloE.setSayHello(sayHello);
+
+HelloEndpointServiceStub.SayHelloResponseE sayHelloResponseE = 
+        stub.sayHello(sayHelloE);
+System.out.println(sayHelloResponseE
+        .getSayHelloResponse()
+        .getHelloResponse()
+        .getMessage());
+```
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+Egy példa Java Axis2 kliens elérhető a GitHubon.</p>
 
 ## JMeter
 

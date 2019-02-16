@@ -5,9 +5,9 @@ layout: default
 <div class="pt-3 text-right">
 <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
 Last update: 
-<span class="text-nowrap font-weight-bold">February 13, 2019</span>, 
+<span class="text-nowrap font-weight-bold">February 17, 2019</span>, 
 Version 
-<span class="text-nowrap font-weight-bold">1.1.1</span>
+<span class="text-nowrap font-weight-bold">1.1.2</span>
 </a>
 </div>
 
@@ -162,11 +162,15 @@ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   http://www.learnwebservices.com/services/hello
 ```
 
-## Java client with JAX-WS RI
+## Java client with JAX-WS RI or CXF
 
 The following source code demonstrates calling the web service using 
 [JAX-WS RI](https://javaee.github.io/metro-jax-ws/) library and
 [jaxws-maven-plugin](https://www.mojohaus.org/jaxws-maven-plugin/) Maven plugin.
+
+The source code is the same when using [CXF](http://cxf.apache.org) 
+with [cxf-codegen-plugin](http://cxf.apache.org/docs/maven-cxf-codegen-plugin-wsdl-to-java.html)
+Maven plugin.
 
 ```java
 URL url = new URL("http://www.learnwebservices.com/services/hello?wsdl");
@@ -178,8 +182,11 @@ HelloResponse response = port.sayHello(request);
 System.out.println(response.getMessage());
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
-The source code is available on GitHub.</p>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="JAX-WS source on GitHub"><i class="fab fa-github"></i></a>
+The source code with JAX-WS is available on GitHub.</p>
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+The source code with CXF is available on GitHub.</p>
 
 ## Java client with Spring Web Services
 
@@ -200,6 +207,40 @@ System.out.println(response.getValue().getHelloResponse().getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+The source code is available on GitHub.</p>
+
+## Java client with Apache Axis2/Java
+
+The following source code demonstrates calling the web service using 
+[Apache Axis2/Java](http://axis.apache.org/axis2/java/core/index.html) library,
+Axis2 Databinding Framework and
+[axis2-wsdl2code-maven-plugin](https://axis.apache.org/axis2/java/core/tools/maven-plugins/axis2-wsdl2code-maven-plugin/index.html) Maven plugin.
+
+```java
+HelloEndpointServiceStub stub =
+        new HelloEndpointServiceStub();
+
+HelloEndpointServiceStub.HelloRequest helloRequest = 
+        new HelloEndpointServiceStub.HelloRequest();
+helloRequest.setName("John Doe");
+
+HelloEndpointServiceStub.SayHello sayHello = 
+        new HelloEndpointServiceStub.SayHello();
+sayHello.setHelloRequest(helloRequest);
+
+HelloEndpointServiceStub.SayHelloE sayHelloE = 
+        new HelloEndpointServiceStub.SayHelloE();
+sayHelloE.setSayHello(sayHello);
+
+HelloEndpointServiceStub.SayHelloResponseE sayHelloResponseE = 
+        stub.sayHello(sayHelloE);
+System.out.println(sayHelloResponseE
+        .getSayHelloResponse()
+        .getHelloResponse()
+        .getMessage());
+```
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
 
 ## JMeter

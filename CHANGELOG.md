@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.1.2] - 2019-02-17
+
+- Java Apache CXF client
+- Java Apache Axis2/Java client
+
 ## [1.1.1] - 2019-02-13
 
 ### Added
