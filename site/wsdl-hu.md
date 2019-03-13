@@ -7,7 +7,8 @@ layout: default-hu
 <hr />
 
 ```xml
-<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://learnwebservices.com/services/hello" 
     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" 
     name="HelloEndpointService" targetNamespace="http://learnwebservices.com/services/hello">
