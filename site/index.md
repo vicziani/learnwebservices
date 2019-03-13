@@ -5,9 +5,9 @@ layout: default
 <div class="pt-3 text-right">
 <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
 Last update: 
-<span class="text-nowrap font-weight-bold">February 17, 2019</span>, 
+<span class="text-nowrap font-weight-bold">March 13, 2019</span>, 
 Version 
-<span class="text-nowrap font-weight-bold">1.1.2</span>
+<span class="text-nowrap font-weight-bold">1.1.3</span>
 </a>
 </div>
 
@@ -364,3 +364,25 @@ Console.WriteLine(response.Body.HelloResponse.Message);
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
+
+## Ruby client with Savon
+
+The following source code demonstrates how to call a web service with Ruby and
+[Savon](https://github.com/savonrb/savon).
+
+```ruby
+require 'savon'
+
+client = Savon.client(wsdl: 'http://www.learnwebservices.com/services/hello?WSDL')
+response = client.call(
+  :say_hello,
+  soap_action: '',
+  message: { 'HelloRequest' => { 'Name' => 'John Doe' } }
+)
+puts response.body[:say_hello_response][:hello_response][:message]
+```
+
+## Contributors
+
+* János Rácz ([rczjns](https://github.com/rczjns))
+* Bea Vörös ([beavoros](https://github.com/beavoros))

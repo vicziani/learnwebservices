@@ -1,6 +1,15 @@
 # Changelog
 
+## [1.1.3] - 2019-03-13
+
+### Added
+
+- Ruby client with [Savon](https://github.com/savonrb/savon)
+
+
 ## [1.1.2] - 2019-02-17
+
+### Added
 
 - Java Apache CXF client
 - Java Apache Axis2/Java client

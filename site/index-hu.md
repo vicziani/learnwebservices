@@ -5,9 +5,9 @@ layout: default-hu
 <div class="pt-3 text-right">
 <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
 Utolsó frissítés dátuma: 
-<span class="text-nowrap font-weight-bold">2019. február 17.</span>, 
+<span class="text-nowrap font-weight-bold">2019. március 13.</span>, 
 Verzió 
-<span class="text-nowrap font-weight-bold">1.1.2</span>
+<span class="text-nowrap font-weight-bold">1.1.3</span>
 </a>
 </div>
 
@@ -281,7 +281,7 @@ A JMeter projekt elérhető GitHubon.</p>
 
 ## Hívása Pythonban
 
-Használható a [Zeep](https://github.com/mvantellingen/python-zeep) keretrendszer.
+Használható a [Zeep](https://github.com/mvantellingen/python-zeep) library.
 
 ```python
 wsdl = 'http://www.learnwebservices.com/services/hello?wsdl'
@@ -367,7 +367,7 @@ soap.createClient(url, function(err, client) {
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Node.js kliens SOAP keretrendszerrel elérhető a GitHubon.</p>
+Egy példa Node.js kliens SOAP library-vel elérhető a GitHubon.</p>
 
 ## Hívása .NET Core keretrendszerrel C# nyelven
 
@@ -383,3 +383,25 @@ Console.WriteLine(response.Body.HelloResponse.Message);
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa C# kliens elérhető a GitHubon.</p>
+
+## Ruby nyelven Savon library-vel
+
+A következő példa mutatja, hogy kell webszolgáltatás hívni Ruby-ban,
+[Savon](https://github.com/savonrb/savon) library használatával.
+
+```ruby
+require 'savon'
+
+client = Savon.client(wsdl: 'http://www.learnwebservices.com/services/hello?WSDL')
+response = client.call(
+  :say_hello,
+  soap_action: '',
+  message: { 'HelloRequest' => { 'Name' => 'John Doe' } }
+)
+puts response.body[:say_hello_response][:hello_response][:message]
+```
+
+## Közreműködők
+
+* Rácz János ([rczjns](https://github.com/rczjns))
+* Vörös Bea ([beavoros](https://github.com/beavoros))
