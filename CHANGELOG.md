@@ -5,7 +5,7 @@
 ### Added
 
 - Ruby client with [Savon](https://github.com/savonrb/savon)
-
+- Contributors
 
 ## [1.1.2] - 2019-02-17
 
