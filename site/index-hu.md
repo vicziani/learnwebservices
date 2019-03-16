@@ -401,6 +401,10 @@ response = client.call(
 puts response.body[:say_hello_response][:hello_response][:message]
 ```
 
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+Egy példa Ruby kliens elérhető a GitHubon.</p>
+
+
 ## Közreműködők
 
 * Rácz János ([rczjns](https://github.com/rczjns))
