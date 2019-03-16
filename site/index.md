@@ -132,7 +132,7 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
 </soap:Envelope>
 ```
 
-## Calling web service with SoapUI
+## Calling web service with SoapUI {#soapui}
 
 To [call the web service with SoapUI](https://www.soapui.org/soap-and-wsdl/getting-started.html), create a new SOAP project in the application,
 and paste the URL of the WSDL document [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) into the _Initial WSDL_
@@ -147,7 +147,7 @@ SoapUI will process the WSDL file, and generate an example request. On the left 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
 The SoapUI project is available on GitHub.</p>
 
-## CURL
+## Calling web service with CURL {#curl}
 
 Tip: try this site with the `curl www.learnwebservices.com` command.
 
@@ -162,7 +162,7 @@ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   http://www.learnwebservices.com/services/hello
 ```
 
-## Java client with JAX-WS RI or CXF
+## Java web service client with JAX-WS RI or CXF {#java-jaxws-cxf}
 
 The following source code demonstrates calling the web service using 
 [JAX-WS RI](https://javaee.github.io/metro-jax-ws/) library and
@@ -188,7 +188,7 @@ The source code with JAX-WS is available on GitHub.</p>
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code with CXF is available on GitHub.</p>
 
-## Java client with Spring Web Services
+## Java web service client with Spring Web Services {#java-spring-web-services}
 
 The following source code demonstrates calling the web service using 
 [Spring Web Services](https://spring.io/projects/spring-ws) library and
@@ -209,7 +209,7 @@ System.out.println(response.getValue().getHelloResponse().getMessage());
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
 
-## Java client with Apache Axis2/Java
+## Java web service client with Apache Axis2/Java {#java-axis}
 
 The following source code demonstrates calling the web service using 
 [Apache Axis2/Java](http://axis.apache.org/axis2/java/core/index.html) library,
@@ -243,7 +243,7 @@ System.out.println(sayHelloResponseE
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
 
-## JMeter
+## Calling web services with JMeter {#jmeter}
 
 Apache JMeter may be used to test performance of SOAP web services.
 
@@ -258,7 +258,7 @@ Click on the picture to view the full animation that shows how to create a JMete
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
 The JMeter project is available on GitHub.</p>
 
-## Python client
+## Python web service client with Zeep {#python-zeep}
 
 The following source code uses the [Zeep](https://github.com/mvantellingen/python-zeep) framework to call the web service.
 
@@ -272,7 +272,7 @@ print(client.service.SayHello(request))
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
 
-## Vanilla JS
+## Vanilla JS web service client {#vanillajs}
 
 It is possible to call a web service from JavaScript running in the browser when it is in the same domain, or the
 Cross-Origin Resource Sharing (CORS) is properly configured.
@@ -330,7 +330,7 @@ You can try this online by pressing the submit button below.
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
 
-## Node.js client
+## Node.js web service client with SOAP {#nodejs-soap}
 
 The following source code demonstrates how to call a web service with Node.js and [SOAP](https://github.com/vpulim/node-soap#readme) package.
 
@@ -348,7 +348,7 @@ soap.createClient(url, function(err, client) {
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
 
-## C# client with .NET Core
+## C# client with .NET Core {#c-sharp}
 
 The following source code demonstrates how to call a web service with .NET Core using C# language.
 
@@ -365,7 +365,7 @@ Console.WriteLine(response.Body.HelloResponse.Message);
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
 
-## Ruby client with Savon
+## Ruby client with Savon {#ruby-savon}
 
 The following source code demonstrates how to call a web service with Ruby and
 [Savon](https://github.com/savonrb/savon).
@@ -381,6 +381,9 @@ response = client.call(
 )
 puts response.body[:say_hello_response][:hello_response][:message]
 ```
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+The source code is available on GitHub.</p>
 
 ## Contributors
 

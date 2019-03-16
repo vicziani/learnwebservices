@@ -33,7 +33,7 @@ webszolgáltatás:
 </div>
 </div>
 
-## Az oldal célja
+## Az oldal célja {#az-oldal-celja}
 
 Ez az oldal azért jött létre, hogy ingyenes, publikus példa SOAP
 webszolgáltatásokat biztosítson tanuláshoz, oktatáshoz,
@@ -48,7 +48,7 @@ különböző programozási nyelven implementált kliens programok
 technológia használatba vételéhez. Gyakran frissítem ezeket, ahogy kijönnek
 a nyelvek és keretrendszerek új verziói.
 
-## Webszolgáltatásokról
+## Webszolgáltatásokról {#webszolgaltatasokrol}
 
 A SOAP webszolgáltatások alkalmazások közötti adatcserére valók. XML és
 főleg HTTP(S) technológiákra támaszkodnak. Ezért ember és számítógép
@@ -69,7 +69,7 @@ modern programokból is csatlakozni kell.
 
 <hr />
 
-## További webszolgáltatások
+## További webszolgáltatások {#tovabbi-webszolgaltatasok}
 
 <table class="table table-borderless table-striped">
   <!--<thead>
@@ -97,7 +97,7 @@ modern programokból is csatlakozni kell.
 </tbody>
 </table>
 
-## Egy példa webszolgáltatás
+## Egy példa webszolgáltatás {#egy-pelda-webszolgaltatas}
 
 Egy SOAP webszolgáltatás található `http://www.learnwebservices.com/services/hello`
 címen, mely egy nevet vár, és egy üdvözlőszöveget ad vissza.
@@ -137,7 +137,7 @@ A név alapján változó üzenetet a `Message` tag tartalmazza.
 </soap:Envelope>
 ```
 
-### Hibakezelés
+### Hibakezelés {#hibakezeles}
 
 Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üzenetet küldünk be, un. SOAP faultot kapunk.
 
@@ -153,7 +153,7 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 </soap:Envelope>
 ```
 
-## Hívása SoapUI használatával
+## Hívása SoapUI használatával {#soapui}
 
 SoapUI használatával a [hivatalos dokumentáció](https://www.soapui.org/soap-and-wsdl/getting-started.html) alapján létre
 kell hozni egy új SOAP projektet, és a _Initial WSDL_ beviteli mezőben megadni a [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL)
@@ -167,7 +167,7 @@ megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit reques
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa SoapUI projekt elérhető a GitHubon.</p>
 
-## CURL
+## CURL {#curl}
 
 Tipp: ez az oldal letölthető a curl használatával is a `curl www.learnwebservices.com` paranccsal.
 
@@ -184,7 +184,7 @@ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   http://www.learnwebservices.com/services/hello
 ```
 
-## Hívása Javaban JAX-WS RI-vel vagy CXF-fel
+## Hívása Javaban JAX-WS RI-vel vagy CXF-fel {#java-jaxws-cxf}
 
 SOAP webszolgáltatás meghívása Javaban [JAX-WS RI](https://javaee.github.io/metro-jax-ws/) library-vel,
 [jaxws-maven-plugin](https://www.mojohaus.org/jaxws-maven-plugin/) Maven pluginnel.
@@ -209,7 +209,7 @@ Egy példa Java JAX-WS RI kliens elérhető a GitHubon.</p>
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Java CXF kliens elérhető a GitHubon.</p>
 
-## Hívása Javaban Spring Web Services-zel
+## Hívása Javaban Spring Web Services-zel {#java-spring-web-services}
 
 Javaban [Spring Web Services](https://spring.io/projects/spring-ws) library-vel, JAX-B marshallerrel,
 [maven-jaxb2-plugin](https://github.com/highsource/maven-jaxb2-plugin) Maven pluginnel.
@@ -229,7 +229,7 @@ System.out.println(response.getValue().getHelloResponse().getMessage());
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Java Spring Web Services kliens elérhető a GitHubon.</p>
 
-## Hívás Apache Axis2/Java library-vel
+## Hívás Apache Axis2/Java library-vel {#java-axis}
 
 A következő kód mutatja be, hogy kell webszolgáltatást hívni
 [Apache Axis2/Java](http://axis.apache.org/axis2/java/core/index.html) library,
@@ -264,7 +264,7 @@ System.out.println(sayHelloResponseE
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Java Axis2 kliens elérhető a GitHubon.</p>
 
-## JMeter
+## JMeter {#jmeter}
 
 Az Apache JMeter használható SOAP webszolgáltatások terheléses tesztelésére is.
 
@@ -279,7 +279,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
 A JMeter projekt elérhető GitHubon.</p>
 
-## Hívása Pythonban
+## Hívása Pythonban Zeep library-vel {#python-zeep}
 
 Használható a [Zeep](https://github.com/mvantellingen/python-zeep) library.
 
@@ -293,7 +293,7 @@ print(client.service.SayHello(request))
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Python kliens elérhető a GitHubon.</p>
 
-## Vanilla JS
+## Vanilla JS {#vanillajs}
 
 A webszolgáltatást böngészőből is meg lehet hívni, ha ugyanazon a domainen van, vagy be van állítva a
 Cross-Origin Resource Sharing (CORS).
@@ -351,7 +351,7 @@ Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Node.js kliens elérhető a GitHubon.</p>
 
-## Hívása Node.js esetén
+## Hívása Node.js esetén SOAP library-vel {#nodejs-soap}
 
 Használható a [SOAP](https://github.com/vpulim/node-soap#readme) projekt.
 
@@ -369,7 +369,7 @@ soap.createClient(url, function(err, client) {
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Node.js kliens SOAP library-vel elérhető a GitHubon.</p>
 
-## Hívása .NET Core keretrendszerrel C# nyelven
+## Hívása .NET Core keretrendszerrel C# nyelven {#c-sharp}
 
 ```csharp
 HelloEndpointClient proxy = new HelloEndpointClient();
@@ -384,7 +384,7 @@ Console.WriteLine(response.Body.HelloResponse.Message);
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa C# kliens elérhető a GitHubon.</p>
 
-## Ruby nyelven Savon library-vel
+## Ruby nyelven Savon library-vel {#ruby-savon}
 
 A következő példa mutatja, hogy kell webszolgáltatás hívni Ruby-ban,
 [Savon](https://github.com/savonrb/savon) library használatával.
@@ -405,7 +405,7 @@ puts response.body[:say_hello_response][:hello_response][:message]
 Egy példa Ruby kliens elérhető a GitHubon.</p>
 
 
-## Közreműködők
+## Közreműködők {#kozremukodok}
 
 * Rácz János ([rczjns](https://github.com/rczjns))
 * Vörös Bea ([beavoros](https://github.com/beavoros))

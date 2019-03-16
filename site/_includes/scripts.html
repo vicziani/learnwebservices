@@ -1,4 +1,6 @@
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script src="/assets/js/jquery.min.js"></script>
+
+<script src="/assets/js/clipboard.min.js"></script>
 
 <script>
 var clipboard = new ClipboardJS('.copy-button');
@@ -7,9 +9,15 @@ clipboard.on('success', function(event) {
 });
 </script>
 
-<script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+<script src="/assets/js/anchorify.min.js"></script>
 
-<script src="/assets/js/learnwebservices.js"></script>
+<script>
+jQuery(window).load(function () {
+    jQuery('body').anchorify();
+});
+</script>
+
+<script src="/assets/js/lightbox.min.js"></script>
 
 <script>
 lightbox.option({
@@ -19,3 +27,5 @@ lightbox.option({
   'albumLabel': "%1 / %2"
 });
 </script>
+
+<script src="/assets/js/learnwebservices.js"></script>

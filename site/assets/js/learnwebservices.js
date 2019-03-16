@@ -34,7 +34,6 @@ function showErrorMessage() {
 
 function setStatus(status) {
     var badge = document.getElementById(status + "-badge");
-    console.log(badge);
     badge.classList.remove("d-none");
 }
 

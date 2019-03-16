@@ -115,3 +115,22 @@ footer {
   color: #f05f40;
   font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
 }
+
+.header-link {
+  display: inline-block;
+  margin-left: -20px;
+  padding-right: 8px;
+  }
+
+.header-link svg {
+  visibility: hidden;
+  }
+
+h1:hover .header-link svg,
+h2:hover .header-link svg,
+h3:hover .header-link svg,
+h4:hover .header-link svg,
+h5:hover .header-link svg,
+h6:hover .header-link svg {
+  visibility: visible;
+} 
