@@ -1,6 +1,13 @@
 window.onload = function() {
   registerOnSubmit();
   checkWebserviceStatus();
+  registerCopyButtonHandlers();
+}
+
+function registerCopyButtonHandlers() {  
+  $(".btn-copy").mouseleave(function(e) {
+    $(this).tooltip('hide');
+  });
 }
 
 function registerOnSubmit() {

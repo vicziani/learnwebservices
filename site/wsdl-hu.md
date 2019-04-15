@@ -2,7 +2,7 @@
 layout: default-hu
 ---
 
-# Példa WSDL fájl
+# Példa WSDL fájl {#pelda-wsdl-fajl}
 
 <hr />
 

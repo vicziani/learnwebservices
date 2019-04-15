@@ -20,18 +20,23 @@ Verzió
 Ha szükséged van gyorsan kipróbálni valamit, itt egy WSDL, és mögötte egy működő SOAP
 webszolgáltatás:
 
-<div class="container">
-<div class="row justify-content-md-center">
-<div class="col-xs-6 highlighted-wsdl">
-  <a id="highlighted-wsdl-hello" class="text-wrap" href="http://www.learnwebservices.com/services/hello?WSDL">http://www.learnwebservices.com/services/hello?WSDL</a>  
-</div>
-  <div class="col-xs-6">
-    <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-hello"></i>  
-    <span id="online-badge" class="badge badge-success d-none">Online</span>
-    <span id="offline-badge" class="badge badge-danger d-none">Offline</span>
+<div class="form-row d-flex justify-content-center mb-3">
+  <div class="input-group col-md-8">
+    <input type="text" value="http://www.learnwebservices.com/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control"/>
+    <div class="input-group-append">
+      <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-hello" title="Kimásoltad">
+        <i class="copy-button far fa-copy"></i>
+        </button>
+    </div>  
+    <div>
+      <span id="online-badge" class="badge badge-success d-none ml-2">Online</span>
+      <span id="offline-badge" class="badge badge-danger d-none ml-2">Offline</span>
+    </div>
   </div>
 </div>
-</div>
+
+(A WSDL dokumentum egy XML dokumentum, melyet a Firefox nem jelenít meg, csak a _View Page Source_ menüpontra kattintva.) A WSDL állomány
+olvasható formában [itt található](wsdl-hu.html).
 
 ## Az oldal célja {#az-oldal-celja}
 
@@ -71,31 +76,19 @@ modern programokból is csatlakozni kell.
 
 ## További webszolgáltatások {#tovabbi-webszolgaltatasok}
 
-<table class="table table-borderless table-striped">
-  <!--<thead>
-    <tr>
-      <th>Funkció</th>
-      <th>WSDL</th>
-    </tr>
-  </thead>-->
-  <tbody>
-    <tr>
-      <td class="align-middle">Celsius és Fahrenheit váltás</td>
-      <td>
-        <div class="container">
-        <div class="row justify-content-md-center">
-        <div class="col-xs-6 highlighted-wsdl">
-          <a id="highlighted-wsdl-temp" class="text-wrap" href="http://www.learnwebservices.com/services/tempconverter?wsdl">http://www.learnwebservices.com/services/tempconverter?wsdl</a>  
-        </div>
-          <div class="col-xs-6">
-            <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-temp"></i>  
-          </div>
-        </div>
-        </div>        
-      </td>
-    </tr>
-</tbody>
-</table>
+<div class="d-flex justify-content-center mb-3">
+  <div class="form-row col-md-10">
+    <label for="highlighted-wsdl-temp">Celsius to Fahrenheit converter</label>
+    <div class="input-group ">    
+      <input type="text" value="http://www.learnwebservices.com/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Kimásoltad">
+          <i class="copy-button far fa-copy"></i>
+          </button>
+      </div>  
+    </div>
+  </div>
+</div>
 
 ## Egy példa webszolgáltatás {#egy-pelda-webszolgaltatas}
 
@@ -103,8 +96,6 @@ Egy SOAP webszolgáltatás található `http://www.learnwebservices.com/services
 címen, mely egy nevet vár, és egy üdvözlőszöveget ad vissza.
 
 A SOAP webszolgáltatás WSDL dokumentuma elérhető a [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) címen.
-(A WSDL dokumentum egy XML dokumentum, melyet a Firefox nem jelenít meg, csak a _View Page Source_ menüpontra kattintva.) A WSDL állomány
-olvasható formában [itt található](wsdl-hu.html).
 
 A címre a következő formátumban kell posztolni egy XML dokumentumot (a WSDL-ben leírtaknak megfelelően).
 A `Name` tag értéke tetszőlegesen módosítható.

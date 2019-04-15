@@ -44,6 +44,10 @@ header a {
   color: #ffffff;
 }
 
+header a:hover {
+  color: #ffffff;
+}
+
 .container h1 {
   margin-top: 1.5rem;
   text-align: center;
@@ -53,22 +57,29 @@ header a {
   border-color: #f05f40;
 }
 
-.highlighted-wsdl {
-  font-size: 1.25rem;
-  text-align: center;
-  border: 1px #f05f40 solid;
-  margin-right: 20px;
+.btn-primary {
+  background-color: #f05f40;
+  border-color: #f05f40;
 }
 
-.highlighted-wsdl a {
-  padding: 5px;
+.btn-primary:hover {
+  background-color: #f05f40;
+  border-color: #f05f40;
 }
 
-.copy-button {
-  font-size: 1.25rem;
-  cursor: pointer;
-  vertical-align: middle;
-  padding: 5px;
+
+.btn-outline-primary {
+  color: #f05f40;
+  border-color: #f05f40;
+}
+
+.btn-outline-primary:focus {
+  box-shadow: 0px 0px;
+}
+
+.form-control {
+  color: #f05f40;
+  border: 1px solid #f05f40;
 }
 
 footer {

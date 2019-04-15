@@ -3,6 +3,7 @@
 ## [1.1.4] - 2019-03-16
 
 - Anchors for headings on the site
+- Visual feedback for copy WSDL url
 
 ## [1.1.3] - 2019-03-13
 

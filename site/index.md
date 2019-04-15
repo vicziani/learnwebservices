@@ -19,18 +19,22 @@ Version
 
 If you want a simple, online web service, here is a WSDL for it:
 
-<div class="container">
-<div class="row justify-content-md-center mb-4 mt-4">
-<div class="col-xs-6 highlighted-wsdl">
-  <a id="highlighted-wsdl-hello" class="text-wrap" href="http://www.learnwebservices.com/services/hello?WSDL">http://www.learnwebservices.com/services/hello?WSDL</a>  
-</div>
-  <div class="col-xs-6">
-    <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-hello"></i>  
-    <span id="online-badge" class="badge badge-success d-none">Online</span>
-    <span id="offline-badge" class="badge badge-danger d-none">Offline</span>
+<div class="form-row d-flex justify-content-center mb-3">
+  <div class="input-group col-md-8">
+    <input type="text" value="http://www.learnwebservices.com/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control"/>
+    <div class="input-group-append">
+      <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-hello" title="Copied">
+        <i class="copy-button far fa-copy"></i>
+        </button>
+    </div>  
+    <div>
+      <span id="online-badge" class="badge badge-success d-none ml-2">Online</span>
+      <span id="offline-badge" class="badge badge-danger d-none ml-2">Offline</span>
+    </div>
   </div>
 </div>
-</div>
+
+The WSDL document is [available here](wsdl.html) in readable format.
 
 ## Purpose of this site
 
@@ -55,36 +59,24 @@ Sometime the SOAP web services are considered legacy solutions today, because th
 
 ## Other provided web services
 
-<table class="table table-borderless table-striped">
-  <!--<thead>
-    <tr>
-      <th>Funkció</th>
-      <th>WSDL</th>
-    </tr>
-  </thead>-->
-  <tbody>
-    <tr>
-      <td class="align-middle">Celsius to Fahrenheit converter</td>
-      <td>
-        <div class="container">
-        <div class="row justify-content-md-center">
-        <div class="col-xs-6 highlighted-wsdl">
-          <a id="highlighted-wsdl-temp" class="text-wrap" href="http://www.learnwebservices.com/services/tempconverter?wsdl">http://www.learnwebservices.com/services/tempconverter?wsdl</a>  
-        </div>
-          <div class="col-xs-6">
-            <i class="copy-button far fa-copy" data-clipboard-target="#highlighted-wsdl-temp"></i>  
-          </div>
-        </div>
-        </div>        
-      </td>
-    </tr>
-</tbody>
-</table>
+<div class="d-flex justify-content-center mb-3">
+  <div class="form-row col-md-10">
+    <label for="highlighted-wsdl-temp">Celsius to Fahrenheit converter</label>
+    <div class="input-group ">    
+      <input type="text" value="http://www.learnwebservices.com/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Copied">
+          <i class="copy-button far fa-copy"></i>
+          </button>
+      </div>  
+    </div>
+  </div>
+</div>
 
 ## An example web service
 
 You may find an operating web service at the `http://www.learnwebservices.com/services/hello` URL that accepts a name, and gives back a welcome message. (The service accepts only POST HTTP requests so you may not use it in a browser directly.)
-The WSDL file that specifies the interface is available at [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) URL. (Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document.) The appropriate WSDL document is [available here](wsdl.html) in readable format.
+The WSDL file that specifies the interface is available at [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) URL. (Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document.)
 
 The WSDL specifies the format of the request message. The content of the `Name` tag may be freely rewritten.
 
