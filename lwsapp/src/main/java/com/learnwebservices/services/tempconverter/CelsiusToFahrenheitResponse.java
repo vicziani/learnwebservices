@@ -6,6 +6,9 @@ public class CelsiusToFahrenheitResponse {
 
     private double temperatureInFahrenheit;
 
+    public CelsiusToFahrenheitResponse() {
+    }
+
     public CelsiusToFahrenheitResponse(double temperatureInFahrenheit) {
         this.temperatureInFahrenheit = temperatureInFahrenheit;
     }

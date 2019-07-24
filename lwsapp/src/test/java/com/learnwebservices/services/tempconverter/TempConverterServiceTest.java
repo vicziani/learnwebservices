@@ -1,6 +1,5 @@
-package com.learnwebservices.tempconverter;
+package com.learnwebservices.services.tempconverter;
 
-import com.learnwebservices.services.tempconverter.TempConverterService;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.5]
+
+- Integration tests for `lwsapp` project
+
 ## [1.1.4] - 2019-03-16
 
 - Anchors for headings on the site
