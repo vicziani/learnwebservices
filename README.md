@@ -1,5 +1,7 @@
 # Repository for learnwebservices.com site
 
+[![Build Status](https://api.travis-ci.com/vicziani/learnwebservices.svg?branch=master)](https://travis-ci.com/vicziani/learnwebservices)
+
 This repository contains the source of the http://learnwebservices.com site.
 
 The main purpose of this site to provide a free, public, sample SOAP webservices
