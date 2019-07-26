@@ -6,6 +6,7 @@
 - Add Travis build for `lwsapp` project
 - Add Travis build status
 - Maven wrapper for `lwsapp` project
+- Fix Lightbox (requires jQuery, not jQuery slim)
 
 ## [1.1.4] - 2019-03-16
 
