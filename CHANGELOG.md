@@ -3,6 +3,8 @@
 ## [1.1.6]
 
 - Groovy client
+- `lwsapp` logs requests and `User-Agent` header
+- Create sematext logging
 
 ## [1.1.5] - 2019-08-04
 
