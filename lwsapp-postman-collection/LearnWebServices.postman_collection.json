@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "53d29c7b-30ab-407c-b3a5-64735b54f1fd",
+		"name": "LearnWebServices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Learn Web Services Hello",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ba8de0c6-a561-407d-9d94-76871a6bd6f1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body contains 'Hello John Doe!' message\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Hello John Doe!\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n   <soapenv:Header/>\n   <soapenv:Body>\n      <SayHello xmlns=\"http://learnwebservices.com/services/hello\">\n         <HelloRequest>\n            <Name>John Doe</Name>\n         </HelloRequest>\n      </SayHello>\n   </soapenv:Body>\n</soapenv:Envelope>\n"
+				},
+				"url": {
+					"raw": "http://www.learnwebservices.com/services/hello",
+					"protocol": "http",
+					"host": [
+						"www",
+						"learnwebservices",
+						"com"
+					],
+					"path": [
+						"services",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

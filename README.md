@@ -20,6 +20,7 @@ The repository contains clients with different technologies:
 * `lwsapp-jaxwsri-client` - Java JAX-RS RI client
 * `lwsapp-jmeter-project` - JMeter project file
 * `lwsapp-js-client` - Node.js client with SOAP library
+* `lwsapp-postman-collection` - Postman sample request
 * `lwsapp-python-client` - Python client with Zeep
 * `lwsapp-ruby-client` - Ruby client with [Savon](https://github.com/savonrb/savon)
 * `lwsapp-soapui-project` - SoapUI project

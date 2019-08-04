@@ -5,9 +5,9 @@ layout: default-hu
 <div class="pt-3 text-right">
 <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
 Utolsó frissítés dátuma: 
-<span class="text-nowrap font-weight-bold">2019. március 13.</span>, 
+<span class="text-nowrap font-weight-bold">2019. augusztus 4.</span>, 
 Verzió 
-<span class="text-nowrap font-weight-bold">1.1.3</span>
+<span class="text-nowrap font-weight-bold">1.1.5</span>
 </a>
 </div>
 
@@ -254,6 +254,19 @@ System.out.println(sayHelloResponseE
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Java Axis2 kliens elérhető a GitHubon.</p>
+
+## Postman {#postman}
+
+Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman kérést létrehozni!
+
+<div class="demo-image">
+  <a href="images/postman-anim.gif" data-lightbox="learnwebservices">
+    <img src="images/postman.png" title="Postman kérés" class="img-fluid"/>
+  </a>
+</div>
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Project on GitHub"><i class="fab fa-github"></i></a>
+A Postman Collection elérhető GitHubon.</p>
 
 ## JMeter {#jmeter}
 

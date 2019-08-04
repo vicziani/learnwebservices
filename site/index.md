@@ -5,9 +5,9 @@ layout: default
 <div class="pt-3 text-right">
 <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
 Last update: 
-<span class="text-nowrap font-weight-bold">March 13, 2019</span>, 
+<span class="text-nowrap font-weight-bold">August 4, 2019</span>, 
 Version 
-<span class="text-nowrap font-weight-bold">1.1.3</span>
+<span class="text-nowrap font-weight-bold">1.1.5</span>
 </a>
 </div>
 
@@ -234,6 +234,19 @@ System.out.println(sayHelloResponseE
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
+
+## Calling web services with Postman {#postman}
+
+Click on the picture to view the full animation that shows how to create a Postman project.
+
+<div class="demo-image">
+  <a href="images/postman-anim.gif" data-lightbox="learnwebservices">
+    <img src="images/postman.png" title="Create Postman request" class="img-fluid"/>
+  </a>
+</div>
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Project on GitHub"><i class="fab fa-github"></i></a>
+The Postman Collection is available on GitHub.</p>
 
 ## Calling web services with JMeter {#jmeter}
 

@@ -1,12 +1,14 @@
 # Changelog
 
-## [1.1.5]
+## [1.1.5] - 2019-08-04
 
 - Integration tests for `lwsapp` project
 - Add Travis build for `lwsapp` project
 - Add Travis build status
 - Maven wrapper for `lwsapp` project
 - Fix Lightbox (requires jQuery, not jQuery slim)
+- Postman sample request
+- Create Postman Monitoring
 
 ## [1.1.4] - 2019-03-16
 
