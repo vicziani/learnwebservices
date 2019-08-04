@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.6]
+
+- Groovy client
+
 ## [1.1.5] - 2019-08-04
 
 - Integration tests for `lwsapp` project
