@@ -4,7 +4,9 @@
 
 - Groovy client
 - `lwsapp` logs requests and `User-Agent` header
-- Create sematext logging
+- Create sematext logging for `lwsapp` and sample configuration file
+- `lwsapp` handles GET method with status 405 Method not allowed
+- `lwsapp` returns hint when using bad decimal separator when calling tempconverter
 
 ## [1.1.5] - 2019-08-04
 
