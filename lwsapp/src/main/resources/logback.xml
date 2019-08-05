@@ -1,0 +1,32 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %logger %level %thread - %message%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
+        <syslogHost>logsene-syslog-receiver.sematext.com</syslogHost>
+        <port>514</port>
+        <facility>LOCAL0</facility>
+        <throwableExcluded>true</throwableExcluded>
+        <suffixPattern>[SEMATEXT-TOKEN]:@cee: {"logger": "%logger", "level":"%level", "thread":"%thread",
+            "message":"%message", "exception":"%replace(%ex){'\"', '\''}",
+            "@timestamp":"%date{"yyyy-MM-dd'T'HH:mm:ss,SSSXXX", UTC}"}
+        </suffixPattern>
+    </appender>
+
+
+    <root level="warn">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="SYSLOG"/>
+    </root>
+
+    <logger name="com.learnwebservices" level="debug">
+    </logger>
+
+    <logger name="com.learnwebservices.LearnWebservicesApp" level="info">
+    </logger>
+</configuration>
