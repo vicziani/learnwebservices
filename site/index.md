@@ -5,9 +5,9 @@ layout: default
 <div class="pt-3 text-right">
 <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
 Last update: 
-<span class="text-nowrap font-weight-bold">August 4, 2019</span>, 
+<span class="text-nowrap font-weight-bold">August 8, 2019</span>, 
 Version 
-<span class="text-nowrap font-weight-bold">1.1.5</span>
+<span class="text-nowrap font-weight-bold">1.1.6</span>
 </a>
 </div>
 
@@ -154,6 +154,31 @@ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   http://www.learnwebservices.com/services/hello
 ```
 
+## Calling web service with Wget {#wget}
+
+Use the following command to call the web service with Wget.
+
+```
+wget -qO - --header "Content-Type: text/xml;charset=UTF-8"  \
+  --post-data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
+  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
+  <HelloRequest><Name>John Doe</Name></HelloRequest> \
+  </SayHello></soapenv:Body></soapenv:Envelope>' \
+  http://www.learnwebservices.com/services/hello
+```
+
+## Calling web service with HTTPie {#httpie}
+
+Use the following command to call the web service with [HTTPie](https://httpie.org/).
+
+```
+echo '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
+  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
+  <HelloRequest><Name>John Doe</Name></HelloRequest> \
+  </SayHello></soapenv:Body></soapenv:Envelope>' | \
+  http -b POST http://www.learnwebservices.com/services/hello  'Content-Type:text/xml;charset=UTF-8'
+```
+
 ## Java web service client with JAX-WS RI or CXF {#java-jaxws-cxf}
 
 The following source code demonstrates calling the web service using 
@@ -234,6 +259,33 @@ System.out.println(sayHelloResponseE
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 The source code is available on GitHub.</p>
+
+## Groovy web service client with groovy-wslite {#groovy}
+
+The following source code demonstrates calling the web service using 
+[groovy-wslite](https://github.com/jwagenleitner/groovy-wslite) library.
+
+```groovy
+@Grab('com.github.groovy-wslite:groovy-wslite:1.1.2')
+import wslite.soap.*
+
+def client = new SOAPClient('http://www.learnwebservices.com/services/hello')
+def response = client.send {
+    body {
+        SayHello('xmlns':'http://learnwebservices.com/services/hello') {
+            HelloRequest {
+              Name("John Doe")
+            }
+        }
+    }
+}
+
+println(response.SayHelloResponse.HelloResponse.Message)
+```
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+The source code is available on GitHub.</p>
+
 
 ## Calling web services with Postman {#postman}
 

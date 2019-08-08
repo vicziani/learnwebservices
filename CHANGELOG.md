@@ -1,6 +1,13 @@
 # Changelog
 
-## [1.1.6]
+## [1.1.7] - 2019-08-15
+
+- Groovy client documentation
+- Call web service with wget
+- Call web service with HTTPie
+- `lwsapp` in a separate repository
+
+## [1.1.6] - 2019-08-05
 
 - Groovy client
 - `lwsapp` logs requests and `User-Agent` header

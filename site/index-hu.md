@@ -5,9 +5,9 @@ layout: default-hu
 <div class="pt-3 text-right">
 <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
 Utolsó frissítés dátuma: 
-<span class="text-nowrap font-weight-bold">2019. augusztus 4.</span>, 
+<span class="text-nowrap font-weight-bold">2019. augusztus 8.</span>, 
 Verzió 
-<span class="text-nowrap font-weight-bold">1.1.5</span>
+<span class="text-nowrap font-weight-bold">1.1.6</span>
 </a>
 </div>
 
@@ -175,6 +175,31 @@ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   http://www.learnwebservices.com/services/hello
 ```
 
+## Wget {#wget}
+
+A webszolgáltatás Wget parancs használatával a következő módon hívható meg.
+
+```
+wget -qO - --header "Content-Type: text/xml;charset=UTF-8"  \
+  --post-data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
+  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
+  <HelloRequest><Name>John Doe</Name></HelloRequest> \
+  </SayHello></soapenv:Body></soapenv:Envelope>' \
+  http://www.learnwebservices.com/services/hello
+```
+
+## HTTPie {#httpie}
+
+A webszolgáltatás [HTTPie](https://httpie.org/) parancs használatával a következő módon hívható meg.
+
+```
+echo '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
+  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
+  <HelloRequest><Name>John Doe</Name></HelloRequest> \
+  </SayHello></soapenv:Body></soapenv:Envelope>' | \
+  http -b POST http://www.learnwebservices.com/services/hello  'Content-Type:text/xml;charset=UTF-8'
+```
+
 ## Hívása Javaban JAX-WS RI-vel vagy CXF-fel {#java-jaxws-cxf}
 
 SOAP webszolgáltatás meghívása Javaban [JAX-WS RI](https://javaee.github.io/metro-jax-ws/) library-vel,
@@ -254,6 +279,33 @@ System.out.println(sayHelloResponseE
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 Egy példa Java Axis2 kliens elérhető a GitHubon.</p>
+
+## Groovy kliens {#groovy}
+
+Webszolgáltatás hívása Goovy nyelven
+[groovy-wslite](https://github.com/jwagenleitner/groovy-wslite) library
+használatával.
+
+```groovy
+@Grab('com.github.groovy-wslite:groovy-wslite:1.1.2')
+import wslite.soap.*
+
+def client = new SOAPClient('http://www.learnwebservices.com/services/hello')
+def response = client.send {
+    body {
+        SayHello('xmlns':'http://learnwebservices.com/services/hello') {
+            HelloRequest {
+              Name("John Doe")
+            }
+        }
+    }
+}
+
+println(response.SayHelloResponse.HelloResponse.Message)
+```
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+Egy példa Groovy kliens elérhető a GitHubon.</p>
 
 ## Postman {#postman}
 
