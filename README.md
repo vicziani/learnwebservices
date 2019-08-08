@@ -1,7 +1,5 @@
 # Repository for learnwebservices.com site
 
-[![Build Status](https://api.travis-ci.com/vicziani/learnwebservices.svg?branch=master)](https://travis-ci.com/vicziani/learnwebservices)
-
 This repository contains the source of the http://learnwebservices.com site.
 
 The main purpose of this site to provide a free, public, sample SOAP webservices
@@ -11,9 +9,10 @@ SOAP clients in different programming languages.
 
 Static pages are in the `site` directory, and generated with Jekyll.
 
-There are a Spring Boot server application (`lwsapp`) serves the SOAP webservices.
+There is a Spring Boot server application serves the SOAP webservices in a different
+GitHub repository: https://github.com/vicziani/learnwebservices-server/.
 
-The repository contains clients with different technologies:
+This repository contains clients with different technologies:
 
 * `lwsapp-axis2-client` - Java Axis2 client
 * `lwsapp-cxf-client` - Java CXF client

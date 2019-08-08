@@ -144,6 +144,11 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 </soap:Envelope>
 ```
 
+## Szerver forráskódja
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices-server/" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+Egy Spring Boot alkalmazás szolgálja ki a példa webszolgáltatásokat. A forráskódja elérhető a GitHub-on.</p>
+
 ## Hívása SoapUI használatával {#soapui}
 
 SoapUI használatával a [hivatalos dokumentáció](https://www.soapui.org/soap-and-wsdl/getting-started.html) alapján létre
@@ -317,7 +322,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman
   </a>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Project on GitHub"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 A Postman Collection elérhető GitHubon.</p>
 
 ## JMeter {#jmeter}
@@ -332,7 +337,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter 
   </a>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 A JMeter projekt elérhető GitHubon.</p>
 
 ## Hívása Pythonban Zeep library-vel {#python-zeep}

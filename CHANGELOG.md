@@ -1,26 +1,15 @@
 # Changelog
 
-## [1.1.7] - 2019-08-15
+## [1.1.6] - 2019-08-15
 
 - Groovy client documentation
 - Call web service with wget
 - Call web service with HTTPie
-- `lwsapp` in a separate repository
-
-## [1.1.6] - 2019-08-05
-
-- Groovy client
-- `lwsapp` logs requests and `User-Agent` header
-- Create sematext logging for `lwsapp` and sample configuration file
-- `lwsapp` handles GET method with status 405 Method not allowed
-- `lwsapp` returns hint when using bad decimal separator when calling tempconverter
+- Spring Boot server application in a separate repository
 
 ## [1.1.5] - 2019-08-04
 
-- Integration tests for `lwsapp` project
-- Add Travis build for `lwsapp` project
 - Add Travis build status
-- Maven wrapper for `lwsapp` project
 - Fix Lightbox (requires jQuery, not jQuery slim)
 - Postman sample request
 - Create Postman Monitoring

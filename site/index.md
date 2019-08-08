@@ -124,6 +124,11 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
 </soap:Envelope>
 ```
 
+## Server source code
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices-server/" title="Project on GitHub"><i class="fab fa-github"></i></a>
+A Spring Boot server application serves the sample web services. It's source code available on GitHub.</p>
+
 ## Calling web service with SoapUI {#soapui}
 
 To [call the web service with SoapUI](https://www.soapui.org/soap-and-wsdl/getting-started.html), create a new SOAP project in the application,
