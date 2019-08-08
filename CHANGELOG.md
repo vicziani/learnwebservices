@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.1.6] - 2019-08-15
+## [1.1.6] - 2019-08-08
 
 - Groovy client documentation
 - Call web service with wget
