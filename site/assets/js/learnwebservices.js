@@ -16,7 +16,7 @@ function registerOnSubmit() {
 }
 
 function checkServerStatus() {
-  let url = "http://localhost:8080/actuator/info";
+  let url = "http://www.learnwebservices.com/actuator/info";
   fetch(url)
     .then(function(response) {
       return response.json();
