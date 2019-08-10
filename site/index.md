@@ -28,8 +28,7 @@ If you want a simple, online web service, here is a WSDL for it:
         </button>
     </div>  
     <div>
-      <span id="online-badge" class="badge badge-success d-none ml-2">Online</span>
-      <span id="offline-badge" class="badge badge-danger d-none ml-2">Offline</span>
+      <span id="health-check-badge" class="badge d-none ml-2">Unknown</span>
     </div>
   </div>
 </div>

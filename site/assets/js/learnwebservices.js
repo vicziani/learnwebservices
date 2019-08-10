@@ -1,6 +1,6 @@
 window.onload = function() {
   registerOnSubmit();
-  checkWebserviceStatus();
+  checkServerStatus();
   registerCopyButtonHandlers();
 }
 
@@ -15,13 +15,18 @@ function registerOnSubmit() {
   form.onsubmit = submitHandler;
 }
 
-function checkWebserviceStatus() {
-  callWebservice("John Doe", function(message) {
-      setStatus("online");
-  },
-  function(error) {
-      setStatus("offline");
-  });
+function checkServerStatus() {
+  var url = "http://localhost:8080/actuator/info";
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(info) {        
+      setStatus("Online (" + info.build.version + ")", "badge-success");
+    })
+    .catch(function(error) {
+      setStatus("Offline", "badge-danger")  
+    });
 }
 
 function submitHandler() {
@@ -39,9 +44,11 @@ function showErrorMessage() {
   div.classList.remove("d-none");
 }
 
-function setStatus(status) {
-    var badge = document.getElementById(status + "-badge");
+function setStatus(text, ccsClass) {
+    var badge = document.getElementById("health-check-badge");
+    badge.innerHTML = text;
     badge.classList.remove("d-none");
+    badge.classList.add(ccsClass);
 }
 
 function readName() {
