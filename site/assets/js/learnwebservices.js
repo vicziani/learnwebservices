@@ -11,12 +11,12 @@ function registerCopyButtonHandlers() {
 }
 
 function registerOnSubmit() {
-  var form = document.getElementById("hello-form");
+  let form = document.getElementById("hello-form");
   form.onsubmit = submitHandler;
 }
 
 function checkServerStatus() {
-  var url = "http://localhost:8080/actuator/info";
+  let url = "http://localhost:8080/actuator/info";
   fetch(url)
     .then(function(response) {
       return response.json();
@@ -40,12 +40,12 @@ function submitHandler() {
 }
 
 function showErrorMessage() {
-  var div = document.getElementById("webservice-error-div");
+  let div = document.getElementById("webservice-error-div");
   div.classList.remove("d-none");
 }
 
 function setStatus(text, ccsClass) {
-    var badge = document.getElementById("health-check-badge");
+    let badge = document.getElementById("health-check-badge");
     badge.innerHTML = text;
     badge.classList.remove("d-none");
     badge.classList.add(ccsClass);
@@ -60,8 +60,8 @@ function writeMessage(message) {
 }
 
 function callWebservice(name, onSuccess, onError) {
-  var url = "http://www.learnwebservices.com/services/hello";
-  var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  let url = "http://www.learnwebservices.com/services/hello";
+  let request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
      <soapenv:Header/>
      <soapenv:Body>
         <SayHello xmlns="http://learnwebservices.com/services/hello">
@@ -72,7 +72,7 @@ function callWebservice(name, onSuccess, onError) {
      </soapenv:Body>
   </soapenv:Envelope>`.replace("{{name}}", name);
 
-  var fetchData = {
+  let fetchData = {
      method: 'POST',
      body: request
   };
@@ -82,8 +82,8 @@ function callWebservice(name, onSuccess, onError) {
       return response.text();
     })
     .then(function(xml) {
-        var xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
-        var message = xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent;
+        let xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+        let message = xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent;
         onSuccess(message);
     })
     .catch(function(error) {
