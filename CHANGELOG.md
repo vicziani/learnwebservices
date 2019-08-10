@@ -4,6 +4,7 @@
 
 - Health check with Spring Boot actuator, and writes the version of the server application
 - Proper 404 design for complex paths
+- Favico
 
 ## [1.1.6] - 2019-08-08
 
