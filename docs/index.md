@@ -520,6 +520,9 @@ puts response.body[:say_hello_response][:hello_response][:message]
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">The source code is available on GitHub.</a></p>
 
+</div>
+</div>
+
 ## Contributors
 
 * Rita Kuti
