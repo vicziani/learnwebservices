@@ -1,13 +1,86 @@
+.navbar.navbar-language {
+  height: 35px;
+}
+
+.navbar-language .navbar-nav .nav-link {
+  color: rgba(0,0,0,.65);
+  font-size: .8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+  padding-right: 10px;
+}
+
+
+.navbar-light .navbar-brand {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #f05f40;
+  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+  text-decoration: none;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: #f05f40;
+}
+
+.navbar ul {
+  display: table-row;
+}
+
+.navbar-nav > li {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0,0,0,.65);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+  text-decoration: none;
+  padding-right: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #f05f40;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #f05f40;
+  text-decoration: none;
+}
+
+.nav-pills .nav-link.active:hover {
+  text-decoration: none;
+}
+
+.nav-pills .nav-link:hover {
+  text-decoration: underline;
+}
+
+ul.nav.nav-pills {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: .8rem;
+}
+
+
 code {
   color: #f05f40;
 }
 
 a {
+  text-decoration: underline;
   color: #f05f40;
 }
 
 a:hover {
-  color: #f05f40;
+  color: rgba(0,0,0,.65);
 }
 
 
@@ -82,16 +155,13 @@ header a:hover {
   border: 1px solid #f05f40;
 }
 
-footer {
-  padding-top: 1rem;
+.highlight {
+  background-color: #fafafa;
+  padding: 5px;
 }
 
-.right-menu-item {
-  vertical-align: middle;
-  font-size: .9rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+footer {
+  padding-top: 1rem;
 }
 
 .github-icon {
@@ -103,7 +173,6 @@ footer {
 }
 
 .github-icon {
-  color: #000000;
   font-size: 2rem;
   padding: 5px;
   vertical-align: middle;
@@ -119,19 +188,16 @@ footer {
   padding: 10px;
 }
 
-.logo {
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #f05f40;
-  font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-}
-
 .header-link {
   display: inline-block;
   margin-left: -20px;
   padding-right: 8px;
-  }
+  color: rgba(0,0,0,.65);
+}
+
+.header-link:hover {
+  color: rgba(0,0,0,.65);
+}
 
 .header-link svg {
   visibility: hidden;
@@ -144,4 +210,4 @@ h4:hover .header-link svg,
 h5:hover .header-link svg,
 h6:hover .header-link svg {
   visibility: visible;
-} 
+}

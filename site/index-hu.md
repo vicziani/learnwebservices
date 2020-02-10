@@ -3,12 +3,14 @@ layout: default-hu
 ---
 
 <div class="pt-3 text-right">
-<a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
-Utolsó frissítés dátuma: 
-<span class="text-nowrap font-weight-bold">2019. augusztus 8.</span>, 
-Verzió 
-<span class="text-nowrap font-weight-bold">1.1.6</span>
-</a>
+  Utolsó frissítés dátuma:
+  <span class="text-nowrap font-weight-bold">2019. augusztus 8.</span>
+</div>
+<div class="pt-3 text-right">
+  <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
+    Verzió
+    <span class="text-nowrap font-weight-bold">1.1.6</span>
+    </a>
 </div>
 
 # Bevezetés {#bevezetes}
@@ -69,7 +71,7 @@ RESTful webszolgáltatások kezdik kiszorítani. Azonban még történeti
 jelleggel sok helyen találhatóak SOAP webszolgáltatások, melyekhez
 modern programokból is csatlakozni kell.
 
-# Példák {#peldak}
+# Részletek {#reszletek}
 
 <hr />
 
@@ -145,10 +147,65 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 
 ## Szerver forráskódja
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices-server/" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy Spring Boot alkalmazás szolgálja ki a példa webszolgáltatásokat. A forráskódja elérhető a GitHub-on.</p>
+<p>Egy Spring Boot alkalmazás szolgálja ki a példa webszolgáltatásokat.</p>
 
-## Hívása SoapUI használatával {#soapui}
+<p><a href="https://github.com/vicziani/learnwebservices-server/" title="Forráskód a GitHubon" class="github-icon"><i class="fab fa-github"></i></a>
+ <a href="https://github.com/vicziani/learnwebservices-server/">A forráskódja elérhető a GitHub-on.</a></p>
+
+# Implementációk {#implementaciok}
+
+<hr />
+
+<ul class="nav nav-pills" id="implementationsTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="soapui-tab" data-toggle="tab" href="#soapui" role="tab" aria-controls="home" aria-selected="true">SoapUI</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="curl-tab" data-toggle="tab" href="#curl" role="tab" aria-controls="profile" aria-selected="false">CURL</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="wget-tab" data-toggle="tab" href="#wget" role="tab" aria-controls="contact" aria-selected="false">Wget</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="httpie-tab" data-toggle="tab" href="#httpie" role="tab" aria-controls="contact" aria-selected="false">HTTPie</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="jaxws-tab" data-toggle="tab" href="#jaxws" role="tab" aria-controls="contact" aria-selected="false">Java JAX-WS RI/CXF</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="sws-tab" data-toggle="tab" href="#sws" role="tab" aria-controls="contact" aria-selected="false">Java Spring Web Services</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="axis2-tab" data-toggle="tab" href="#axis2" role="tab" aria-controls="contact" aria-selected="false">Java Apache Axis2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="groovy-tab" data-toggle="tab" href="#groovy" role="tab" aria-controls="contact" aria-selected="false">Groovy</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="postman-tab" data-toggle="tab" href="#postman" role="tab" aria-controls="contact" aria-selected="false">Postman</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="jmeter-tab" data-toggle="tab" href="#jmeter" role="tab" aria-controls="contact" aria-selected="false">JMeter</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="contact" aria-selected="false">Python</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="js-tab" data-toggle="tab" href="#js" role="tab" aria-controls="contact" aria-selected="false">JavaScript</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="nodejs-tab" data-toggle="tab" href="#nodejs" role="tab" aria-controls="contact" aria-selected="false">Node.js</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="dotnet-tab" data-toggle="tab" href="#dotnet" role="tab" aria-controls="contact" aria-selected="false">.NET Core C#</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="ruby-tab" data-toggle="tab" href="#ruby" role="tab" aria-controls="contact" aria-selected="false">Ruby</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="soapui" role="tabpanel" aria-labelledby="soapui-tab" markdown="1">
 
 SoapUI használatával a [hivatalos dokumentáció](https://www.soapui.org/soap-and-wsdl/getting-started.html) alapján létre
 kell hozni egy új SOAP projektet, és a _Initial WSDL_ beviteli mezőben megadni a [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL)
@@ -160,9 +217,10 @@ megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit reques
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa SoapUI projekt elérhető a GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project">Egy példa SoapUI projekt elérhető a GitHubon.</a></p>
 
-## CURL {#curl}
+</div>
+<div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab" markdown="1">
 
 Tipp: ez az oldal letölthető a curl használatával is a `curl www.learnwebservices.com` paranccsal.
 
@@ -179,7 +237,8 @@ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   http://www.learnwebservices.com/services/hello
 ```
 
-## Wget {#wget}
+</div>
+<div class="tab-pane fade" id="wget" role="tabpanel" aria-labelledby="wget-tab" markdown="1">
 
 A webszolgáltatás Wget parancs használatával a következő módon hívható meg.
 
@@ -192,7 +251,8 @@ wget -qO - --header "Content-Type: text/xml;charset=UTF-8"  \
   http://www.learnwebservices.com/services/hello
 ```
 
-## HTTPie {#httpie}
+</div>
+<div class="tab-pane fade" id="httpie" role="tabpanel" aria-labelledby="httpie-tab" markdown="1">
 
 A webszolgáltatás [HTTPie](https://httpie.org/) parancs használatával a következő módon hívható meg.
 
@@ -204,7 +264,8 @@ echo '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/
   http -b POST http://www.learnwebservices.com/services/hello  'Content-Type:text/xml;charset=UTF-8'
 ```
 
-## Hívása Javaban JAX-WS RI-vel vagy CXF-fel {#java-jaxws-cxf}
+</div>
+<div class="tab-pane fade" id="jaxws" role="tabpanel" aria-labelledby="cxf-tab" markdown="1">
 
 SOAP webszolgáltatás meghívása Javaban [JAX-WS RI](https://javaee.github.io/metro-jax-ws/) library-vel,
 [jaxws-maven-plugin](https://www.mojohaus.org/jaxws-maven-plugin/) Maven pluginnel.
@@ -224,12 +285,13 @@ System.out.println(response.getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Java JAX-WS RI kliens elérhető a GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client">Egy példa Java JAX-WS RI kliens elérhető a GitHubon.</a></p>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Java CXF kliens elérhető a GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client">Egy példa Java CXF kliens elérhető a GitHubon.</a></p>
 
-## Hívása Javaban Spring Web Services-zel {#java-spring-web-services}
+</div>
+<div class="tab-pane fade" id="sws" role="tabpanel" aria-labelledby="sws-tab" markdown="1">
 
 Javaban [Spring Web Services](https://spring.io/projects/spring-ws) library-vel, JAX-B marshallerrel,
 [maven-jaxb2-plugin](https://github.com/highsource/maven-jaxb2-plugin) Maven pluginnel.
@@ -247,9 +309,10 @@ System.out.println(response.getValue().getHelloResponse().getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Java Spring Web Services kliens elérhető a GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client">Egy példa Java Spring Web Services kliens elérhető a GitHubon.</a></p>
 
-## Hívás Apache Axis2/Java library-vel {#java-axis}
+</div>
+<div class="tab-pane fade" id="axis2" role="tabpanel" aria-labelledby="axis2-tab" markdown="1">
 
 A következő kód mutatja be, hogy kell webszolgáltatást hívni
 [Apache Axis2/Java](http://axis.apache.org/axis2/java/core/index.html) library,
@@ -261,19 +324,19 @@ használatával.
 HelloEndpointServiceStub stub =
         new HelloEndpointServiceStub();
 
-HelloEndpointServiceStub.HelloRequest helloRequest = 
+HelloEndpointServiceStub.HelloRequest helloRequest =
         new HelloEndpointServiceStub.HelloRequest();
 helloRequest.setName("John Doe");
 
-HelloEndpointServiceStub.SayHello sayHello = 
+HelloEndpointServiceStub.SayHello sayHello =
         new HelloEndpointServiceStub.SayHello();
 sayHello.setHelloRequest(helloRequest);
 
-HelloEndpointServiceStub.SayHelloE sayHelloE = 
+HelloEndpointServiceStub.SayHelloE sayHelloE =
         new HelloEndpointServiceStub.SayHelloE();
 sayHelloE.setSayHello(sayHello);
 
-HelloEndpointServiceStub.SayHelloResponseE sayHelloResponseE = 
+HelloEndpointServiceStub.SayHelloResponseE sayHelloResponseE =
         stub.sayHello(sayHelloE);
 System.out.println(sayHelloResponseE
         .getSayHelloResponse()
@@ -282,9 +345,10 @@ System.out.println(sayHelloResponseE
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Java Axis2 kliens elérhető a GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client">Egy példa Java Axis2 kliens elérhető a GitHubon.</a></p>
 
-## Groovy kliens {#groovy}
+</div>
+<div class="tab-pane fade" id="groovy" role="tabpanel" aria-labelledby="groovy-tab" markdown="1">
 
 Webszolgáltatás hívása Goovy nyelven
 [groovy-wslite](https://github.com/jwagenleitner/groovy-wslite) library
@@ -309,9 +373,10 @@ println(response.SayHelloResponse.HelloResponse.Message)
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Groovy kliens elérhető a GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client">Egy példa Groovy kliens elérhető a GitHubon.</a></p>
 
-## Postman {#postman}
+</div>
+<div class="tab-pane fade" id="postman" role="tabpanel" aria-labelledby="postman-tab" markdown="1">
 
 Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman kérést létrehozni!
 
@@ -322,9 +387,10 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-A Postman Collection elérhető GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection">A Postman Collection elérhető GitHubon.</a></p>
 
-## JMeter {#jmeter}
+</div>
+<div class="tab-pane fade" id="jmeter" role="tabpanel" aria-labelledby="jmeter-tab" markdown="1">
 
 Az Apache JMeter használható SOAP webszolgáltatások terheléses tesztelésére is.
 
@@ -337,9 +403,10 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter 
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-A JMeter projekt elérhető GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project">A JMeter projekt elérhető GitHubon.</a></p>
 
-## Hívása Pythonban Zeep library-vel {#python-zeep}
+</div>
+<div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab" markdown="1">
 
 Használható a [Zeep](https://github.com/mvantellingen/python-zeep) library.
 
@@ -351,9 +418,10 @@ print(client.service.SayHello(request))
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Python kliens elérhető a GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client">Egy példa Python kliens elérhető a GitHubon.</a></p>
 
-## Vanilla JS {#vanillajs}
+</div>
+<div class="tab-pane fade" id="js" role="tabpanel" aria-labelledby="js-tab" markdown="1">
 
 A webszolgáltatást böngészőből is meg lehet hívni, ha ugyanazon a domainen van, vagy be van állítva a
 Cross-Origin Resource Sharing (CORS).
@@ -409,9 +477,10 @@ Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás
 </form>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Node.js kliens elérhető a GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" >Egy példa Node.js kliens elérhető a GitHubon.</a></p>
 
-## Hívása Node.js esetén SOAP library-vel {#nodejs-soap}
+</div>
+<div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab" markdown="1">
 
 Használható a [SOAP](https://github.com/vpulim/node-soap#readme) projekt.
 
@@ -427,9 +496,10 @@ soap.createClient(url, function(err, client) {
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Node.js kliens SOAP library-vel elérhető a GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client">Egy példa Node.js kliens SOAP library-vel elérhető a GitHubon.</a></p>
 
-## Hívása .NET Core keretrendszerrel C# nyelven {#c-sharp}
+</div>
+<div class="tab-pane fade" id="dotnet" role="tabpanel" aria-labelledby="dotnet-tab" markdown="1">
 
 ```csharp
 HelloEndpointClient proxy = new HelloEndpointClient();
@@ -442,9 +512,10 @@ Console.WriteLine(response.Body.HelloResponse.Message);
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa C# kliens elérhető a GitHubon.</p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient">Egy példa C# kliens elérhető a GitHubon.</a></p>
 
-## Ruby nyelven Savon library-vel {#ruby-savon}
+</div>
+<div class="tab-pane fade" id="ruby" role="tabpanel" aria-labelledby="ruby-tab" markdown="1">
 
 A következő példa mutatja, hogy kell webszolgáltatás hívni Ruby-ban,
 [Savon](https://github.com/savonrb/savon) library használatával.
@@ -462,10 +533,14 @@ puts response.body[:say_hello_response][:hello_response][:message]
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-Egy példa Ruby kliens elérhető a GitHubon.</p>
+<a class=href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">Egy példa Ruby kliens elérhető a GitHubon.</a></p>
+
+</div>
+</div>
 
 
 ## Közreműködők {#kozremukodok}
 
+* Kuti Rita
 * Rácz János ([rczjns](https://github.com/rczjns))
 * Vörös Bea ([beavoros](https://github.com/beavoros))
