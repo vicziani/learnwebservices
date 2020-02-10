@@ -533,7 +533,7 @@ puts response.body[:say_hello_response][:hello_response][:message]
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a class=href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">Egy példa Ruby kliens elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">Egy példa Ruby kliens elérhető a GitHubon.</a></p>
 
 </div>
 </div>
