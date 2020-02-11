@@ -44,6 +44,10 @@
   padding-right: 10px;
 }
 
+.navbar-light .navbar-nav .nav-link .fa-github {
+  font-weight: normal;
+}
+
 .navbar-light .navbar-nav .nav-link:hover {
   color: #f05f40;
 }
