@@ -2,6 +2,10 @@
   height: 35px;
 }
 
+.navbar.navbar-language ul {
+  flex-direction: row;
+}
+
 .navbar-language .navbar-nav .nav-link {
   color: rgba(0,0,0,.65);
   font-size: .8rem;
@@ -9,6 +13,12 @@
   font-weight: 500;
   font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
   padding-right: 10px;
+}
+
+@media(min-width: 992px) {
+  .navbar-nav {
+    align-items: center;
+  }
 }
 
 
@@ -22,15 +32,6 @@
 
 .navbar-light .navbar-brand:hover {
   color: #f05f40;
-}
-
-.navbar ul {
-  display: table-row;
-}
-
-.navbar-nav > li {
-  display: table-cell;
-  vertical-align: middle;
 }
 
 
