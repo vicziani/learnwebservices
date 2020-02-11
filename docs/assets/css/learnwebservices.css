@@ -159,13 +159,14 @@ header a:hover {
 pre.highlight {
   background-color: #fafafa;
   padding: 5px 5px 5px 20px;
+  overflow-x: auto;
 }
 
-div.highlight::-webkit-scrollbar {
-    height: 6px;
+pre.highlight::-webkit-scrollbar {
+    height: 6px;    
 }
 
-div.highlight::-webkit-scrollbar-thumb {
+pre.highlight::-webkit-scrollbar-thumb {
     background-color: #f05f40;
 }  
 
