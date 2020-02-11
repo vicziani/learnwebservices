@@ -161,6 +161,14 @@ pre.highlight {
   padding: 5px 5px 5px 20px;
 }
 
+pre::-webkit-scrollbar {
+    height: 6px;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background-color: #f05f40;
+}  
+
 footer {
   padding-top: 1rem;
 }
