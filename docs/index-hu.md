@@ -31,7 +31,7 @@ webszolgáltatás:
         </button>
     </div>  
     <div>
-      <span id="health-check-badge" class="badge d-none ml-2">Unknown</span>
+      <span id="health-check-badge" class="badge d-none ml-2">Ismeretlen</span>
     </div>
   </div>
 </div>
@@ -77,9 +77,10 @@ modern programokból is csatlakozni kell.
 
 ## További webszolgáltatások {#tovabbi-webszolgaltatasok}
 
+Celsius to Fahrenheit converter
+
 <div class="d-flex justify-content-center mb-3">
-  <div class="form-row col-md-10">
-    <label for="highlighted-wsdl-temp">Celsius to Fahrenheit converter</label>
+  <div class="form-row col-md-8">
     <div class="input-group ">    
       <input type="text" value="http://www.learnwebservices.com/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
       <div class="input-group-append">
@@ -87,6 +88,9 @@ modern programokból is csatlakozni kell.
           <i class="copy-button far fa-copy"></i>
           </button>
       </div>  
+      <div>
+        <span id="health-check-badge-converter" class="badge d-none ml-2">Ismeretlen</span>
+      </div>
     </div>
   </div>
 </div>

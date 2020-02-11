@@ -4,7 +4,7 @@ window.onload = function() {
   registerCopyButtonHandlers();
 }
 
-function registerCopyButtonHandlers() {  
+function registerCopyButtonHandlers() {
   $(".btn-copy").mouseleave(function(e) {
     $(this).tooltip('hide');
   });
@@ -21,11 +21,11 @@ function checkServerStatus() {
     .then(function(response) {
       return response.json();
     })
-    .then(function(info) {        
+    .then(function(info) {
       setStatus("Online (" + info.build.version + ")", "badge-success");
     })
     .catch(function(error) {
-      setStatus("Offline", "badge-danger")  
+      setStatus("Offline", "badge-danger")
     });
 }
 
@@ -44,11 +44,16 @@ function showErrorMessage() {
   div.classList.remove("d-none");
 }
 
-function setStatus(text, ccsClass) {
-    let badge = document.getElementById("health-check-badge");
-    badge.innerHTML = text;
-    badge.classList.remove("d-none");
-    badge.classList.add(ccsClass);
+function setStatus(text, cssClass) {
+  setStatusForElement("health-check-badge", text, cssClass);
+  setStatusForElement("health-check-badge-converter", text, cssClass);
+}
+
+function setStatusForElement(elementId, text, ccsClass) {
+  let badge = document.getElementById(elementId);
+  badge.innerHTML = text;
+  badge.classList.remove("d-none");
+  badge.classList.add(ccsClass);
 }
 
 function readName() {

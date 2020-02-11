@@ -60,16 +60,20 @@ Sometime the SOAP web services are considered legacy solutions today, because th
 
 ## Other provided web services
 
+Celsius to Fahrenheit converter
+
 <div class="d-flex justify-content-center mb-3">
-  <div class="form-row col-md-10">
-    <label for="highlighted-wsdl-temp">Celsius to Fahrenheit converter</label>
-    <div class="input-group ">    
+  <div class="form-row col-md-8">
+    <div class="input-group">    
       <input type="text" value="http://www.learnwebservices.com/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
       <div class="input-group-append">
         <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Copied">
           <i class="copy-button far fa-copy"></i>
           </button>
-      </div>  
+      </div>
+      <div>
+        <span id="health-check-badge-converter" class="badge d-none ml-2">Unknown</span>
+      </div>
     </div>
   </div>
 </div>
