@@ -427,8 +427,8 @@ A webszolgáltatást böngészőből is meg lehet hívni, ha ugyanazon a domaine
 Cross-Origin Resource Sharing (CORS).
 
 ```javascript
-var url = "http://localhost:8080/services/hello";
-var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+let url = "http://localhost:8080/services/hello";
+let request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     <soapenv:Header/>
     <soapenv:Body>
        <SayHello xmlns="http://learnwebservices.com/services/hello">
@@ -439,7 +439,7 @@ var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/
     </soapenv:Body>
  </soapenv:Envelope>`;
 
- var fetchData = {
+ let fetchData = {
     method: 'POST',
     body: request
  };
@@ -449,7 +449,7 @@ var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/
      return response.text();
    })
    .then(function(xml) {
-       var xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+       let xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
        console.log(xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent);
    })
    .catch(function(error) {
@@ -485,9 +485,9 @@ Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás
 Használható a [SOAP](https://github.com/vpulim/node-soap#readme) projekt.
 
 ```javascript
-var soap = require('soap');
-var url = 'http://www.learnwebservices.com/services/hello?wsdl';
-var args = {HelloRequest: {Name: 'John Doe'}};
+let soap = require('soap');
+let url = 'http://www.learnwebservices.com/services/hello?wsdl';
+let args = {HelloRequest: {Name: 'John Doe'}};
 soap.createClient(url, function(err, client) {
     client.SayHello(args, function(err, result) {
         console.log(result.HelloResponse.Message);

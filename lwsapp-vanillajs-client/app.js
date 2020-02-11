@@ -2,8 +2,8 @@ const fetch = require('node-fetch');
 const DOMParser = require('xmldom').DOMParser;
 
 function callWebservice() {
-  var url = "http://localhost:8080/services/hello";
-  var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  let url = "http://localhost:8080/services/hello";
+  let request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
      <soapenv:Header/>
      <soapenv:Body>
         <SayHello xmlns="http://learnwebservices.com/services/hello">
@@ -14,7 +14,7 @@ function callWebservice() {
      </soapenv:Body>
   </soapenv:Envelope>`;
 
-  var fetchData = {
+  let fetchData = {
      method: 'POST',
      body: request
   };
@@ -24,7 +24,7 @@ function callWebservice() {
       return response.text();
     })
     .then(function(xml) {
-        var xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+        let xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
         console.log(xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent);
     })
     .catch(function(error) {
