@@ -161,11 +161,11 @@ pre.highlight {
   padding: 5px 5px 5px 20px;
 }
 
-pre::-webkit-scrollbar {
+div.highlight::-webkit-scrollbar {
     height: 6px;
 }
 
-pre::-webkit-scrollbar-thumb {
+div.highlight::-webkit-scrollbar-thumb {
     background-color: #f05f40;
 }  
 
