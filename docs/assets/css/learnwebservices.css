@@ -160,10 +160,13 @@ pre.highlight {
   background-color: #fafafa;
   padding: 5px 5px 5px 20px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch
 }
 
 pre.highlight::-webkit-scrollbar {
+  -webkit-appearance: none;
     height: 6px;    
+    
 }
 
 pre.highlight::-webkit-scrollbar-thumb {
