@@ -156,7 +156,7 @@ header a:hover {
   border: 1px solid #f05f40;
 }
 
-.highlight {
+pre.highlight {
   background-color: #fafafa;
   padding: 5px;
 }
