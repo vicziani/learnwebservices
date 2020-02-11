@@ -444,7 +444,7 @@ let request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/
    });
 ```
 
-You can try this online by pressing the submit button below.
+You can try this online by pressing the _Call the web service!_ button below.
 
 <div id="webservice-error-div" class="alert alert-danger d-none" role="alert">
   A web service is not available!
