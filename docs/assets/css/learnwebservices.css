@@ -208,6 +208,7 @@ footer {
   visibility: hidden;
   }
 
+@media(min-width: 576px) {
 h1:hover .header-link svg,
 h2:hover .header-link svg,
 h3:hover .header-link svg,
@@ -215,4 +216,5 @@ h4:hover .header-link svg,
 h5:hover .header-link svg,
 h6:hover .header-link svg {
   visibility: visible;
+}
 }
