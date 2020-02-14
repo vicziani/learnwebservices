@@ -250,7 +250,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter 
 
 <div class="demo-image">
   <a href="images/jmeter-anim.gif" data-lightbox="learnwebservices">
-    <img src="images/jmeter.png" title="JMeter for performance testing of SOAP web services" class="img-fluid"/>
+    <img src="images/jmeter.png" title="Webszolgáltatás hívás JMeterrel" class="img-fluid"/>
   </a>
 </div>
 
