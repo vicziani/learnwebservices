@@ -216,8 +216,12 @@ kell hozni egy új SOAP projektet, és a _Initial WSDL_ beviteli mezőben megadn
 címet, majd kiválasztani bal oldalon a `SayHello` operációt, és megnyitni a `Request 1` példa kérést. A nevet
 megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit request_ gombot.
 
+Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal kérést létrehozni!
+
 <div class="demo-image">
-  <img src="images/soapui.gif" title="Call web service in SoapUI" class="img-fluid"/>
+  <a href="images/soapui-anim.gif" data-lightbox="learnwebservices">
+    <img src="images/soapui.png" title="Kérés SoapUI-ban" class="img-fluid"/>
+  </a>
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>

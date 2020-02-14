@@ -198,8 +198,12 @@ input field.
 SoapUI will process the WSDL file, and generate an example request. On the left side of the panel choose the `SayHello` operation, then the
 `Request 1` example request. Give a name value in the `Name` tag (replacing the `?` sign), then press the _Submit request_ button.
 
+Click on the picture to view the full animation that shows how to create a request with SoapUI!
+
 <div class="demo-image">
-  <img src="images/soapui.gif" title="Call web service in SoapUI" class="img-fluid"/>
+  <a href="images/soapui-anim.gif" data-lightbox="learnwebservices">
+    <img src="images/soapui.png" title="Call web service in SoapUI" class="img-fluid"/>
+  </a>
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
@@ -208,7 +212,7 @@ SoapUI will process the WSDL file, and generate an example request. On the left 
 </div>
 <div class="tab-pane fade" id="postman" role="tabpanel" aria-labelledby="postman-tab" markdown="1">
 
-Click on the picture to view the full animation that shows how to create a Postman project.
+Click on the picture to view the full animation that shows how to create a Postman project!
 
 <div class="demo-image">
   <a href="images/postman-anim.gif" data-lightbox="learnwebservices">
