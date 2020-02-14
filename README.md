@@ -34,12 +34,9 @@ This site was developed by István Viczián, the author of the http://jtechlog.h
 
 ## Licence
 
-The source codes of the SOAP server example and the client application examples above
-are available on the learnwebservices.com site (everything in this repository, except the `site` directory) are licensed under MIT License.
-
-The textual content of the learnwebservices.com site
-(the content of the `site` directory) is licensed under
+The content of the learnwebservices.com site
+is licensed under
 Creative Commons Attribution-ShareAlike 4.0 International License.
 
-See [LICENSE-MIT](LICENSE-MIT) and [LICENCE-CC-BY-SA-4.0](LICENCE-CC-BY-SA-4.0) files for details,
-or the https://opensource.org/licenses/MIT and http://creativecommons.org/licenses/by-nc/4.0/ sites.
+See [LICENCE](LICENCE) files for details,
+or the http://creativecommons.org/licenses/by-nc/4.0/ site.
