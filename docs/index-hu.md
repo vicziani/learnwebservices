@@ -154,7 +154,7 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 <p>Egy Spring Boot alkalmazás szolgálja ki a példa webszolgáltatásokat.</p>
 
 <p><a href="https://github.com/vicziani/learnwebservices-server/" title="Forráskód a GitHubon" class="github-icon"><i class="fab fa-github"></i></a>
- <a href="https://github.com/vicziani/learnwebservices-server/">A forráskódja elérhető a GitHub-on.</a></p>
+ <a href="https://github.com/vicziani/learnwebservices-server/">Forráskód</a></p>
 
 # Implementációk {#implementaciok}
 
@@ -221,7 +221,7 @@ megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit reques
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project">Egy példa SoapUI projekt elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project">SoapUI projekt fájl</a></p>
 
 </div>
 <div class="tab-pane fade" id="postman" role="tabpanel" aria-labelledby="postman-tab" markdown="1">
@@ -235,7 +235,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection">A Postman Collection elérhető GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection">Postman Collection fájl</a></p>
 
 </div>
 <div class="tab-pane fade" id="jmeter" role="tabpanel" aria-labelledby="jmeter-tab" markdown="1">
@@ -251,7 +251,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter 
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project">A JMeter projekt elérhető GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project">JMeter projekt fájl</a></p>
 
 </div>
 
@@ -320,10 +320,10 @@ System.out.println(response.getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client">Egy példa Java JAX-WS RI kliens elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client">Forráskód JAX-WS RI-vel</a></p>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client">Egy példa Java CXF kliens elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client">Forráskód Java CXF-fel</a></p>
 
 </div>
 <div class="tab-pane fade" id="sws" role="tabpanel" aria-labelledby="sws-tab" markdown="1">
@@ -344,7 +344,7 @@ System.out.println(response.getValue().getHelloResponse().getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client">Egy példa Java Spring Web Services kliens elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client">Forráskód</a></p>
 
 </div>
 <div class="tab-pane fade" id="axis2" role="tabpanel" aria-labelledby="axis2-tab" markdown="1">
@@ -380,7 +380,7 @@ System.out.println(sayHelloResponseE
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client">Egy példa Java Axis2 kliens elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client">Forráskód</a></p>
 
 </div>
 <div class="tab-pane fade" id="groovy" role="tabpanel" aria-labelledby="groovy-tab" markdown="1">
@@ -408,7 +408,7 @@ println(response.SayHelloResponse.HelloResponse.Message)
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client">Egy példa Groovy kliens elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client">Forráskód</a></p>
 
 </div>
 <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab" markdown="1">
@@ -423,7 +423,7 @@ print(client.service.SayHello(request))
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client">Egy példa Python kliens elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client">Forráskód</a></p>
 
 </div>
 <div class="tab-pane fade" id="js" role="tabpanel" aria-labelledby="js-tab" markdown="1">
@@ -482,7 +482,7 @@ Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás
 </form>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" >Egy példa Node.js kliens elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" >Forráskód</a></p>
 
 </div>
 <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab" markdown="1">
@@ -501,7 +501,7 @@ soap.createClient(url, function(err, client) {
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client">Egy példa Node.js kliens SOAP library-vel elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client">Forráskód</a></p>
 
 </div>
 <div class="tab-pane fade" id="dotnet" role="tabpanel" aria-labelledby="dotnet-tab" markdown="1">
@@ -517,7 +517,7 @@ Console.WriteLine(response.Body.HelloResponse.Message);
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient">Egy példa C# kliens elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient">Forráskód</a></p>
 
 </div>
 <div class="tab-pane fade" id="ruby" role="tabpanel" aria-labelledby="ruby-tab" markdown="1">
@@ -538,7 +538,7 @@ puts response.body[:say_hello_response][:hello_response][:message]
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">Egy példa Ruby kliens elérhető a GitHubon.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">Forráskód</a></p>
 
 </div>
 </div>

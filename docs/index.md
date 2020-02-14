@@ -134,7 +134,7 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
 <p>A Spring Boot server application serves the sample web services.</p>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices-server/" title="Project on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices-server/">It's source code available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices-server/">Source code</a></p>
 
 # Implementations
 
@@ -203,7 +203,7 @@ SoapUI will process the WSDL file, and generate an example request. On the left 
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project">The SoapUI project is available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project">SoapUI project file</a></p>
 
 </div>
 <div class="tab-pane fade" id="postman" role="tabpanel" aria-labelledby="postman-tab" markdown="1">
@@ -217,7 +217,7 @@ Click on the picture to view the full animation that shows how to create a Postm
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Project on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection">The Postman Collection is available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection">Postman Collection file</a></p>
 
 </div>
 <div class="tab-pane fade" id="jmeter" role="tabpanel" aria-labelledby="jmeter-tab" markdown="1">
@@ -233,7 +233,7 @@ Click on the picture to view the full animation that shows how to create a JMete
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project">The JMeter project is available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project">JMeter project file</a></p>
 
 </div>
 <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab" markdown="1">
@@ -300,10 +300,10 @@ System.out.println(response.getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="JAX-WS source on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client">The source code with JAX-WS is available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client">Source code with JAX-WS RI</a></p>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client">The source code with CXF is available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client">Source code with CXF</a></p>
 
 </div>
 <div class="tab-pane fade" id="sws" role="tabpanel" aria-labelledby="sws-tab" markdown="1">
@@ -326,7 +326,7 @@ System.out.println(response.getValue().getHelloResponse().getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client">The source code is available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client">Source code</a></p>
 
 </div>
 <div class="tab-pane fade" id="axis2" role="tabpanel" aria-labelledby="axis2-tab" markdown="1">
@@ -362,7 +362,7 @@ System.out.println(sayHelloResponseE
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client">The source code is available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client">Source code</a></p>
 
 </div>
 <div class="tab-pane fade" id="groovy" role="tabpanel" aria-labelledby="groovy-tab" markdown="1">
@@ -389,7 +389,7 @@ println(response.SayHelloResponse.HelloResponse.Message)
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client">The source code is available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client">Source code</a></p>
 
 
 </div>
@@ -405,7 +405,7 @@ print(client.service.SayHello(request))
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client">The source code is available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client">Source code</a></p>
 
 </div>
 <div class="tab-pane fade" id="js" role="tabpanel" aria-labelledby="js-tab" markdown="1">
@@ -464,7 +464,7 @@ You can try this online by pressing the _Call the web service!_ button below.
 </form>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client">The source code is available on GitHub.</a></p>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client">Source code</a></p>
 
 </div>
 <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab" markdown="1">
