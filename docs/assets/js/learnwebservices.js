@@ -25,16 +25,18 @@ function checkServerStatus() {
       setStatus("Online (" + info.build.version + ")", "badge-success");
     })
     .catch(function(error) {
+      console.log(error);
       setStatus("Offline", "badge-danger")
     });
 }
 
 function submitHandler() {
     callWebservice(readName(), function(message) {
-        writeMessage(message);
+      hideErrorMessage();
+      writeMessage(message);
     },
     function(error) {
-        showErrorMessage();
+      showErrorMessage();
     });
     return false;
 }
@@ -42,6 +44,11 @@ function submitHandler() {
 function showErrorMessage() {
   let div = document.getElementById("webservice-error-div");
   div.classList.remove("d-none");
+}
+
+function hideErrorMessage() {
+  let div = document.getElementById("webservice-error-div");
+  div.classList.add("d-none");
 }
 
 function setStatus(text, cssClass) {
@@ -57,7 +64,7 @@ function setStatusForElement(elementId, text, ccsClass) {
 }
 
 function readName() {
-    return document.getElementById("hello-name-input").value;
+    return escapeXml(document.getElementById("hello-name-input").value);
 }
 
 function writeMessage(message) {
@@ -92,8 +99,21 @@ function callWebservice(name, onSuccess, onError) {
         onSuccess(message);
     })
     .catch(function(error) {
+      console.log(error);
       onError(error);
     });
 
   return false;
+}
+
+function escapeXml(unsafe) {
+  return unsafe.replace(/[<>&'"]/g, function (c) {
+      switch (c) {
+          case '<': return '&lt;';
+          case '>': return '&gt;';
+          case '&': return '&amp;';
+          case '\'': return '&apos;';
+          case '"': return '&quot;';
+      }
+  });
 }
