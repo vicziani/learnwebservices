@@ -462,7 +462,7 @@ You can try this online by pressing the _Call the web service!_ button below.
       <input id="hello-message-input" type="text" readonly="readonly" class="form-control" />
     </div>    
     <div class="col-sm mb-3">
-    <button type="submit" class="btn btn-primary">Call the web service!</button>
+    <button type="submit" class="btn btn-primary text-nowrap">Call the web service!</button>
   </div>    
 </div>
 </form>

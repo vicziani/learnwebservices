@@ -480,7 +480,7 @@ Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás
       <input id="hello-message-input" type="text" readonly="readonly" class="form-control" />
     </div>    
     <div class="col-sm mb-3">
-    <button type="submit" class="btn btn-primary">Hívd meg a webszolgáltatást!</button>
+    <button type="submit" class="btn btn-primary text-nowrap">Hívd meg a webszolgáltatást!</button>
   </div>    
 </div>
 </form>
