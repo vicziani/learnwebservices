@@ -224,7 +224,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal 
   </a>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Projekt fájl a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project">SoapUI projekt fájl</a></p>
 
 </div>
@@ -238,7 +238,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman
   </a>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Postman Collection a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection">Postman Collection fájl</a></p>
 
 </div>
@@ -254,7 +254,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter 
   </a>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Projekt a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project">JMeter projekt fájl</a></p>
 
 </div>
