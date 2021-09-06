@@ -78,11 +78,11 @@ function callWebservice(name, onSuccess, onError) {
      <soapenv:Body>
         <SayHello xmlns="http://learnwebservices.com/services/hello">
            <HelloRequest>
-              <Name>{{name}}</Name>
+              <Name>${name}</Name>
            </HelloRequest>
         </SayHello>
      </soapenv:Body>
-  </soapenv:Envelope>`.replace("{{name}}", name);
+  </soapenv:Envelope>`;
 
   let fetchData = {
      method: 'POST',
