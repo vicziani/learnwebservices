@@ -19,7 +19,7 @@ layout: default-hu
 
 ## TL;DR
 
-Ha szükséged van gyorsan kipróbálni valamit, itt egy WSDL, és mögötte egy működő SOAP
+Ha szükséged van egy webszolgáltatásra, amit gyorsan kipróbálhasz, itt egy WSDL, és mögötte egy működő SOAP
 webszolgáltatás:
 
 <div class="form-row d-flex justify-content-center mb-3">
@@ -62,7 +62,7 @@ főleg HTTP(S) technológiákra támaszkodnak. Ezért ember és számítógép
 használhatóak, ezért különösen alkalmasak különböző platformon és
 programozási nyelven fejlesztett alkalmazások együttműködésére. A SOAP
 webszolgáltatások az OASIS és W3C szabványügyi szervezetek által
-karbantartott szabányokon nyugszanak. WS-I szervezet több profilt
+karbantartott szabványokon nyugszanak. WS-I szervezet több profilt
 fejlesztett ki a különböző implementációk együttműködésének segítségére.
 A SOAP egy XML alapú üzenetformátum, mely egy SOAP borítékot definiál,
 melyben az üzenetek utaznak. A WSDL szintén egy XML alapú interfészleíró
