@@ -145,6 +145,11 @@ header a:hover {
   border-color: #f05f40;
 }
 
+.btn-primary:focus {
+    border-color: #f05f40;
+    box-shadow: 0 0 0 .2rem #fbd4cc;
+    outline-width: 0;
+}
 
 .btn-outline-primary {
   color: #f05f40;
@@ -159,6 +164,13 @@ header a:hover {
   color: #f05f40;
   border: 1px solid #f05f40;
 }
+
+.form-control:focus {
+    border-color: #f05f40;
+    box-shadow: 0 0 0 .2rem #fbd4cc;
+    outline-width: 0;
+}
+
 
 pre.highlight {
   background-color: #fafafa;
