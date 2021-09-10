@@ -19,6 +19,9 @@ function checkServerStatus() {
   const url = apiUrl + "/actuator/info";
   fetch(url)
     .then(function(response) {
+      if (response.status != 200) {
+        throw new Error(`Status: ${response.status}`);
+      }
       return response.json();
     })
     .then(function(info) {
@@ -94,6 +97,9 @@ function callWebservice(name, onSuccess, onError) {
       return response.text();
     })
     .then(function(xml) {
+        if (response.status != 200) {
+          throw new Error(`Status: ${response.status}`);
+        }
         const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
         const message = xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent;
         onSuccess(message);
