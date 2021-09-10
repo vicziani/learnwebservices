@@ -24,7 +24,7 @@ webszolgáltatás:
 
 <div class="form-row d-flex justify-content-center mb-3">
   <div class="input-group col-md-8">
-    <input type="text" value="http://www.learnwebservices.com/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control"/>
+    <input type="text" value="{{site.api_url}}/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control"/>
     <div class="input-group-append">
       <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-hello" title="Kimásoltad">
         <i class="copy-button far fa-copy"></i>
@@ -82,7 +82,7 @@ Celsius to Fahrenheit converter
 <div class="d-flex justify-content-center mb-3">
   <div class="form-row col-md-8">
     <div class="input-group ">    
-      <input type="text" value="http://www.learnwebservices.com/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
+      <input type="text" value="{{site.api_url}}/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
       <div class="input-group-append">
         <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Kimásoltad">
           <i class="copy-button far fa-copy"></i>
@@ -97,10 +97,7 @@ Celsius to Fahrenheit converter
 
 ## Egy példa webszolgáltatás {#egy-pelda-webszolgaltatas}
 
-Egy SOAP webszolgáltatás található `http://www.learnwebservices.com/services/hello`
-címen, mely egy nevet vár, és egy üdvözlőszöveget ad vissza.
-
-A SOAP webszolgáltatás WSDL dokumentuma elérhető a [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) címen.
+A webszolgáltatás egy nevet vár, és egy üdvözlőszöveget ad vissza.
 
 A címre a következő formátumban kell posztolni egy XML dokumentumot (a WSDL-ben leírtaknak megfelelően).
 A `Name` tag értéke tetszőlegesen módosítható.

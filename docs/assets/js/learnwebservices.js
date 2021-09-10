@@ -6,7 +6,7 @@ window.onload = function() {
 
 function registerCopyButtonHandlers() {
   $(".btn-copy").mouseleave(function(e) {
-    $(this).tooltip('hide');
+    $(this).tooltip("hide");
   });
 }
 
@@ -16,7 +16,7 @@ function registerOnSubmit() {
 }
 
 function checkServerStatus() {
-  let url = "http://www.learnwebservices.com/actuator/info";
+  let url = apiUrl + "/actuator/info";
   fetch(url)
     .then(function(response) {
       return response.json();
@@ -85,7 +85,7 @@ function callWebservice(name, onSuccess, onError) {
   </soapenv:Envelope>`;
 
   let fetchData = {
-     method: 'POST',
+     method: "POST",
      body: request
   };
 
@@ -95,7 +95,7 @@ function callWebservice(name, onSuccess, onError) {
     })
     .then(function(xml) {
         let xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
-        let message = xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent;
+        let message = xmlDoc.getElementsByTagNameNS(apiUrl + "/services/hello", "Message")[0].textContent;
         onSuccess(message);
     })
     .catch(function(error) {
@@ -109,11 +109,11 @@ function callWebservice(name, onSuccess, onError) {
 function escapeXml(unsafe) {
   return unsafe.replace(/[<>&'"]/g, function (c) {
       switch (c) {
-          case '<': return '&lt;';
-          case '>': return '&gt;';
-          case '&': return '&amp;';
-          case '\'': return '&apos;';
-          case '"': return '&quot;';
+          case "<": return "&lt;";
+          case ">": return "&gt;";
+          case "&": return "&amp;";
+          case "\"': return "&apos;";
+          case '"': return "&quot;";
       }
   });
 }

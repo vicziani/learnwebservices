@@ -1,6 +1,9 @@
 # Site settings
 url: "http://www.learnwebservices.com"
 
+# URL of the backend server
+api_url: "http://www.learnwebservices.com"
+
 # Build settings
 markdown: kramdown
 
