@@ -4,6 +4,9 @@
 
 - Redesign
 - Server application in Docker
+- HTTPS support
+- PHP sample
+- Dockerfile for clients
 
 ## [1.1.7]
 
