@@ -434,8 +434,8 @@ It is possible to call a web service from JavaScript running in the browser when
 Cross-Origin Resource Sharing (CORS) is properly configured.
 
 ```javascript
-let url = "http://localhost:8080/services/hello";
-let request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+const url = "http://www.learnwebservices.com/services/hello";
+const request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     <soapenv:Header/>
     <soapenv:Body>
        <SayHello xmlns="http://learnwebservices.com/services/hello">
@@ -446,7 +446,7 @@ let request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/
     </soapenv:Body>
  </soapenv:Envelope>`;
 
- let fetchData = {
+ const fetchData = {
     method: 'POST',
     body: request
  };
@@ -456,7 +456,7 @@ let request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/
      return response.text();
    })
    .then(function(xml) {
-       let xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+       const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
        console.log(xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent);
    })
    .catch(function(error) {
@@ -492,9 +492,9 @@ You can try this online by pressing the _Call the web service!_ button below.
 The following source code demonstrates how to call a web service with Node.js and [SOAP](https://github.com/vpulim/node-soap#readme) package.
 
 ```javascript
-let soap = require('soap');
-let url = 'http://www.learnwebservices.com/services/hello?wsdl';
-let args = {HelloRequest: {Name: 'John Doe'}};
+const soap = require("soap");
+const url = "http://www.learnwebservices.com/services/hello?wsdl";
+const args = {HelloRequest: {Name: "John Doe"}};
 soap.createClient(url, function(err, client) {
     client.SayHello(args, function(err, result) {
         console.log(result.HelloResponse.Message);
