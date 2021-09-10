@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.2.0]
+
+- Redesign
+- Server application in Docker
+
 ## [1.1.7]
 
 - Health check with Spring Boot actuator, and writes the version of the server application

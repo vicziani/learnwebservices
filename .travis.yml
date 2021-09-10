@@ -1,3 +1,0 @@
-language: java
-jdk: openjdk12
-script: mvn -f lwsapp/pom.xml clean verify

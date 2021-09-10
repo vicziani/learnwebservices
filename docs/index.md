@@ -4,12 +4,12 @@ layout: default
 
 <div class="pt-3 text-right">
   Last update:
-  <span class="text-nowrap font-weight-bold">August 8, 2019</span>
+  <span class="text-nowrap font-weight-bold">September 10, 2021</span>
 </div>
 <div class="pt-3 text-right">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
     Version
-    <span class="text-nowrap font-weight-bold">1.1.6</span>
+    <span class="text-nowrap font-weight-bold">1.2.0</span>
     </a>
 </div>
 
@@ -23,7 +23,7 @@ If you want a simple, online web service, here is a WSDL for it:
 
 <div class="form-row d-flex justify-content-center mb-3">
   <div class="input-group col-md-8">
-    <input type="text" value="http://www.learnwebservices.com/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control"/>
+    <input type="text" value="{{site.api_url}}/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control"/>
     <div class="input-group-append">
       <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-hello" title="Copied">
         <i class="copy-button far fa-copy"></i>
@@ -58,30 +58,7 @@ Sometime the SOAP web services are considered legacy solutions today, because th
 
 <hr />
 
-## Other provided web services
-
-Celsius to Fahrenheit converter
-
-<div class="d-flex justify-content-center mb-3">
-  <div class="form-row col-md-8">
-    <div class="input-group">    
-      <input type="text" value="http://www.learnwebservices.com/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
-      <div class="input-group-append">
-        <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Copied">
-          <i class="copy-button far fa-copy"></i>
-          </button>
-      </div>
-      <div>
-        <span id="health-check-badge-converter" class="badge d-none ml-2">Unknown</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-## An example web service
-
-You may find an operating web service at the `http://www.learnwebservices.com/services/hello` URL that accepts a name, and gives back a welcome message. (The service accepts only POST HTTP requests so you may not use it in a browser directly.)
-The WSDL file that specifies the interface is available at [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) URL. (Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document.)
+The web service accepts a name, and gives back a welcome message. (The service accepts only POST HTTP requests so you may not use it in a browser directly.)
 
 The WSDL specifies the format of the request message. The content of the `Name` tag may be freely rewritten.
 
@@ -129,14 +106,48 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
 </soap:Envelope>
 ```
 
-## Server source code
+# Other services
 
-<p>A Spring Boot server application serves the sample web services.</p>
+<hr />
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices-server/" title="Project on GitHub"><i class="fab fa-github"></i></a>
+Celsius to Fahrenheit converter
+
+<div class="d-flex justify-content-center mb-3">
+  <div class="form-row col-md-8">
+    <div class="input-group">    
+      <input type="text" value="{{site.api_url}}/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Copied">
+          <i class="copy-button far fa-copy"></i>
+          </button>
+      </div>
+      <div>
+        <span id="health-check-badge-converter" class="badge d-none ml-2">Unknown</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+# Server application
+
+<hr />
+
+A Spring Boot server application serves the sample web services.
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices-server/" title="Source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices-server/">Source code</a></p>
 
-# Implementations
+The application is available on [Docker Hub](https://hub.docker.com/r/vicziani/lwsapp).
+
+If you would like to run with Docker, just use the following command.
+
+```shell
+docker run -p 8080:8080 --name my-lwsapp vicziani/lwsapp
+```
+
+Then check the `http://localhost:8080` address!
+
+# Client implementations
 
 <hr />
 
@@ -220,7 +231,7 @@ Click on the picture to view the full animation that shows how to create a Postm
   </a>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Project on GitHub"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Collection file on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection">Postman Collection file</a></p>
 
 </div>
@@ -303,10 +314,10 @@ HelloResponse response = port.sayHello(request);
 System.out.println(response.getMessage());
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="JAX-WS source on GitHub"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="JAX-WS source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client">Source code with JAX-WS RI</a></p>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client">Source code with CXF</a></p>
 
 </div>
@@ -329,7 +340,7 @@ JAXBElement<SayHelloResponse> response = (JAXBElement<SayHelloResponse>)
 System.out.println(response.getValue().getHelloResponse().getMessage());
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client">Source code</a></p>
 
 </div>
@@ -365,7 +376,7 @@ System.out.println(sayHelloResponseE
         .getMessage());
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client">Source code</a></p>
 
 </div>
@@ -392,7 +403,7 @@ def response = client.send {
 println(response.SayHelloResponse.HelloResponse.Message)
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client">Source code</a></p>
 
 
@@ -408,7 +419,7 @@ request = {'Name': 'John Doe'}
 print(client.service.SayHello(request))
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client">Source code</a></p>
 
 </div>
@@ -462,12 +473,12 @@ You can try this online by pressing the _Call the web service!_ button below.
       <input id="hello-message-input" type="text" readonly="readonly" class="form-control" />
     </div>    
     <div class="col-sm mb-3">
-    <button type="submit" class="btn btn-primary">Call the web service!</button>
+    <button type="submit" class="btn btn-primary text-nowrap">Call the web service!</button>
   </div>    
 </div>
 </form>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client">Source code</a></p>
 
 </div>
@@ -486,8 +497,8 @@ soap.createClient(url, function(err, client) {
 });
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client">The source code is available on GitHub.</a></p>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client">Source code</a></p>
 
 </div>
 <div class="tab-pane fade" id="dotnet" role="tabpanel" aria-labelledby="dotnet-tab" markdown="1">
@@ -504,8 +515,8 @@ var response = await proxy.SayHelloAsync(request);
 Console.WriteLine(response.Body.HelloResponse.Message);
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Source on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient">The source code is available on GitHub.</a></p>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Source code on GitHub"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient">Source code</a></p>
 
 </div>
 <div class="tab-pane fade" id="ruby" role="tabpanel" aria-labelledby="ruby-tab" markdown="1">
@@ -525,8 +536,8 @@ response = client.call(
 puts response.body[:say_hello_response][:hello_response][:message]
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Source on GitHub"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">The source code is available on GitHub.</a></p>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">Source code</a></p>
 
 </div>
 </div>

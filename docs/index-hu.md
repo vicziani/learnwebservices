@@ -4,12 +4,12 @@ layout: default-hu
 
 <div class="pt-3 text-right">
   Utolsó frissítés dátuma:
-  <span class="text-nowrap font-weight-bold">2019. augusztus 8.</span>
+  <span class="text-nowrap font-weight-bold">2021. szeptember 10.</span>
 </div>
 <div class="pt-3 text-right">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
     Verzió
-    <span class="text-nowrap font-weight-bold">1.1.6</span>
+    <span class="text-nowrap font-weight-bold">1.2.0</span>
     </a>
 </div>
 
@@ -19,12 +19,12 @@ layout: default-hu
 
 ## TL;DR
 
-Ha szükséged van gyorsan kipróbálni valamit, itt egy WSDL, és mögötte egy működő SOAP
+Ha szükséged van egy webszolgáltatásra, amit gyorsan kipróbálhasz, itt egy WSDL, és mögötte egy működő SOAP
 webszolgáltatás:
 
 <div class="form-row d-flex justify-content-center mb-3">
   <div class="input-group col-md-8">
-    <input type="text" value="http://www.learnwebservices.com/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control"/>
+    <input type="text" value="{{site.api_url}}/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control"/>
     <div class="input-group-append">
       <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-hello" title="Kimásoltad">
         <i class="copy-button far fa-copy"></i>
@@ -62,7 +62,7 @@ főleg HTTP(S) technológiákra támaszkodnak. Ezért ember és számítógép
 használhatóak, ezért különösen alkalmasak különböző platformon és
 programozási nyelven fejlesztett alkalmazások együttműködésére. A SOAP
 webszolgáltatások az OASIS és W3C szabványügyi szervezetek által
-karbantartott szabányokon nyugszanak. WS-I szervezet több profilt
+karbantartott szabványokon nyugszanak. WS-I szervezet több profilt
 fejlesztett ki a különböző implementációk együttműködésének segítségére.
 A SOAP egy XML alapú üzenetformátum, mely egy SOAP borítékot definiál,
 melyben az üzenetek utaznak. A WSDL szintén egy XML alapú interfészleíró
@@ -75,32 +75,9 @@ modern programokból is csatlakozni kell.
 
 <hr />
 
-## További webszolgáltatások {#tovabbi-webszolgaltatasok}
-
-Celsius to Fahrenheit converter
-
-<div class="d-flex justify-content-center mb-3">
-  <div class="form-row col-md-8">
-    <div class="input-group ">    
-      <input type="text" value="http://www.learnwebservices.com/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
-      <div class="input-group-append">
-        <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Kimásoltad">
-          <i class="copy-button far fa-copy"></i>
-          </button>
-      </div>  
-      <div>
-        <span id="health-check-badge-converter" class="badge d-none ml-2">Ismeretlen</span>
-      </div>
-    </div>
-  </div>
-</div>
-
 ## Egy példa webszolgáltatás {#egy-pelda-webszolgaltatas}
 
-Egy SOAP webszolgáltatás található `http://www.learnwebservices.com/services/hello`
-címen, mely egy nevet vár, és egy üdvözlőszöveget ad vissza.
-
-A SOAP webszolgáltatás WSDL dokumentuma elérhető a [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) címen.
+A webszolgáltatás egy nevet vár, és egy üdvözlőszöveget ad vissza.
 
 A címre a következő formátumban kell posztolni egy XML dokumentumot (a WSDL-ben leírtaknak megfelelően).
 A `Name` tag értéke tetszőlegesen módosítható.
@@ -149,14 +126,48 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 </soap:Envelope>
 ```
 
-## Szerver forráskódja
+# További webszolgáltatások {#tovabbi-webszolgaltatasok}
+
+<hr />
+
+Celsius to Fahrenheit converter
+
+<div class="d-flex justify-content-center mb-3">
+  <div class="form-row col-md-8">
+    <div class="input-group ">    
+      <input type="text" value="{{site.api_url}}/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Kimásoltad">
+          <i class="copy-button far fa-copy"></i>
+          </button>
+      </div>  
+      <div>
+        <span id="health-check-badge-converter" class="badge d-none ml-2">Ismeretlen</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+# Szerver alkalmazás {#szerver-alkalmazas}
+
+<hr />
 
 <p>Egy Spring Boot alkalmazás szolgálja ki a példa webszolgáltatásokat.</p>
 
 <p><a href="https://github.com/vicziani/learnwebservices-server/" title="Forráskód a GitHubon" class="github-icon"><i class="fab fa-github"></i></a>
  <a href="https://github.com/vicziani/learnwebservices-server/">Forráskód</a></p>
 
-# Implementációk {#implementaciok}
+Az alkalmazás elérhető a [Docker Hub-on](https://hub.docker.com/r/vicziani/lwsapp) is.
+
+A következő paranccsal futtatható.
+
+```shell
+docker run -p 8080:8080 --name my-lwsapp vicziani/lwsapp
+```
+
+Utána elérhető a `http://localhost:8080` címen!
+
+# Kliens Implementációk {#kliens-implementaciok}
 
 <hr />
 
@@ -224,7 +235,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal 
   </a>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Projekt fájl a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project">SoapUI projekt fájl</a></p>
 
 </div>
@@ -238,7 +249,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman
   </a>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Postman Collection a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection">Postman Collection fájl</a></p>
 
 </div>
@@ -254,7 +265,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter 
   </a>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Projekt a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project">JMeter projekt fájl</a></p>
 
 </div>
@@ -480,7 +491,7 @@ Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás
       <input id="hello-message-input" type="text" readonly="readonly" class="form-control" />
     </div>    
     <div class="col-sm mb-3">
-    <button type="submit" class="btn btn-primary">Hívd meg a webszolgáltatást!</button>
+    <button type="submit" class="btn btn-primary text-nowrap">Hívd meg a webszolgáltatást!</button>
   </div>    
 </div>
 </form>

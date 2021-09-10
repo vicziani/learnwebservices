@@ -6,7 +6,7 @@ window.onload = function() {
 
 function registerCopyButtonHandlers() {
   $(".btn-copy").mouseleave(function(e) {
-    $(this).tooltip('hide');
+    $(this).tooltip("hide");
   });
 }
 
@@ -16,7 +16,7 @@ function registerOnSubmit() {
 }
 
 function checkServerStatus() {
-  let url = "http://www.learnwebservices.com/actuator/info";
+  let url = apiUrl + "/actuator/info";
   fetch(url)
     .then(function(response) {
       return response.json();
@@ -25,16 +25,18 @@ function checkServerStatus() {
       setStatus("Online (" + info.build.version + ")", "badge-success");
     })
     .catch(function(error) {
+      console.log(error);
       setStatus("Offline", "badge-danger")
     });
 }
 
 function submitHandler() {
     callWebservice(readName(), function(message) {
-        writeMessage(message);
+      hideErrorMessage();
+      writeMessage(message);
     },
     function(error) {
-        showErrorMessage();
+      showErrorMessage();
     });
     return false;
 }
@@ -42,6 +44,11 @@ function submitHandler() {
 function showErrorMessage() {
   let div = document.getElementById("webservice-error-div");
   div.classList.remove("d-none");
+}
+
+function hideErrorMessage() {
+  let div = document.getElementById("webservice-error-div");
+  div.classList.add("d-none");
 }
 
 function setStatus(text, cssClass) {
@@ -57,7 +64,7 @@ function setStatusForElement(elementId, text, ccsClass) {
 }
 
 function readName() {
-    return document.getElementById("hello-name-input").value;
+    return escapeXml(document.getElementById("hello-name-input").value);
 }
 
 function writeMessage(message) {
@@ -65,20 +72,20 @@ function writeMessage(message) {
 }
 
 function callWebservice(name, onSuccess, onError) {
-  let url = "http://www.learnwebservices.com/services/hello";
+  let url = apiUrl + "/services/hello";
   let request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
      <soapenv:Header/>
      <soapenv:Body>
         <SayHello xmlns="http://learnwebservices.com/services/hello">
            <HelloRequest>
-              <Name>{{name}}</Name>
+              <Name>${name}</Name>
            </HelloRequest>
         </SayHello>
      </soapenv:Body>
-  </soapenv:Envelope>`.replace("{{name}}", name);
+  </soapenv:Envelope>`;
 
   let fetchData = {
-     method: 'POST',
+     method: "POST",
      body: request
   };
 
@@ -92,8 +99,21 @@ function callWebservice(name, onSuccess, onError) {
         onSuccess(message);
     })
     .catch(function(error) {
+      console.log(error);
       onError(error);
     });
 
   return false;
+}
+
+function escapeXml(unsafe) {
+  return unsafe.replace(/[<>&'"]/g, function (c) {
+      switch (c) {
+          case "<": return "&lt;";
+          case ">": return "&gt;";
+          case "&": return "&amp;";
+          case "'": return "&apos;";
+          case '"': return "&quot;";
+      }
+  });
 }
