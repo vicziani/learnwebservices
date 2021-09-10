@@ -4,12 +4,12 @@ layout: default
 
 <div class="pt-3 text-right">
   Last update:
-  <span class="text-nowrap font-weight-bold">August 8, 2019</span>
+  <span class="text-nowrap font-weight-bold">September 10, 2021</span>
 </div>
 <div class="pt-3 text-right">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
     Version
-    <span class="text-nowrap font-weight-bold">1.1.6</span>
+    <span class="text-nowrap font-weight-bold">1.2.0</span>
     </a>
 </div>
 
@@ -57,28 +57,6 @@ Sometime the SOAP web services are considered legacy solutions today, because th
 # Details
 
 <hr />
-
-## Other provided web services
-
-Celsius to Fahrenheit converter
-
-<div class="d-flex justify-content-center mb-3">
-  <div class="form-row col-md-8">
-    <div class="input-group">    
-      <input type="text" value="{{site.api_url}}/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
-      <div class="input-group-append">
-        <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Copied">
-          <i class="copy-button far fa-copy"></i>
-          </button>
-      </div>
-      <div>
-        <span id="health-check-badge-converter" class="badge d-none ml-2">Unknown</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-## An example web service
 
 The web service accepts a name, and gives back a welcome message. (The service accepts only POST HTTP requests so you may not use it in a browser directly.)
 
@@ -128,14 +106,48 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
 </soap:Envelope>
 ```
 
-## Server source code
+# Other services
 
-<p>A Spring Boot server application serves the sample web services.</p>
+<hr />
+
+Celsius to Fahrenheit converter
+
+<div class="d-flex justify-content-center mb-3">
+  <div class="form-row col-md-8">
+    <div class="input-group">    
+      <input type="text" value="{{site.api_url}}/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Copied">
+          <i class="copy-button far fa-copy"></i>
+          </button>
+      </div>
+      <div>
+        <span id="health-check-badge-converter" class="badge d-none ml-2">Unknown</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+# Server application
+
+<hr />
+
+A Spring Boot server application serves the sample web services.
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices-server/" title="Source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices-server/">Source code</a></p>
 
-# Implementations
+The application is available on [Docker Hub](https://hub.docker.com/r/vicziani/lwsapp).
+
+If you would like to run with Docker, just use the following command.
+
+```shell
+docker run -p 8080:8080 --name my-lwsapp vicziani/lwsapp
+```
+
+Then check the `http://localhost:8080` address!
+
+# Client implementations
 
 <hr />
 
