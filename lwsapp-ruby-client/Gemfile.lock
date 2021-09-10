@@ -15,6 +15,7 @@ GEM
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     nori (2.6.0)
+    rack (2.2.3)
     racc (1.5.2)
     rack (2.0.8)
     savon (2.12.0)
