@@ -36,8 +36,10 @@ webszolgáltatás:
   </div>
 </div>
 
-(A WSDL dokumentum egy XML dokumentum, melyet a Firefox nem jelenít meg, csak a _View Page Source_ menüpontra kattintva.) A WSDL állomány
+(A WSDL dokumentum egy XML dokumentum, melyet a Firefox nem jelenít meg, csak a _View Page Source_ menüpontra kattintva. A WSDL állomány
 olvasható formában [itt található](wsdl-hu.html).
+
+Kompatibilitási okokból a webszolgáltatás elérhető http protokollon is.
 
 ## Az oldal célja {#az-oldal-celja}
 

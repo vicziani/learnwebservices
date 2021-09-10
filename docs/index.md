@@ -35,7 +35,9 @@ If you want a simple, online web service, here is a WSDL for it:
   </div>
 </div>
 
-The WSDL document is [available here](wsdl.html) in readable format.
+Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document. The WSDL document is [available here](wsdl.html) in readable format. 
+
+For compatibility reasons it is available on http too.
 
 ## Purpose of this site
 
