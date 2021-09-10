@@ -112,7 +112,7 @@ function escapeXml(unsafe) {
           case "<": return "&lt;";
           case ">": return "&gt;";
           case "&": return "&amp;";
-          case "\"': return "&apos;";
+          case "'": return "&apos;";
           case '"': return "&quot;";
       }
   });
