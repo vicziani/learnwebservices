@@ -1,4 +1,4 @@
-# Vanilla JavaScript client
+# Node.js client
 
 ```shell
 docker build -t lwsapp-js-client .
