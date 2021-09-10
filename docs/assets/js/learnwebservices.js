@@ -72,7 +72,7 @@ function writeMessage(message) {
 }
 
 function callWebservice(name, onSuccess, onError) {
-  let url = "http://www.learnwebservices.com/services/hello";
+  let url = apiUrl + "/services/hello";
   let request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
      <soapenv:Header/>
      <soapenv:Body>
@@ -95,7 +95,7 @@ function callWebservice(name, onSuccess, onError) {
     })
     .then(function(xml) {
         let xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
-        let message = xmlDoc.getElementsByTagNameNS(apiUrl + "/services/hello", "Message")[0].textContent;
+        let message = xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent;
         onSuccess(message);
     })
     .catch(function(error) {
