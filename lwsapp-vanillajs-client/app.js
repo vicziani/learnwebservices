@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const DOMParser = require("xmldom").DOMParser;
+const DOMParser = require("@xmldom/xmldom").DOMParser;
 
 function callWebservice() {
   const url = "http://www.learnwebservices.com/services/hello";
