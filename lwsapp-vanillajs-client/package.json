@@ -5,6 +5,6 @@
   "main": "app.js",
   "dependencies": {
      "node-fetch": "2.6.1",
-     "xmldom": "0.5.0"
+     "xmldom": "0.6.0"
   }
 }
