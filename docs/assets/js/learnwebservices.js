@@ -94,12 +94,12 @@ function callWebservice(name, onSuccess, onError) {
 
   fetch(url, fetchData)
     .then(function(response) {
-      return response.text();
-    })
-    .then(function(xml) {
         if (response.status != 200) {
           throw new Error(`Status: ${response.status}`);
         }
+        return response.text();
+    })
+    .then(function(xml) {
         const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
         const message = xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent;
         onSuccess(message);
