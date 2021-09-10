@@ -217,6 +217,9 @@ Utána elérhető a `http://localhost:8080` címen!
   <li class="nav-item">
     <a class="nav-link" id="ruby-tab" data-toggle="tab" href="#ruby" role="tab" aria-controls="contact" aria-selected="false">Ruby</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" id="php-tab" data-toggle="tab" href="#php" role="tab" aria-controls="contact" aria-selected="false">PHP</a>
+  </li>
 </ul>
 
 <div class="tab-content" id="myTabContent">
@@ -556,11 +559,37 @@ puts response.body[:say_hello_response][:hello_response][:message]
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">Forráskód</a></p>
 
 </div>
+<div class="tab-pane fade" id="php" role="tabpanel" aria-labelledby="php-tab" markdown="1">
+
+A következő példa mutatja, hogy kell webszolgáltatás hívni PHP-ban,
+[SOAP bővítménnyel](https://www.php.net/manual/en/book.soap.php).
+
+```php
+<?php
+
+$client = new SoapClient('http://www.learnwebservices.com/services/hello?wsdl');
+echo $client
+	->SayHello(
+		[
+			'HelloRequest' => 
+				['Name' => 'John Doe']
+		]
+	)
+	->HelloResponse
+		->Message
+;
+```
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-php-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-php-client">Forráskód</a></p>
+
+</div>
 </div>
 
 
 ## Közreműködők {#kozremukodok}
 
 * Kuti Rita
+* Mauro Chojrin ([mchojrin](https://github.com/mchojrin))
 * Rácz János ([rczjns](https://github.com/rczjns))
 * Vörös Bea ([beavoros](https://github.com/beavoros))

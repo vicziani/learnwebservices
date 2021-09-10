@@ -197,6 +197,9 @@ Then check the `http://localhost:8080` address!
   <li class="nav-item">
     <a class="nav-link" id="ruby-tab" data-toggle="tab" href="#ruby" role="tab" aria-controls="contact" aria-selected="false">Ruby</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" id="php-tab" data-toggle="tab" href="#php" role="tab" aria-controls="contact" aria-selected="false">PHP</a>
+  </li>
 </ul>
 
 <div class="tab-content" id="myTabContent">
@@ -540,10 +543,35 @@ puts response.body[:say_hello_response][:hello_response][:message]
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">Source code</a></p>
 
 </div>
+<div class="tab-pane fade" id="php" role="tabpanel" aria-labelledby="php-tab" markdown="1">
+
+The following source code demonstrates how to call a web service with PHP and [SOAP extension](https://www.php.net/manual/en/book.soap.php).
+
+```php
+<?php
+
+$client = new SoapClient('http://www.learnwebservices.com/services/hello?wsdl');
+echo $client
+	->SayHello(
+		[
+			'HelloRequest' => 
+				['Name' => 'John Doe']
+		]
+	)
+	->HelloResponse
+		->Message
+;
+```
+
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-php-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-php-client">Source code</a></p>
+
+</div>
 </div>
 
 ## Contributors
 
 * Rita Kuti
+* Mauro Chojrin ([mchojrin](https://github.com/mchojrin))
 * János Rácz ([rczjns](https://github.com/rczjns))
 * Bea Vörös ([beavoros](https://github.com/beavoros))

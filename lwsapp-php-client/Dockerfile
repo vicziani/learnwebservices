@@ -6,4 +6,4 @@ RUN apt-get update -y \
      libxml2-dev \
   && apt-get clean -y \
   && docker-php-ext-install soap  
-CMD ["/usr/local/bin/php", "hello-client.php"]
+ENTRYPOINT ["/usr/local/bin/php", "hello-client.php"]
