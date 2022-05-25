@@ -114,7 +114,7 @@ A név alapján változó üzenetet a `Message` tag tartalmazza.
 
 ### Hibakezelés {#hibakezeles}
 
-Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üzenetet küldünk be, un. SOAP faultot kapunk.
+Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üzenetet küldünk be, ún. SOAP faultot kapunk.
 
 ```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
