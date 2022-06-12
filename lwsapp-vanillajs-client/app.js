@@ -2,15 +2,13 @@ const fetch = require("node-fetch");
 const DOMParser = require("@xmldom/xmldom").DOMParser;
 
 function callWebservice() {
-  const url = "http://www.learnwebservices.com/services/hello";
+  const url = "https://apps.learnwebservices.com/services/hello";
   const request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
      <soapenv:Header/>
      <soapenv:Body>
-        <SayHello xmlns="http://learnwebservices.com/services/hello">
-           <HelloRequest>
+           <HelloRequest xmlns="http://learnwebservices.com/services/hello">
               <Name>John Doe</Name>
            </HelloRequest>
-        </SayHello>
      </soapenv:Body>
   </soapenv:Envelope>`;
 

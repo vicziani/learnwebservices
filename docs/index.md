@@ -4,12 +4,12 @@ layout: default
 
 <div class="pt-3 text-right">
   Last update:
-  <span class="text-nowrap font-weight-bold">September 10, 2021</span>
+  <span class="text-nowrap font-weight-bold">June 12, 2022</span>
 </div>
 <div class="pt-3 text-right">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
     Version
-    <span class="text-nowrap font-weight-bold">1.2.0</span>
+    <span class="text-nowrap font-weight-bold">2.0.0</span>
     </a>
 </div>
 
@@ -68,11 +68,9 @@ The WSDL specifies the format of the request message. The content of the `Name` 
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
    <soapenv:Header/>
    <soapenv:Body>
-      <SayHello xmlns="http://learnwebservices.com/services/hello">
-         <HelloRequest>
-            <Name>John Doe</Name>
-         </HelloRequest>
-      </SayHello>
+       <HelloRequest xmlns="http://learnwebservices.com/services/hello">
+          <Name>John Doe</Name>
+       </HelloRequest>
    </soapenv:Body>
 </soapenv:Envelope>
 ```
@@ -83,11 +81,9 @@ response message based on the request.
 ```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
-      <SayHelloResponse xmlns="http://learnwebservices.com/services/hello">
-         <HelloResponse>
-            <Message>Hello John Doe!</Message>
-         </HelloResponse>
-      </SayHelloResponse>
+       <HelloResponse xmlns="http://learnwebservices.com/services/hello">
+          <Message>Hello John Doe!</Message>
+       </HelloResponse>
    </soap:Body>
 </soap:Envelope>
 ```
@@ -209,7 +205,7 @@ Then check the `http://localhost:8080` address!
 <div class="tab-pane fade show active" id="soapui" role="tabpanel" aria-labelledby="soapui-tab" markdown="1">
 
 To [call the web service with SoapUI](https://www.soapui.org/soap-and-wsdl/getting-started.html), create a new SOAP project in the application,
-and paste the URL of the WSDL document [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL) into the _Initial WSDL_
+and paste the URL of the WSDL document [{{site.api_url}}/services/hello?WSDL]({{site.api_url}}/services/hello?WSDL) into the _Initial WSDL_
 input field.
 SoapUI will process the WSDL file, and generate an example request. On the left side of the panel choose the `SayHello` operation, then the
 `Request 1` example request. Give a name value in the `Name` tag (replacing the `?` sign), then press the _Submit request_ button.
@@ -258,17 +254,17 @@ Click on the picture to view the full animation that shows how to create a JMete
 </div>
 <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab" markdown="1">
 
-Tip: try this site with the `curl www.learnwebservices.com` command.
+<!-- Tip: try this site with the `curl https://www.learnwebservices.com` command. -->
 
 Use the following command to call the web service with curl.
 
 ```
 curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   --data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
-  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
-  <HelloRequest><Name>John Doe</Name></HelloRequest> \
-  </SayHello></soapenv:Body></soapenv:Envelope>' \
-  http://www.learnwebservices.com/services/hello
+  <soapenv:Body> \
+  <HelloRequest xmlns="http://learnwebservices.com/services/hello"><Name>John Doe</Name></HelloRequest> \
+  </soapenv:Body></soapenv:Envelope>' \
+  https://apps.learnwebservices.com/services/hello
 ```
 
 </div>
@@ -279,10 +275,10 @@ Use the following command to call the web service with Wget.
 ```
 wget -qO - --header "Content-Type: text/xml;charset=UTF-8"  \
   --post-data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
-  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
-  <HelloRequest><Name>John Doe</Name></HelloRequest> \
-  </SayHello></soapenv:Body></soapenv:Envelope>' \
-  http://www.learnwebservices.com/services/hello
+  <soapenv:Body> \
+  <HelloRequest xmlns="http://learnwebservices.com/services/hello"><Name>John Doe</Name></HelloRequest> \
+  </soapenv:Body></soapenv:Envelope>' \
+  https://apps.learnwebservices.com/services/hello
 ```
 
 </div>
@@ -292,10 +288,10 @@ Use the following command to call the web service with [HTTPie](https://httpie.o
 
 ```
 echo '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
-  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
-  <HelloRequest><Name>John Doe</Name></HelloRequest> \
-  </SayHello></soapenv:Body></soapenv:Envelope>' | \
-  http -b POST http://www.learnwebservices.com/services/hello  'Content-Type:text/xml;charset=UTF-8'
+  <soapenv:Body> \
+  <HelloRequest xmlns="http://learnwebservices.com/services/hello"><Name>John Doe</Name></HelloRequest> \
+  </soapenv:Body></soapenv:Envelope>' | \
+  http -b POST https://apps.learnwebservices.com/services/hello  'Content-Type:text/xml;charset=UTF-8'
 ```
 
 </div>
@@ -310,8 +306,7 @@ with [cxf-codegen-plugin](http://cxf.apache.org/docs/maven-cxf-codegen-plugin-ws
 Maven plugin.
 
 ```java
-URL url = new URL("http://www.learnwebservices.com/services/hello?wsdl");
-HelloEndpointService service = new HelloEndpointService(url);
+HelloEndpointService service = new HelloEndpointService();
 HelloEndpoint port = service.getHelloEndpointPort();
 HelloRequest request = new HelloRequest();
 request.setName("John Doe");
@@ -336,13 +331,11 @@ The following source code demonstrates calling the web service using
 ```java
 HelloRequest helloRequest = new HelloRequest();
 helloRequest.setName("John Doe");
-SayHello sayHello = new SayHello();
-sayHello.setHelloRequest(helloRequest);
 
-JAXBElement<SayHelloResponse> response = (JAXBElement<SayHelloResponse>)
-        webServiceTemplate.marshalSendAndReceive(new ObjectFactory().createSayHello(sayHello));
+JAXBElement<HelloResponse> response = (JAXBElement<HelloResponse>)
+        webServiceTemplate.marshalSendAndReceive(new ObjectFactory().createHelloRequest(helloRequest));
 
-System.out.println(response.getValue().getHelloResponse().getMessage());
+System.out.println(response.getValue().getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
@@ -365,18 +358,13 @@ HelloEndpointServiceStub.HelloRequest helloRequest =
         new HelloEndpointServiceStub.HelloRequest();
 helloRequest.setName("John Doe");
 
-HelloEndpointServiceStub.SayHello sayHello =
-        new HelloEndpointServiceStub.SayHello();
-sayHello.setHelloRequest(helloRequest);
+HelloEndpointServiceStub.HelloRequestE sayHelloE =
+        new HelloEndpointServiceStub.HelloRequestE();
+sayHelloE.setHelloRequest(helloRequest);
 
-HelloEndpointServiceStub.SayHelloE sayHelloE =
-        new HelloEndpointServiceStub.SayHelloE();
-sayHelloE.setSayHello(sayHello);
-
-HelloEndpointServiceStub.SayHelloResponseE sayHelloResponseE =
+HelloEndpointServiceStub.HelloResponseE sayHelloResponseE =
         stub.sayHello(sayHelloE);
 System.out.println(sayHelloResponseE
-        .getSayHelloResponse()
         .getHelloResponse()
         .getMessage());
 ```
@@ -394,18 +382,16 @@ The following source code demonstrates calling the web service using
 @Grab('com.github.groovy-wslite:groovy-wslite:1.1.2')
 import wslite.soap.*
 
-def client = new SOAPClient('http://www.learnwebservices.com/services/hello')
+def client = new SOAPClient('https://apps.learnwebservices.com/services/hello')
 def response = client.send {
     body {
-        SayHello('xmlns':'http://learnwebservices.com/services/hello') {
-            HelloRequest {
-              Name("John Doe")
-            }
+        HelloRequest('xmlns':'http://learnwebservices.com/services/hello') {
+          Name("John Doe")
         }
     }
 }
 
-println(response.SayHelloResponse.HelloResponse.Message)
+println(response.HelloResponse.Message)
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
@@ -418,9 +404,9 @@ println(response.SayHelloResponse.HelloResponse.Message)
 The following source code uses the [Zeep](https://github.com/mvantellingen/python-zeep) framework to call the web service.
 
 ```python
-wsdl = 'http://www.learnwebservices.com/services/hello?wsdl'
+wsdl = 'https://apps.learnwebservices.com/services/hello?wsdl'
 client = zeep.Client(wsdl=wsdl)
-request = {'Name': 'John Doe'}
+request = 'John Doe'
 print(client.service.SayHello(request))
 ```
 
@@ -434,15 +420,13 @@ It is possible to call a web service from JavaScript running in the browser when
 Cross-Origin Resource Sharing (CORS) is properly configured.
 
 ```javascript
-const url = "http://www.learnwebservices.com/services/hello";
+const url = "https://apps.learnwebservices.com/services/hello";
 const request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     <soapenv:Header/>
     <soapenv:Body>
-       <SayHello xmlns="http://learnwebservices.com/services/hello">
-          <HelloRequest>
-             <Name>John Doe</Name>
-          </HelloRequest>
-       </SayHello>
+        <HelloRequest xmlns="http://learnwebservices.com/services/hello">
+            <Name>John Doe</Name>
+        </HelloRequest>
     </soapenv:Body>
  </soapenv:Envelope>`;
 
@@ -493,11 +477,11 @@ The following source code demonstrates how to call a web service with Node.js an
 
 ```javascript
 const soap = require("soap");
-const url = "http://www.learnwebservices.com/services/hello?wsdl";
-const args = {HelloRequest: {Name: "John Doe"}};
+const url = "https://apps.learnwebservices.com/services/hello?wsdl";
+const args = {Name: "John Doe"};
 soap.createClient(url, function(err, client) {
     client.SayHello(args, function(err, result) {
-        console.log(result.HelloResponse.Message);
+        console.log(result.Message);
     });
 });
 ```
@@ -532,13 +516,13 @@ The following source code demonstrates how to call a web service with Ruby and
 ```ruby
 require 'savon'
 
-client = Savon.client(wsdl: 'http://www.learnwebservices.com/services/hello?WSDL')
+client = Savon.client(wsdl: 'https://apps.learnwebservices.com/services/hello?WSDL')
 response = client.call(
   :say_hello,
   soap_action: '',
-  message: { 'HelloRequest' => { 'Name' => 'John Doe' } }
+  message: { 'Name' => 'John Doe' }
 )
-puts response.body[:say_hello_response][:hello_response][:message]
+puts response.body[:hello_response][:message]
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
@@ -552,16 +536,14 @@ The following source code demonstrates how to call a web service with PHP and [S
 ```php
 <?php
 
-$client = new SoapClient('http://www.learnwebservices.com/services/hello?wsdl');
+$client = new SoapClient('https://apps.learnwebservices.com/services/hello?wsdl');
 echo $client
 	->SayHello(
 		[
-			'HelloRequest' => 
-				['Name' => 'John Doe']
+				'Name' => 'John Doe'
 		]
 	)
-	->HelloResponse
-		->Message
+	->Message
 ;
 ```
 

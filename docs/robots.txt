@@ -1,1 +1,1 @@
-Sitemap: http://www.learnwebservices.com/sitemap.txt
+Sitemap: https://www.learnwebservices.com/sitemap.txt

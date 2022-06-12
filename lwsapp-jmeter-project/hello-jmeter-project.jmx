@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.0 r1840935">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -23,6 +23,7 @@
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
@@ -32,23 +33,21 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#xd;
-   &lt;soapenv:Header/&gt;&#xd;
-   &lt;soapenv:Body&gt;&#xd;
-      &lt;SayHello xmlns=&quot;http://learnwebservices.com/services/hello&quot;&gt;&#xd;
-         &lt;HelloRequest&gt;&#xd;
-            &lt;Name&gt;John Doe&lt;/Name&gt;&#xd;
-         &lt;/HelloRequest&gt;&#xd;
-      &lt;/SayHello&gt;&#xd;
-   &lt;/soapenv:Body&gt;&#xd;
+    &lt;soapenv:Header/&gt;&#xd;
+    &lt;soapenv:Body&gt;&#xd;
+	    &lt;HelloRequest xmlns=&quot;http://learnwebservices.com/services/hello&quot;&gt;&#xd;
+	       &lt;Name&gt;John Doe&lt;/Name&gt;&#xd;
+	    &lt;/HelloRequest&gt;&#xd;
+    &lt;/soapenv:Body&gt;&#xd;
 &lt;/soapenv:Envelope&gt;&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
-          <stringProp name="HTTPSampler.domain">www.learnwebservices.com</stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.domain">apps.learnwebservices.com</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/services/hello</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>

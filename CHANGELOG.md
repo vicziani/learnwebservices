@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.0]
+
+- Move to GitHub Pages
+- Change url to https://apps.learnwebservices.com/services/hello?WSDL
+- Simplify WSDL and SOAP messages in `hello` web service
+- Dockerfile for clients: lwsapp-cxf-client, lwsapp-groovy-client, lwsapp-jaxwsri-client, lwsapp-springws-client
+- Add SoapUI assert
+
 ## [1.2.0]
 
 - Redesign

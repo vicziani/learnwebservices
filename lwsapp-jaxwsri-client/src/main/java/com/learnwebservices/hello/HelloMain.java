@@ -16,8 +16,10 @@ public class HelloMain {
         System.setProperty("com.sun.xml.ws.transport.http.HttpAdapter.dump", "true");
         System.setProperty("com.sun.xml.internal.ws.transport.http.HttpAdapter.dump", "true");
 
-        URL url = new URL("http://www.learnwebservices.com/services/hello?wsdl");
-        HelloEndpointService service = new HelloEndpointService(url);
+//        URL url = new URL("https://apps.learnwebservices.com/services/hello?wsdl");
+//        HelloEndpointService service = new HelloEndpointService(url);
+
+        HelloEndpointService service = new HelloEndpointService();
         HelloEndpoint port = service.getHelloEndpointPort();
         HelloRequest request = new HelloRequest();
         request.setName("John Doe");

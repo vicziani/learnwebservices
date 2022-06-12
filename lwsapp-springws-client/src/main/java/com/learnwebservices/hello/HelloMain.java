@@ -1,9 +1,8 @@
 package com.learnwebservices.hello;
 
 import com.learnwebservices.services.hello.HelloRequest;
+import com.learnwebservices.services.hello.HelloResponse;
 import com.learnwebservices.services.hello.ObjectFactory;
-import com.learnwebservices.services.hello.SayHello;
-import com.learnwebservices.services.hello.SayHelloResponse;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,13 +22,11 @@ public class HelloMain {
 
         HelloRequest helloRequest = new HelloRequest();
         helloRequest.setName("John Doe");
-        SayHello sayHello = new SayHello();
-        sayHello.setHelloRequest(helloRequest);
 
-        JAXBElement<SayHelloResponse> response = (JAXBElement<SayHelloResponse>)
-                webServiceTemplate.marshalSendAndReceive(new ObjectFactory().createSayHello(sayHello));
+        JAXBElement<HelloResponse> response = (JAXBElement<HelloResponse>)
+                webServiceTemplate.marshalSendAndReceive(new ObjectFactory().createHelloRequest(helloRequest));
 
-        System.out.println(response.getValue().getHelloResponse().getMessage());
+        System.out.println(response.getValue().getMessage());
     }
 
     @Bean
@@ -43,7 +40,7 @@ public class HelloMain {
     public WebServiceTemplate webServiceTemplate() {
         WebServiceTemplate webServiceTemplate =
                 new WebServiceTemplate(marshaller());
-        webServiceTemplate.setDefaultUri("http://www.learnwebservices.com/services/hello");
+        webServiceTemplate.setDefaultUri("https://apps.learnwebservices.com/services/hello");
         return webServiceTemplate;
     }
 

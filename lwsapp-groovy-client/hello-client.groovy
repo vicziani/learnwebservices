@@ -2,13 +2,11 @@
 import wslite.soap.*
 
 
-def client = new SOAPClient('http://www.learnwebservices.com/services/hello')
+def client = new SOAPClient('https://apps.learnwebservices.com/services/hello')
 def response = client.send {
     body {
-        SayHello('xmlns':'http://learnwebservices.com/services/hello') {
-            HelloRequest {
-              Name("John Doe")
-            }
+        HelloRequest('xmlns':'http://learnwebservices.com/services/hello') {
+          Name("John Doe")
         }
     }
 }
@@ -29,4 +27,4 @@ def response = client.send {
 
 println(response.text)
 
-println(response.SayHelloResponse.HelloResponse.Message)
+println(response.HelloResponse.Message)

@@ -4,12 +4,12 @@ layout: default-hu
 
 <div class="pt-3 text-right">
   Utolsó frissítés dátuma:
-  <span class="text-nowrap font-weight-bold">2021. szeptember 10.</span>
+  <span class="text-nowrap font-weight-bold">2022. június 12.</span>
 </div>
 <div class="pt-3 text-right">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
     Verzió
-    <span class="text-nowrap font-weight-bold">1.2.0</span>
+    <span class="text-nowrap font-weight-bold">2.0.0</span>
     </a>
 </div>
 
@@ -88,11 +88,9 @@ A `Name` tag értéke tetszőlegesen módosítható.
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
    <soapenv:Header/>
    <soapenv:Body>
-      <SayHello xmlns="http://learnwebservices.com/services/hello">
-         <HelloRequest>
-            <Name>John Doe</Name>
-         </HelloRequest>
-      </SayHello>
+        <HelloRequest xmlns="http://learnwebservices.com/services/hello">
+          <Name>John Doe</Name>
+        </HelloRequest>
    </soapenv:Body>
 </soapenv:Envelope>
 ```
@@ -103,11 +101,9 @@ A név alapján változó üzenetet a `Message` tag tartalmazza.
 ```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
    <soap:Body>
-      <SayHelloResponse xmlns="http://learnwebservices.com/services/hello">
-         <HelloResponse>
-            <Message>Hello John Doe!</Message>
-         </HelloResponse>
-      </SayHelloResponse>
+        <HelloResponse xmlns="http://learnwebservices.com/services/hello">
+          <Message>Hello John Doe!</Message>
+        </HelloResponse>
    </soap:Body>
 </soap:Envelope>
 ```
@@ -228,7 +224,7 @@ Utána elérhető a `http://localhost:8080` címen!
   <div class="tab-pane fade show active" id="soapui" role="tabpanel" aria-labelledby="soapui-tab" markdown="1">
 
 SoapUI használatával a [hivatalos dokumentáció](https://www.soapui.org/soap-and-wsdl/getting-started.html) alapján létre
-kell hozni egy új SOAP projektet, és a _Initial WSDL_ beviteli mezőben megadni a [http://www.learnwebservices.com/services/hello?WSDL](http://www.learnwebservices.com/services/hello?WSDL)
+kell hozni egy új SOAP projektet, és a _Initial WSDL_ beviteli mezőben megadni a [{{site.api_url}}/services/hello?WSDL]({{site.api_url}}/services/hello?WSDL)
 címet, majd kiválasztani bal oldalon a `SayHello` operációt, és megnyitni a `Request 1` példa kérést. A nevet
 megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit request_ gombot.
 
@@ -277,7 +273,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter 
 
 <div class="tab-pane fade" id="curl" role="tabpanel" aria-labelledby="curl-tab" markdown="1">
 
-Tipp: ez az oldal letölthető a curl használatával is a `curl www.learnwebservices.com` paranccsal.
+<!-- Tipp: ez az oldal letölthető a curl használatával is a `curl https://www.learnwebservices.com` paranccsal. -->
 
 A webszolgáltatás a curl segítségével is meghívható a következő módon. Egyrészt `POST` metódust kell használni,
 majd meg kell adni, hogy a tartalom típusa XML, végül a http kérés törzsében az elküldendő
@@ -286,10 +282,10 @@ SOAP kérést.
 ```
 curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
   --data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
-  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
-  <HelloRequest><Name>John Doe</Name></HelloRequest> \
-  </SayHello></soapenv:Body></soapenv:Envelope>' \
-  http://www.learnwebservices.com/services/hello
+  <soapenv:Body> \
+  <HelloRequest xmlns="http://learnwebservices.com/services/hello"><Name>John Doe</Name></HelloRequest> \
+  </soapenv:Body></soapenv:Envelope>' \
+  https://apps.learnwebservices.com/services/hello
 ```
 
 </div>
@@ -300,10 +296,10 @@ A webszolgáltatás Wget parancs használatával a következő módon hívható 
 ```
 wget -qO - --header "Content-Type: text/xml;charset=UTF-8"  \
   --post-data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
-  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
-  <HelloRequest><Name>John Doe</Name></HelloRequest> \
-  </SayHello></soapenv:Body></soapenv:Envelope>' \
-  http://www.learnwebservices.com/services/hello
+  <soapenv:Body> \
+  <HelloRequest xmlns="http://learnwebservices.com/services/hello"><Name>John Doe</Name></HelloRequest> \
+  </soapenv:Body></soapenv:Envelope>' \
+  https://apps.learnwebservices.com/services/hello
 ```
 
 </div>
@@ -313,10 +309,10 @@ A webszolgáltatás [HTTPie](https://httpie.org/) parancs használatával a köv
 
 ```
 echo '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/> \
-  <soapenv:Body><SayHello xmlns="http://learnwebservices.com/services/hello"> \
-  <HelloRequest><Name>John Doe</Name></HelloRequest> \
-  </SayHello></soapenv:Body></soapenv:Envelope>' | \
-  http -b POST http://www.learnwebservices.com/services/hello  'Content-Type:text/xml;charset=UTF-8'
+  <soapenv:Body> \
+  <HelloRequest xmlns="http://learnwebservices.com/services/hello"><Name>John Doe</Name></HelloRequest> \
+  </soapenv:Body></soapenv:Envelope>' | \
+  http -b POST https://apps.learnwebservices.com/services/hello  'Content-Type:text/xml;charset=UTF-8'
 ```
 
 </div>
@@ -330,8 +326,7 @@ A kód ugyanez [CXF](http://cxf.apache.org) library-vel és
 Maven pluginnel.
 
 ```java
-URL url = new URL("http://www.learnwebservices.com/services/hello?wsdl");
-HelloEndpointService service = new HelloEndpointService(url);
+HelloEndpointService service = new HelloEndpointService();
 HelloEndpoint port = service.getHelloEndpointPort();
 HelloRequest request = new HelloRequest();
 request.setName("John Doe");
@@ -354,13 +349,11 @@ Javaban [Spring Web Services](https://spring.io/projects/spring-ws) library-vel,
 ```java
 HelloRequest helloRequest = new HelloRequest();
 helloRequest.setName("John Doe");
-SayHello sayHello = new SayHello();
-sayHello.setHelloRequest(helloRequest);
 
-JAXBElement<SayHelloResponse> response = (JAXBElement<SayHelloResponse>)
-        webServiceTemplate.marshalSendAndReceive(new ObjectFactory().createSayHello(sayHello));
+JAXBElement<HelloResponse> response = (JAXBElement<HelloResponse>)
+        webServiceTemplate.marshalSendAndReceive(new ObjectFactory().createHelloRequest(helloRequest));
 
-System.out.println(response.getValue().getHelloResponse().getMessage());
+System.out.println(response.getValue().getMessage());
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
@@ -383,18 +376,13 @@ HelloEndpointServiceStub.HelloRequest helloRequest =
         new HelloEndpointServiceStub.HelloRequest();
 helloRequest.setName("John Doe");
 
-HelloEndpointServiceStub.SayHello sayHello =
-        new HelloEndpointServiceStub.SayHello();
-sayHello.setHelloRequest(helloRequest);
+HelloEndpointServiceStub.HelloRequestE sayHelloE =
+        new HelloEndpointServiceStub.HelloRequestE();
+sayHelloE.setHelloRequest(helloRequest);
 
-HelloEndpointServiceStub.SayHelloE sayHelloE =
-        new HelloEndpointServiceStub.SayHelloE();
-sayHelloE.setSayHello(sayHello);
-
-HelloEndpointServiceStub.SayHelloResponseE sayHelloResponseE =
+HelloEndpointServiceStub.HelloResponseE sayHelloResponseE =
         stub.sayHello(sayHelloE);
 System.out.println(sayHelloResponseE
-        .getSayHelloResponse()
         .getHelloResponse()
         .getMessage());
 ```
@@ -413,18 +401,16 @@ használatával.
 @Grab('com.github.groovy-wslite:groovy-wslite:1.1.2')
 import wslite.soap.*
 
-def client = new SOAPClient('http://www.learnwebservices.com/services/hello')
+def client = new SOAPClient('https://apps.learnwebservices.com/services/hello')
 def response = client.send {
     body {
-        SayHello('xmlns':'http://learnwebservices.com/services/hello') {
-            HelloRequest {
-              Name("John Doe")
-            }
+        HelloRequest('xmlns':'http://learnwebservices.com/services/hello') {
+          Name("John Doe")
         }
     }
 }
 
-println(response.SayHelloResponse.HelloResponse.Message)
+println(response.HelloResponse.Message)
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
@@ -436,9 +422,9 @@ println(response.SayHelloResponse.HelloResponse.Message)
 Használható a [Zeep](https://github.com/mvantellingen/python-zeep) library.
 
 ```python
-wsdl = 'http://www.learnwebservices.com/services/hello?wsdl'
+wsdl = 'https://apps.learnwebservices.com/services/hello?wsdl'
 client = zeep.Client(wsdl=wsdl)
-request = {'Name': 'John Doe'}
+request = 'John Doe'
 print(client.service.SayHello(request))
 ```
 
@@ -452,15 +438,13 @@ A webszolgáltatást böngészőből is meg lehet hívni, ha ugyanazon a domaine
 Cross-Origin Resource Sharing (CORS).
 
 ```javascript
-const url = "http://www.learnwebservices.com/services/hello";
+const url = "https://apps.learnwebservices.com/services/hello";
 const request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     <soapenv:Header/>
     <soapenv:Body>
-       <SayHello xmlns="http://learnwebservices.com/services/hello">
-          <HelloRequest>
-             <Name>John Doe</Name>
-          </HelloRequest>
-       </SayHello>
+        <HelloRequest xmlns="http://learnwebservices.com/services/hello">
+            <Name>John Doe</Name>
+        </HelloRequest>
     </soapenv:Body>
  </soapenv:Envelope>`;
 
@@ -511,11 +495,11 @@ Használható a [SOAP](https://github.com/vpulim/node-soap#readme) projekt.
 
 ```javascript
 const soap = require("soap");
-const url = "http://www.learnwebservices.com/services/hello?wsdl";
-const args = {HelloRequest: {Name: "John Doe"}};
+const url = "https://apps.learnwebservices.com/services/hello?wsdl";
+const args = {Name: "John Doe"};
 soap.createClient(url, function(err, client) {
     client.SayHello(args, function(err, result) {
-        console.log(result.HelloResponse.Message);
+        console.log(result.Message);
     });
 });
 ```
@@ -548,13 +532,13 @@ A következő példa mutatja, hogy kell webszolgáltatás hívni Ruby-ban,
 ```ruby
 require 'savon'
 
-client = Savon.client(wsdl: 'http://www.learnwebservices.com/services/hello?WSDL')
+client = Savon.client(wsdl: 'https://apps.learnwebservices.com/services/hello?WSDL')
 response = client.call(
   :say_hello,
   soap_action: '',
-  message: { 'HelloRequest' => { 'Name' => 'John Doe' } }
+  message: { 'Name' => 'John Doe' }
 )
-puts response.body[:say_hello_response][:hello_response][:message]
+puts response.body[:hello_response][:message]
 ```
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
@@ -569,16 +553,14 @@ A következő példa mutatja, hogy kell webszolgáltatás hívni PHP-ban,
 ```php
 <?php
 
-$client = new SoapClient('http://www.learnwebservices.com/services/hello?wsdl');
+$client = new SoapClient('https://apps.learnwebservices.com/services/hello?wsdl');
 echo $client
 	->SayHello(
 		[
-			'HelloRequest' => 
-				['Name' => 'John Doe']
+				'Name' => 'John Doe'
 		]
 	)
-	->HelloResponse
-		->Message
+	->Message
 ;
 ```
 

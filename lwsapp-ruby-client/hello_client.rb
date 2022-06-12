@@ -2,10 +2,10 @@
 
 require 'savon'
 
-client = Savon.client(wsdl: 'http://www.learnwebservices.com/services/hello?WSDL')
+client = Savon.client(wsdl: 'https://apps.learnwebservices.com/services/hello?WSDL')
 response = client.call(
   :say_hello,
   soap_action: '',
-  message: { 'HelloRequest' => { 'Name' => 'John Doe' } }
+  message: { 'Name' => 'John Doe' } 
 )
-puts response.body[:say_hello_response][:hello_response][:message]
+puts response.body[:hello_response][:message]

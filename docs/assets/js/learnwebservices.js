@@ -79,11 +79,9 @@ function callWebservice(name, onSuccess, onError) {
   const request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
      <soapenv:Header/>
      <soapenv:Body>
-        <SayHello xmlns="http://learnwebservices.com/services/hello">
-           <HelloRequest>
-              <Name>${name}</Name>
-           </HelloRequest>
-        </SayHello>
+        <HelloRequest xmlns="http://learnwebservices.com/services/hello">
+          <Name>${name}</Name>
+        </HelloRequest>
      </soapenv:Body>
   </soapenv:Envelope>`;
 

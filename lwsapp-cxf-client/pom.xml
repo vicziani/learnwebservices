@@ -5,7 +5,7 @@
 
     <groupId>learnwebservices</groupId>
     <artifactId>lwapp-cxf-client</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -89,6 +89,20 @@
                     </goals>
                 </execution>
             </executions>
+        </plugin>
+        <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+                 <descriptorRefs>
+                     <descriptorRef>jar-with-dependencies</descriptorRef>
+                 </descriptorRefs>
+                 <archive>
+                      <manifest>
+                          <mainClass>com.learnwebservices.hello.HelloMain</mainClass>
+                      </manifest>
+                 </archive>
+            </configuration>
         </plugin>
     </plugins>
     </build>

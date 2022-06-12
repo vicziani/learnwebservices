@@ -1,13 +1,15 @@
 package com.learnwebservices.hello;
 
 import com.learnwebservices.services.hello.HelloEndpointServiceStub;
-import org.apache.axis2.AxisFault;
 
 import java.rmi.RemoteException;
 
 public class HelloMain {
 
-    public static void main(String[] args) throws AxisFault, RemoteException {
+    public static void main(String[] args) throws RemoteException {
+//        HelloEndpointServiceStub stub =
+//                new HelloEndpointServiceStub("https://apps.learnwebservices.com/services/hello");
+
         HelloEndpointServiceStub stub =
                 new HelloEndpointServiceStub();
 
@@ -15,18 +17,13 @@ public class HelloMain {
                 new HelloEndpointServiceStub.HelloRequest();
         helloRequest.setName("John Doe");
 
-        HelloEndpointServiceStub.SayHello sayHello =
-                new HelloEndpointServiceStub.SayHello();
-        sayHello.setHelloRequest(helloRequest);
+        HelloEndpointServiceStub.HelloRequestE sayHelloE =
+                new HelloEndpointServiceStub.HelloRequestE();
+        sayHelloE.setHelloRequest(helloRequest);
 
-        HelloEndpointServiceStub.SayHelloE sayHelloE =
-                new HelloEndpointServiceStub.SayHelloE();
-        sayHelloE.setSayHello(sayHello);
-
-        HelloEndpointServiceStub.SayHelloResponseE sayHelloResponseE =
+        HelloEndpointServiceStub.HelloResponseE sayHelloResponseE =
                 stub.sayHello(sayHelloE);
         System.out.println(sayHelloResponseE
-                .getSayHelloResponse()
                 .getHelloResponse()
                 .getMessage());
     }
