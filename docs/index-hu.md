@@ -39,7 +39,13 @@ webszolgáltatás:
 (A WSDL dokumentum egy XML dokumentum, melyet a Firefox nem jelenít meg, csak a _View Page Source_ menüpontra kattintva. A WSDL állomány
 olvasható formában [itt található](wsdl-hu.html).
 
-Kompatibilitási okokból a webszolgáltatás elérhető http protokollon is.
+<div class="alert alert-danger" role="alert">
+    <h3 class="alert-heading">Figyelem!</h3>
+
+    A 2.0.0 verzióban a cím <code class="highlighter-rouge">http://www.learnwebservices.com/services/hello?WSDL</code> URL-ről a
+    <code class="highlighter-rouge">https://apps.learnwebservices.com/services/hello?WSDL</code> URL-re változott.
+    A WSDL és az XML struktúrája is egyszerűsítésre került, így a klienseket módosítani kell, vagy újra kell generálni.
+</div>
 
 ## Az oldal célja {#az-oldal-celja}
 

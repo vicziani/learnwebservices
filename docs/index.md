@@ -37,7 +37,13 @@ If you want a simple, online web service, here is a WSDL for it:
 
 Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document. The WSDL document is [available here](wsdl.html) in readable format. 
 
-For compatibility reasons it is available on http too.
+<div class="alert alert-danger" role="alert">
+    <h3 class="alert-heading">Warning!</h3>
+
+    In version 2.0.0 the URL has changed from <code class="highlighter-rouge">http://www.learnwebservices.com/services/hello?WSDL</code> to 
+    <code class="highlighter-rouge">https://apps.learnwebservices.com/services/hello?WSDL</code>.
+    The WSDL and the SOAP structure has simplified, so the clients must be modified or regenerated.
+</div>
 
 ## Purpose of this site
 
