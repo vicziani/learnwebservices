@@ -62,6 +62,8 @@ különböző programozási nyelven implementált kliens programok
 technológia használatba vételéhez. Gyakran frissítem ezeket, ahogy kijönnek
 a nyelvek és keretrendszerek új verziói.
 
+Ha kérdésed van, felteheted [ebben a Gitter szobában](https://gitter.im/learnwebservices/community).
+
 ## Webszolgáltatásokról {#webszolgaltatasokrol}
 
 A SOAP webszolgáltatások alkalmazások közötti adatcserére valók. XML és

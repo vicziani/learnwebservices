@@ -51,6 +51,7 @@ Creating this site has two purposes. One is to provide some free, public, SOAP w
 
 The second purpose is to present client applications examples in different programming languages, using with different libraries. You can find the source code of the examples on GitHub what I am going to  update regularly for  the latest versions.
 
+If you have a question, you can ask it in [this Gitter room](https://gitter.im/learnwebservices/community).
 
 ## About SOAP web services
 
