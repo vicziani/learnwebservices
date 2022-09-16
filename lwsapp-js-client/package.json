@@ -4,6 +4,7 @@
   "description": "JavaScript SOAP client",
   "main": "client.js",
   "dependencies": {
-	"soap": "0.45.0"
+	"soap": "0.45.0",
+        "node-fetch": "2.6.7"
   }
 }
