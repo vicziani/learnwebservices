@@ -4,6 +4,6 @@
   "description": "JavaScript SOAP client",
   "main": "client.js",
   "dependencies": {
-	"soap": "0.25.0"
+	"soap": "0.45.0"
   }
 }
