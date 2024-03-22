@@ -16,6 +16,7 @@ This repository contains clients with different technologies:
 
 * `lwsapp-axis2-client` - Java Axis2 client
 * `lwsapp-cxf-client` - Java CXF client
+* `lwsapp-dotnet-client` - .NET client with C#
 * `lwsapp-groovy-client` - Groovy client
 * `lwsapp-jaxwsri-client` - Java JAX-RS RI client
 * `lwsapp-jmeter-project` - JMeter project file
@@ -27,7 +28,6 @@ This repository contains clients with different technologies:
 * `lwsapp-soapui-project` - SoapUI project
 * `lwsapp-springws-client` - Java Spring Web Services client
 * `lwsapp-vanillajs-client` - Vanilla JS client in pure JavaScript (Node.js)
-* `SoapClient` - .NET Core client with C#
 
 ## About the author
 
