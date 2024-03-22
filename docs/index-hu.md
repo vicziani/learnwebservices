@@ -218,7 +218,7 @@ Utána elérhető a `http://localhost:8080` címen!
     <a class="nav-link" id="nodejs-tab" data-toggle="tab" href="#nodejs" role="tab" aria-controls="contact" aria-selected="false">Node.js</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="dotnet-tab" data-toggle="tab" href="#dotnet" role="tab" aria-controls="contact" aria-selected="false">.NET Core C#</a>
+    <a class="nav-link" id="dotnet-tab" data-toggle="tab" href="#dotnet" role="tab" aria-controls="contact" aria-selected="false">.NET C#</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="ruby-tab" data-toggle="tab" href="#ruby" role="tab" aria-controls="contact" aria-selected="false">Ruby</a>
@@ -518,18 +518,16 @@ soap.createClient(url, function(err, client) {
 </div>
 <div class="tab-pane fade" id="dotnet" role="tabpanel" aria-labelledby="dotnet-tab" markdown="1">
 
+Az alábbi forráskód bemutatja, hogyan hívhat meg egy webszolgáltatást .NET használatával C# nyelv használatával.
+
 ```csharp
-HelloEndpointClient proxy = new HelloEndpointClient();
-var request = new helloRequest
-{
-    Name = "John Doe"
-};
-var response = await proxy.SayHelloAsync(request);
-Console.WriteLine(response.Body.HelloResponse.Message);
+HelloEndpointClient client = new HelloEndpointClient();
+var response = await client.SayHelloAsync(new () { Name = "John Doe" });
+Console.WriteLine(response.HelloResponse.Message);
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/SoapClient">Forráskód</a></p>
+<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-dotnet-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-dotnet-client">Forráskód</a></p>
 
 </div>
 <div class="tab-pane fade" id="ruby" role="tabpanel" aria-labelledby="ruby-tab" markdown="1">

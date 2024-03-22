@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "lwsapp-dotnet-client": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
