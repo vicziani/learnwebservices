@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.0.0]
+
+- Remove the Temperature Converter webservice
+
 ## [2.0.0]
 
 - Move to GitHub Pages
@@ -125,4 +129,3 @@
 - Example Node.js client with SOAP library
 - Python client with Zeep
 - SoapUI project and gifanim
-

@@ -11,8 +11,6 @@ If you want a simple, online web service, here are some WSDL:
 
   http://www.learnwebservices.com/services/hello?WSDL
 
-  http://www.learnwebservices.com/services/tempconverter?wsdl
-
 Use the following command to call the web service with curl:
 
 $ curl --request POST --header "Content-Type: text/xml;charset=UTF-8"  \
