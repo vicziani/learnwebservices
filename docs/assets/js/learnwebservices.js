@@ -56,7 +56,6 @@ function hideErrorMessage() {
 
 function setStatus(text, cssClass) {
   setStatusForElement("health-check-badge", text, cssClass);
-  setStatusForElement("health-check-badge-converter", text, cssClass);
 }
 
 function setStatusForElement(elementId, text, ccsClass) {
