@@ -4,12 +4,12 @@ layout: default
 
 <div class="pt-3 text-right">
   Last update:
-  <span class="text-nowrap font-weight-bold">June 12, 2022</span>
+  <span class="text-nowrap font-weight-bold">November 21, 2025</span>
 </div>
 <div class="pt-3 text-right">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
     Version
-    <span class="text-nowrap font-weight-bold">2.0.0</span>
+    <span class="text-nowrap font-weight-bold">{{site.site_version}}</span>
     </a>
 </div>
 
@@ -35,21 +35,20 @@ If you want a simple, online web service, here is a WSDL for it:
   </div>
 </div>
 
-Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document. The WSDL document is [available here](wsdl.html) in readable format. 
+Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document. The WSDL document is [available here](wsdl.html) in readable format.
 
 <div class="alert alert-danger" role="alert">
     <h3 class="alert-heading">Warning!</h3>
 
-    In version 2.0.0 the URL has changed from <code class="highlighter-rouge">http://www.learnwebservices.com/services/hello?WSDL</code> to 
-    <code class="highlighter-rouge">https://apps.learnwebservices.com/services/hello?WSDL</code>.
-    The WSDL and the SOAP structure has simplified, so the clients must be modified or regenerated.
+    In version 4.0.0 of the server application, the Temperature Converter web service was removed. Only the Hello web service is available.
+
 </div>
 
 ## Purpose of this site
 
 Creating this site has two purposes. One is to provide some free, public, SOAP web services examples for learning, prototyping, teaching, testing, demonstrating tools, libraries or technologies. You may use these web services in blog posts, tutorials, videos. I would like to operate this website for reference in the long run.
 
-The second purpose is to present client applications examples in different programming languages, using with different libraries. You can find the source code of the examples on GitHub what I am going to  update regularly for  the latest versions.
+The second purpose is to present client applications examples in different programming languages, using with different libraries. You can find the source code of the examples on GitHub what I am going to update regularly for the latest versions.
 
 If you have a question, you can ask it in [this Gitter room](https://gitter.im/learnwebservices/community).
 
@@ -57,11 +56,11 @@ If you have a question, you can ask it in [this Gitter room](https://gitter.im/l
 
 SOAP web services may be considered as best practices to exchange data between different applications, based on XML and mostly HTTP(S) protocol. Because of the formats and protocols are text based, they are readable by most of the applications and by humans as well. Web services became very popular, and easy to use on any platform and with any programming language.
 
-SOAP web services are based on OASIS and W3C standards, and the  WS-I organization provides some useful profiles to increase interoperability.
+SOAP web services are based on OASIS and W3C standards, and the WS-I organization provides some useful profiles to increase interoperability.
 
 SOAP is a messaging protocol specifying an XML-based message format. This is called the SOAP envelope, encapsulating the message content. The WSDL format is based on XML as well, and specifies the interface - how to call the service, and what are the input and output formats.
 
-Sometime the SOAP web services are considered legacy solutions today, because the RESTful web services are becoming increasingly popular. Also  this is true, but the SOAP web services will be along for a long time.
+Sometime the SOAP web services are considered legacy solutions today, because the RESTful web services are becoming increasingly popular. Also this is true, but the SOAP web services will be along for a long time.
 
 # Details
 
@@ -110,28 +109,6 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
    </soap:Body>
 </soap:Envelope>
 ```
-
-# Other services
-
-<hr />
-
-Celsius to Fahrenheit converter
-
-<div class="d-flex justify-content-center mb-3">
-  <div class="form-row col-md-8">
-    <div class="input-group">    
-      <input type="text" value="{{site.api_url}}/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
-      <div class="input-group-append">
-        <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Copied">
-          <i class="copy-button far fa-copy"></i>
-          </button>
-      </div>
-      <div>
-        <span id="health-check-badge-converter" class="badge d-none ml-2">Unknown</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 # Server application
 
@@ -330,7 +307,6 @@ System.out.println(response.getMessage());
 </div>
 <div class="tab-pane fade" id="sws" role="tabpanel" aria-labelledby="sws-tab" markdown="1">
 
-
 The following source code demonstrates calling the web service using
 [Spring Web Services](https://spring.io/projects/spring-ws) library and
 [maven-jaxb2-plugin](https://github.com/highsource/maven-jaxb2-plugin) Maven plugin.
@@ -350,7 +326,6 @@ System.out.println(response.getValue().getMessage());
 
 </div>
 <div class="tab-pane fade" id="axis2" role="tabpanel" aria-labelledby="axis2-tab" markdown="1">
-
 
 The following source code demonstrates calling the web service using
 [Apache Axis2/Java](http://axis.apache.org/axis2/java/core/index.html) library,
@@ -404,7 +379,6 @@ println(response.HelloResponse.Message)
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client">Source code</a></p>
 
-
 </div>
 <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab" markdown="1">
 
@@ -437,22 +411,27 @@ const request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soa
     </soapenv:Body>
  </soapenv:Envelope>`;
 
- const fetchData = {
-    method: 'POST',
-    body: request
- };
+const fetchData = {
+  method: "POST",
+  body: request,
+};
 
- fetch(url, fetchData)
-   .then(function(response) {
-     return response.text();
-   })
-   .then(function(xml) {
-       const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
-       console.log(xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent);
-   })
-   .catch(function(error) {
-     console.log("Error calling webservice: " + error);
-   });
+fetch(url, fetchData)
+  .then(function (response) {
+    return response.text();
+  })
+  .then(function (xml) {
+    const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+    console.log(
+      xmlDoc.getElementsByTagNameNS(
+        "http://learnwebservices.com/services/hello",
+        "Message"
+      )[0].textContent
+    );
+  })
+  .catch(function (error) {
+    console.log("Error calling webservice: " + error);
+  });
 ```
 
 You can try this online by pressing the _Call the web service!_ button below.
@@ -485,11 +464,11 @@ The following source code demonstrates how to call a web service with Node.js an
 ```javascript
 const soap = require("soap");
 const url = "https://apps.learnwebservices.com/services/hello?wsdl";
-const args = {Name: "John Doe"};
-soap.createClient(url, function(err, client) {
-    client.SayHello(args, function(err, result) {
-        console.log(result.Message);
-    });
+const args = { Name: "John Doe" };
+soap.createClient(url, function (err, client) {
+  client.SayHello(args, function (err, result) {
+    console.log(result.Message);
+  });
 });
 ```
 
@@ -558,7 +537,7 @@ echo $client
 
 ## Contributors
 
-* Rita Kuti
-* Mauro Chojrin ([mchojrin](https://github.com/mchojrin))
-* János Rácz ([rczjns](https://github.com/rczjns))
-* Bea Vörös ([beavoros](https://github.com/beavoros))
+- Rita Kuti
+- Mauro Chojrin ([mchojrin](https://github.com/mchojrin))
+- János Rácz ([rczjns](https://github.com/rczjns))
+- Bea Vörös ([beavoros](https://github.com/beavoros))

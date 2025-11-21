@@ -4,12 +4,12 @@ layout: default-hu
 
 <div class="pt-3 text-right">
   Utolsó frissítés dátuma:
-  <span class="text-nowrap font-weight-bold">2022. június 12.</span>
+  <span class="text-nowrap font-weight-bold">2025. november 21.</span>
 </div>
 <div class="pt-3 text-right">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
     Verzió
-    <span class="text-nowrap font-weight-bold">2.0.0</span>
+    <span class="text-nowrap font-weight-bold">{{site.site_version}}</span>
     </a>
 </div>
 
@@ -42,9 +42,8 @@ olvasható formában [itt található](wsdl-hu.html).
 <div class="alert alert-danger" role="alert">
     <h3 class="alert-heading">Figyelem!</h3>
 
-    A 2.0.0 verzióban a cím <code class="highlighter-rouge">http://www.learnwebservices.com/services/hello?WSDL</code> URL-ről a
-    <code class="highlighter-rouge">https://apps.learnwebservices.com/services/hello?WSDL</code> URL-re változott.
-    A WSDL és az XML struktúrája is egyszerűsítésre került, így a klienseket módosítani kell, vagy újra kell generálni.
+    A server alkalmazás 4.0.0 verziójában a Temperature Converter webservice eltávolításra került. Csak a Hello webservice érhető el.
+
 </div>
 
 ## Az oldal célja {#az-oldal-celja}
@@ -131,28 +130,6 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
    </soap:Body>
 </soap:Envelope>
 ```
-
-# További webszolgáltatások {#tovabbi-webszolgaltatasok}
-
-<hr />
-
-Celsius to Fahrenheit converter
-
-<div class="d-flex justify-content-center mb-3">
-  <div class="form-row col-md-8">
-    <div class="input-group ">    
-      <input type="text" value="{{site.api_url}}/services/tempconverter?wsdl" id="highlighted-wsdl-temp" class="form-control"/>
-      <div class="input-group-append">
-        <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-temp" title="Kimásoltad">
-          <i class="copy-button far fa-copy"></i>
-          </button>
-      </div>  
-      <div>
-        <span id="health-check-badge-converter" class="badge d-none ml-2">Ismeretlen</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 # Szerver alkalmazás {#szerver-alkalmazas}
 
@@ -456,22 +433,27 @@ const request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soa
     </soapenv:Body>
  </soapenv:Envelope>`;
 
- const fetchData = {
-    method: 'POST',
-    body: request
- };
+const fetchData = {
+  method: "POST",
+  body: request,
+};
 
- fetch(url, fetchData)
-   .then(function(response) {
-     return response.text();
-   })
-   .then(function(xml) {
-       const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
-       console.log(xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent);
-   })
-   .catch(function(error) {
-     console.log("Error calling webservice: " + error);
-   });
+fetch(url, fetchData)
+  .then(function (response) {
+    return response.text();
+  })
+  .then(function (xml) {
+    const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+    console.log(
+      xmlDoc.getElementsByTagNameNS(
+        "http://learnwebservices.com/services/hello",
+        "Message"
+      )[0].textContent
+    );
+  })
+  .catch(function (error) {
+    console.log("Error calling webservice: " + error);
+  });
 ```
 
 Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás.
@@ -504,11 +486,11 @@ Használható a [SOAP](https://github.com/vpulim/node-soap#readme) projekt.
 ```javascript
 const soap = require("soap");
 const url = "https://apps.learnwebservices.com/services/hello?wsdl";
-const args = {Name: "John Doe"};
-soap.createClient(url, function(err, client) {
-    client.SayHello(args, function(err, result) {
-        console.log(result.Message);
-    });
+const args = { Name: "John Doe" };
+soap.createClient(url, function (err, client) {
+  client.SayHello(args, function (err, result) {
+    console.log(result.Message);
+  });
 });
 ```
 
@@ -576,10 +558,9 @@ echo $client
 </div>
 </div>
 
-
 ## Közreműködők {#kozremukodok}
 
-* Kuti Rita
-* Mauro Chojrin ([mchojrin](https://github.com/mchojrin))
-* Rácz János ([rczjns](https://github.com/rczjns))
-* Vörös Bea ([beavoros](https://github.com/beavoros))
+- Kuti Rita
+- Mauro Chojrin ([mchojrin](https://github.com/mchojrin))
+- Rácz János ([rczjns](https://github.com/rczjns))
+- Vörös Bea ([beavoros](https://github.com/beavoros))

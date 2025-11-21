@@ -4,6 +4,8 @@ url: "https://www.learnwebservices.com"
 # URL of the backend server
 api_url: "https://apps.learnwebservices.com"
 
+site_version: "3.0.0"
+
 # Build settings
 markdown: kramdown
 
