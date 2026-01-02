@@ -1,19 +1,22 @@
-.navbar.navbar-language {
-  height: 35px;
+.navbar .nav-link:hover {
+  color: #f05f40;
 }
 
-.navbar.navbar-language ul {
-  flex-direction: row;
+.navbar .nav-link:focus {
+  box-shadow: 0 0 0 2px black;
+  border-radius: 2px;
+  border: 0;
+  margin: 0;
 }
 
 .navbar-language .navbar-nav .nav-link {
-  color: rgba(0,0,0,.65);
   font-size: .8rem;
   text-transform: uppercase;
   font-weight: 500;
   font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-  padding-right: 10px;
+  padding-right: 10px;  
 }
+
 
 @media(min-width: 992px) {
   .navbar-nav {
@@ -27,7 +30,6 @@
   font-weight: 700;
   color: #f05f40;
   font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-  text-decoration: none;
 }
 
 .navbar-light .navbar-brand:hover {
@@ -36,11 +38,9 @@
 
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0,0,0,.65);
   text-transform: uppercase;
   font-weight: 700;
   font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-  text-decoration: none;
   padding-right: 10px;
 }
 
@@ -48,8 +48,13 @@
   font-weight: normal;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
+.nav-pills .nav-link {
   color: #f05f40;
+  text-decoration: underline;
+}
+
+.nav-pills .nav-link:hover {
+  color: rgba(0, 0, 0, .65);
 }
 
 .nav-pills .nav-link.active {
@@ -89,13 +94,6 @@ a:hover {
 }
 
 
-hr {
-  border-width: 3px;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-  max-width: 50px;
-}
-
 header {
   background-color: #f05f40;
   padding-top: 2rem;
@@ -131,8 +129,18 @@ header a:hover {
   text-align: center;
 }
 
-.container hr {
-  border-color: #f05f40;
+.form-control::selection {
+  background-color: rgba(0, 0, 0, .65);
+  color: #ffffff;
+}
+
+.form-control:focus {
+  color: #f05f40;
+  background-color: #ffffff;
+}
+
+.btn:focus {
+    background-color: #f05f40;
 }
 
 .btn-primary {
@@ -158,6 +166,28 @@ header a:hover {
 
 .btn-outline-primary:focus {
   box-shadow: 0px 0px;
+}
+
+.btn-copy {
+  border-radius: 0;
+}
+
+.btn-copy:hover {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, .65);
+  border-color: #f05f40;
+}
+
+.btn-copy:focus {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, .65);
+  border-color: #f05f40;
+}
+
+.btn-copy:active {
+  background-color: rgba(0, 0, 0, .65) !important;
+  color: #ffffff !important;
+  border-color: #f05f40 !important;
 }
 
 .form-control {
@@ -198,6 +228,7 @@ footer {
 .demo-image {
   text-align: center;
   padding: 20px;
+  cursor: pointer;
 }
 
 .demo-image img {
@@ -209,7 +240,6 @@ footer {
   display: inline-block;
   margin-left: -20px;
   padding-right: 8px;
-  color: rgba(0,0,0,.65);
 }
 
 .header-link:hover {

@@ -1,10 +1,23 @@
 # Changelog
 
-## [3.0.0]
+## [4.0.0] - 2026-01-02
+
+- Upgrade to Bootstrap 5.3
+- Remove JQuery
+- Change Lightbox to Bootstrap modal
+- Remove Anchorify
+- Remove horizontal lines
+- Move feedback from Gitter to GitHub Issues
+- Set URL input field to readonly
+- Upgrade Clipboard.js to 2.0.11
+- Fix styles of language header, copy button and focused elements
+- Dates to changelog
+
+## [3.0.0] - 2025-11-21
 
 - Remove the Temperature Converter webservice
 
-## [2.0.0]
+## [2.0.0] - 2022-06-12
 
 - Move to GitHub Pages
 - Change url to https://apps.learnwebservices.com/services/hello?WSDL
@@ -12,7 +25,7 @@
 - Dockerfile for clients: lwsapp-cxf-client, lwsapp-groovy-client, lwsapp-jaxwsri-client, lwsapp-springws-client
 - Add SoapUI assert
 
-## [1.2.0]
+## [1.2.0] - 2021-09-10
 
 - Redesign
 - Server application in Docker
@@ -20,7 +33,7 @@
 - PHP sample
 - Dockerfile for clients
 
-## [1.1.7]
+## [1.1.7] - 2019-08-08
 
 - Health check with Spring Boot actuator, and writes the version of the server application
 - Proper 404 design for complex paths

@@ -1,12 +1,29 @@
 window.onload = function() {
+  registerCopy();
   registerOnSubmit();
-  checkServerStatus();
-  registerCopyButtonHandlers();
+  checkServerStatus();  
 }
 
-function registerCopyButtonHandlers() {
-  $(".btn-copy").mouseleave(function(e) {
-    $(this).tooltip("hide");
+function registerCopy() {
+  const clipboard = new ClipboardJS(".btn-copy");
+  clipboard.on("success", function(event) {    
+    event.clearSelection();
+    
+    // Bootstrap tooltip megjelenítése
+    const button = event.trigger;
+    const tooltipText = button.getAttribute("title") || "Copied";
+    const tooltip = new bootstrap.Tooltip(button, {
+      title: tooltipText,
+      placement: "top",
+      trigger: "manual"
+    });
+    
+    tooltip.show();
+    
+    button.addEventListener("mouseleave", function() {
+      tooltip.hide();
+      tooltip.dispose();
+    }, { once: true });
   });
 }
 

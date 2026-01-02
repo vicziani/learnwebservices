@@ -2,20 +2,18 @@
 layout: default-hu
 ---
 
-<div class="pt-3 text-right">
+<div class="pt-3 text-end">
   Utolsó frissítés dátuma:
-  <span class="text-nowrap font-weight-bold">2025. november 21.</span>
+  <span class="text-nowrap fw-bold">2026. január 2.</span>
 </div>
-<div class="pt-3 text-right">
+<div class="pt-3 text-end">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
     Verzió
-    <span class="text-nowrap font-weight-bold">{{site.site_version}}</span>
+    <span class="text-nowrap fw-bold">{{site.site_version}}</span>
     </a>
 </div>
 
 # Bevezetés {#bevezetes}
-
-<hr />
 
 ## TL;DR
 
@@ -24,7 +22,7 @@ webszolgáltatás:
 
 <div class="form-row d-flex justify-content-center mb-3">
   <div class="input-group col-md-8">
-    <input type="text" value="{{site.api_url}}/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control"/>
+    <input type="text" value="{{site.api_url}}/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control" readonly="readonly"/>
     <div class="input-group-append">
       <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-hello" title="Kimásoltad">
         <i class="copy-button far fa-copy"></i>
@@ -48,20 +46,20 @@ olvasható formában [itt található](wsdl-hu.html).
 
 ## Az oldal célja {#az-oldal-celja}
 
-Ez az oldal azért jött létre, hogy ingyenes, publikus példa SOAP
+Ez az oldal azért jött létre, hogy egy ingyenes, publikus példa SOAP
 webszolgáltatásokat biztosítson tanuláshoz, oktatáshoz,
-kísérletezéshez. Az itt található webszolgáltatások kitűnőek a
+kísérletezéshez. Az itt található webszolgáltatás kitűnő a
 technológia bemutatásához és megismeréséhez, különböző eszközök és
-keretrendszerek teszteléséhez. Ezen webszolgáltatásokat lehet használni
+keretrendszerek teszteléséhez. Ezt a webszolgáltatást lehet használni
 dokumentációkban, példákban, tutoriálokban, videókban, hisz célom, hogy
-hosszú távon megmaradjanak.
+hosszú távon megmaradjon.
 Az oldalon ezen kívül megtalálhatóak
 különböző programozási nyelven implementált kliens programok
 (forráskóddal együtt), melyek jó kiindulási alapot biztosíthatnak a
 technológia használatba vételéhez. Gyakran frissítem ezeket, ahogy kijönnek
 a nyelvek és keretrendszerek új verziói.
 
-Ha kérdésed van, felteheted [ebben a Gitter szobában](https://gitter.im/learnwebservices/community).
+Ha kérdésed van, felteheted [GitHub issue-ban](https://github.com/vicziani/learnwebservices/issues).
 
 ## Webszolgáltatásokról {#webszolgaltatasokrol}
 
@@ -81,8 +79,6 @@ jelleggel sok helyen találhatóak SOAP webszolgáltatások, melyekhez
 modern programokból is csatlakozni kell.
 
 # Részletek {#reszletek}
-
-<hr />
 
 ## Egy példa webszolgáltatás {#egy-pelda-webszolgaltatas}
 
@@ -133,8 +129,6 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 
 # Szerver alkalmazás {#szerver-alkalmazas}
 
-<hr />
-
 <p>Egy Spring Boot alkalmazás szolgálja ki a példa webszolgáltatásokat.</p>
 
 <p><a href="https://github.com/vicziani/learnwebservices-server/" title="Forráskód a GitHubon" class="github-icon"><i class="fab fa-github"></i></a>
@@ -152,56 +146,54 @@ Utána elérhető a `http://localhost:8080` címen!
 
 # Kliens Implementációk {#kliens-implementaciok}
 
-<hr />
-
-<ul class="nav nav-pills" id="implementationsTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="soapui-tab" data-toggle="tab" href="#soapui" role="tab" aria-controls="home" aria-selected="true">SoapUI</a>
+<ul class="nav nav-pills" id="implementations-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="soapui-tab" data-bs-toggle="tab" href="#soapui" role="tab" aria-controls="home" aria-selected="true">SoapUI</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="postman-tab" data-toggle="tab" href="#postman" role="tab" aria-controls="contact" aria-selected="false">Postman</a>
+    <a class="nav-link" id="postman-tab" data-bs-toggle="tab" href="#postman" role="tab" aria-controls="contact" aria-selected="false">Postman</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="jmeter-tab" data-toggle="tab" href="#jmeter" role="tab" aria-controls="contact" aria-selected="false">JMeter</a>
+    <a class="nav-link" id="jmeter-tab" data-bs-toggle="tab" href="#jmeter" role="tab" aria-controls="contact" aria-selected="false">JMeter</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="curl-tab" data-toggle="tab" href="#curl" role="tab" aria-controls="profile" aria-selected="false">CURL</a>
+    <a class="nav-link" id="curl-tab" data-bs-toggle="tab" href="#curl" role="tab" aria-controls="profile" aria-selected="false">CURL</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="wget-tab" data-toggle="tab" href="#wget" role="tab" aria-controls="contact" aria-selected="false">Wget</a>
+    <a class="nav-link" id="wget-tab" data-bs-toggle="tab" href="#wget" role="tab" aria-controls="contact" aria-selected="false">Wget</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="httpie-tab" data-toggle="tab" href="#httpie" role="tab" aria-controls="contact" aria-selected="false">HTTPie</a>
+    <a class="nav-link" id="httpie-tab" data-bs-toggle="tab" href="#httpie" role="tab" aria-controls="contact" aria-selected="false">HTTPie</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="jaxws-tab" data-toggle="tab" href="#jaxws" role="tab" aria-controls="contact" aria-selected="false">Java JAX-WS RI/CXF</a>
+    <a class="nav-link" id="jaxws-tab" data-bs-toggle="tab" href="#jaxws" role="tab" aria-controls="contact" aria-selected="false">Java JAX-WS RI/CXF</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="sws-tab" data-toggle="tab" href="#sws" role="tab" aria-controls="contact" aria-selected="false">Java Spring Web Services</a>
+    <a class="nav-link" id="sws-tab" data-bs-toggle="tab" href="#sws" role="tab" aria-controls="contact" aria-selected="false">Java Spring Web Services</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="axis2-tab" data-toggle="tab" href="#axis2" role="tab" aria-controls="contact" aria-selected="false">Java Apache Axis2</a>
+    <a class="nav-link" id="axis2-tab" data-bs-toggle="tab" href="#axis2" role="tab" aria-controls="contact" aria-selected="false">Java Apache Axis2</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="groovy-tab" data-toggle="tab" href="#groovy" role="tab" aria-controls="contact" aria-selected="false">Groovy</a>
+    <a class="nav-link" id="groovy-tab" data-bs-toggle="tab" href="#groovy" role="tab" aria-controls="contact" aria-selected="false">Groovy</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="contact" aria-selected="false">Python</a>
+    <a class="nav-link" id="python-tab" data-bs-toggle="tab" href="#python" role="tab" aria-controls="contact" aria-selected="false">Python</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="js-tab" data-toggle="tab" href="#js" role="tab" aria-controls="contact" aria-selected="false">JavaScript</a>
+    <a class="nav-link" id="js-tab" data-bs-toggle="tab" href="#js" role="tab" aria-controls="contact" aria-selected="false">JavaScript</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="nodejs-tab" data-toggle="tab" href="#nodejs" role="tab" aria-controls="contact" aria-selected="false">Node.js</a>
+    <a class="nav-link" id="nodejs-tab" data-bs-toggle="tab" href="#nodejs" role="tab" aria-controls="contact" aria-selected="false">Node.js</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="dotnet-tab" data-toggle="tab" href="#dotnet" role="tab" aria-controls="contact" aria-selected="false">.NET C#</a>
+    <a class="nav-link" id="dotnet-tab" data-bs-toggle="tab" href="#dotnet" role="tab" aria-controls="contact" aria-selected="false">.NET C#</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="ruby-tab" data-toggle="tab" href="#ruby" role="tab" aria-controls="contact" aria-selected="false">Ruby</a>
+    <a class="nav-link" id="ruby-tab" data-bs-toggle="tab" href="#ruby" role="tab" aria-controls="contact" aria-selected="false">Ruby</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="php-tab" data-toggle="tab" href="#php" role="tab" aria-controls="contact" aria-selected="false">PHP</a>
+    <a class="nav-link" id="php-tab" data-bs-toggle="tab" href="#php" role="tab" aria-controls="contact" aria-selected="false">PHP</a>
   </li>
 </ul>
 
@@ -216,11 +208,24 @@ megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit reques
 Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal kérést létrehozni!
 
 <div class="demo-image">
-  <a href="images/soapui-anim.gif" data-lightbox="learnwebservices">
-    <img src="images/soapui.png" title="Kérés SoapUI-ban" class="img-fluid"/>
-  </a>
+    <img src="images/soapui.png" title="Kérés SoapUI-ban" 
+      class="img-fluid" 
+      data-bs-toggle="modal"
+      data-bs-target="#soapui-modal"/>
 </div>
 
+<div class="modal fade" id="soapui-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezár"></button>
+      </div>
+      <div class="modal-body p-0">
+        <img src="images/soapui-anim.gif" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</div>
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Projekt fájl a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project">SoapUI projekt fájl</a></p>
 
@@ -230,9 +235,23 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal 
 Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman kérést létrehozni!
 
 <div class="demo-image">
-  <a href="images/postman-anim.gif" data-lightbox="learnwebservices">
-    <img src="images/postman.png" title="Postman kérés" class="img-fluid"/>
-  </a>
+    <img src="images/postman.png" title="Postman kérés" 
+      class="img-fluid" 
+      data-bs-toggle="modal"
+      data-bs-target="#postman-modal"/>
+</div>
+
+<div class="modal fade" id="postman-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezár"></button>
+      </div>
+      <div class="modal-body p-0">
+        <img src="images/postman-anim.gif" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Postman Collection a GitHubon"><i class="fab fa-github"></i></a>
@@ -246,9 +265,23 @@ Az Apache JMeter használható SOAP webszolgáltatások terheléses tesztelésé
 Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter projektet létrehozni!
 
 <div class="demo-image">
-  <a href="images/jmeter-anim.gif" data-lightbox="learnwebservices">
-    <img src="images/jmeter.png" title="Webszolgáltatás hívás JMeterrel" class="img-fluid"/>
-  </a>
+    <img src="images/jmeter.png" title="Webszolgáltatás hívás JMeterrel" 
+      class="img-fluid" 
+      data-bs-toggle="modal"
+      data-bs-target="#jmeter-modal"/>
+</div>
+
+<div class="modal fade" id="jmeter-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <img src="images/jmeter-anim.gif" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Projekt a GitHubon"><i class="fab fa-github"></i></a>
@@ -462,12 +495,12 @@ Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás
   A webszolgáltatás nem elérhető!
 </div>
 <form id="hello-form">
- <div class="form-row">
+ <div class="row">
     <div class="col-sm mb-3">
       <input id="hello-name-input" type="text" placeholder="Írd be a neved!" class="form-control" />
     </div>
     <div class="col-sm mb-3">
-      <input id="hello-message-input" type="text" readonly="readonly" class="form-control" />
+      <input id="hello-message-input" type="text" disabled="disabled" readonly="readonly" class="form-control" />
     </div>    
     <div class="col-sm mb-3">
     <button type="submit" class="btn btn-primary text-nowrap">Hívd meg a webszolgáltatást!</button>

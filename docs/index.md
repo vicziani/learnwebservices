@@ -2,20 +2,18 @@
 layout: default
 ---
 
-<div class="pt-3 text-right">
+<div class="pt-3 text-end">
   Last update:
-  <span class="text-nowrap font-weight-bold">November 21, 2025</span>
+  <span class="text-nowrap fw-bold">January 2, 2026</span>
 </div>
-<div class="pt-3 text-right">
+<div class="pt-3 text-end">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
     Version
-    <span class="text-nowrap font-weight-bold">{{site.site_version}}</span>
+    <span class="text-nowrap fw-bold">{{site.site_version}}</span>
     </a>
 </div>
 
 # Introduction
-
-<hr />
 
 ## TL;DR
 
@@ -23,7 +21,7 @@ If you want a simple, online web service, here is a WSDL for it:
 
 <div class="form-row d-flex justify-content-center mb-3">
   <div class="input-group col-md-8">
-    <input type="text" value="{{site.api_url}}/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control"/>
+    <input type="text" value="{{site.api_url}}/services/hello?WSDL" id="highlighted-wsdl-hello" class="form-control" readonly="readonly" />
     <div class="input-group-append">
       <button class="btn btn-outline-primary btn-copy" type="button" data-clipboard-target="#highlighted-wsdl-hello" title="Copied">
         <i class="copy-button far fa-copy"></i>
@@ -46,11 +44,11 @@ Firefox browser does not show us the WSDL document, just a blank page, so it is 
 
 ## Purpose of this site
 
-Creating this site has two purposes. One is to provide some free, public, SOAP web services examples for learning, prototyping, teaching, testing, demonstrating tools, libraries or technologies. You may use these web services in blog posts, tutorials, videos. I would like to operate this website for reference in the long run.
+Creating this site has two purposes. One is to provide a free, public, SOAP web service examples for learning, prototyping, teaching, testing, demonstrating tools, libraries or technologies. You may use these web service in blog posts, tutorials, videos. I would like to operate this website for reference in the long run.
 
 The second purpose is to present client applications examples in different programming languages, using with different libraries. You can find the source code of the examples on GitHub what I am going to update regularly for the latest versions.
 
-If you have a question, you can ask it in [this Gitter room](https://gitter.im/learnwebservices/community).
+If you have a question, [open an issue](https://github.com/vicziani/learnwebservices/issues).
 
 ## About SOAP web services
 
@@ -63,8 +61,6 @@ SOAP is a messaging protocol specifying an XML-based message format. This is cal
 Sometime the SOAP web services are considered legacy solutions today, because the RESTful web services are becoming increasingly popular. Also this is true, but the SOAP web services will be along for a long time.
 
 # Details
-
-<hr />
 
 The web service accepts a name, and gives back a welcome message. (The service accepts only POST HTTP requests so you may not use it in a browser directly.)
 
@@ -112,8 +108,6 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
 
 # Server application
 
-<hr />
-
 A Spring Boot server application serves the sample web services.
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices-server/" title="Source code on GitHub"><i class="fab fa-github"></i></a>
@@ -131,56 +125,54 @@ Then check the `http://localhost:8080` address!
 
 # Client implementations
 
-<hr />
-
-<ul class="nav nav-pills" id="implementationsTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="soapui-tab" data-toggle="tab" href="#soapui" role="tab" aria-controls="home" aria-selected="true">SoapUI</a>
+<ul class="nav nav-pills" id="implementations-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="soapui-tab" data-bs-toggle="tab" href="#soapui" role="tab" aria-controls="home" aria-selected="true">SoapUI</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="postman-tab" data-bs-toggle="tab" href="#postman" role="tab" aria-controls="contact" aria-selected="false">Postman</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="postman-tab" data-toggle="tab" href="#postman" role="tab" aria-controls="contact" aria-selected="false">Postman</a>
+    <a class="nav-link" id="jmeter-tab" data-bs-toggle="tab" href="#jmeter" role="tab" aria-controls="contact" aria-selected="false">JMeter</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="jmeter-tab" data-toggle="tab" href="#jmeter" role="tab" aria-controls="contact" aria-selected="false">JMeter</a>
+    <a class="nav-link" id="curl-tab" data-bs-toggle="tab" href="#curl" role="tab" aria-controls="profile" aria-selected="false">CURL</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="curl-tab" data-toggle="tab" href="#curl" role="tab" aria-controls="profile" aria-selected="false">CURL</a>
+    <a class="nav-link" id="wget-tab" data-bs-toggle="tab" href="#wget" role="tab" aria-controls="contact" aria-selected="false">Wget</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="wget-tab" data-toggle="tab" href="#wget" role="tab" aria-controls="contact" aria-selected="false">Wget</a>
+    <a class="nav-link" id="httpie-tab" data-bs-toggle="tab" href="#httpie" role="tab" aria-controls="contact" aria-selected="false">HTTPie</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="httpie-tab" data-toggle="tab" href="#httpie" role="tab" aria-controls="contact" aria-selected="false">HTTPie</a>
+    <a class="nav-link" id="jaxws-tab" data-bs-toggle="tab" href="#jaxws" role="tab" aria-controls="contact" aria-selected="false">Java JAX-WS RI/CXF</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="jaxws-tab" data-toggle="tab" href="#jaxws" role="tab" aria-controls="contact" aria-selected="false">Java JAX-WS RI/CXF</a>
+    <a class="nav-link" id="sws-tab" data-bs-toggle="tab" href="#sws" role="tab" aria-controls="contact" aria-selected="false">Java Spring Web Services</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="sws-tab" data-toggle="tab" href="#sws" role="tab" aria-controls="contact" aria-selected="false">Java Spring Web Services</a>
+    <a class="nav-link" id="axis2-tab" data-bs-toggle="tab" href="#axis2" role="tab" aria-controls="contact" aria-selected="false">Java Apache Axis2</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="axis2-tab" data-toggle="tab" href="#axis2" role="tab" aria-controls="contact" aria-selected="false">Java Apache Axis2</a>
+    <a class="nav-link" id="groovy-tab" data-bs-toggle="tab" href="#groovy" role="tab" aria-controls="contact" aria-selected="false">Groovy</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="groovy-tab" data-toggle="tab" href="#groovy" role="tab" aria-controls="contact" aria-selected="false">Groovy</a>
+    <a class="nav-link" id="python-tab" data-bs-toggle="tab" href="#python" role="tab" aria-controls="contact" aria-selected="false">Python</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="python-tab" data-toggle="tab" href="#python" role="tab" aria-controls="contact" aria-selected="false">Python</a>
+    <a class="nav-link" id="js-tab" data-bs-toggle="tab" href="#js" role="tab" aria-controls="contact" aria-selected="false">JavaScript</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="js-tab" data-toggle="tab" href="#js" role="tab" aria-controls="contact" aria-selected="false">JavaScript</a>
+    <a class="nav-link" id="nodejs-tab" data-bs-toggle="tab" href="#nodejs" role="tab" aria-controls="contact" aria-selected="false">Node.js</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="nodejs-tab" data-toggle="tab" href="#nodejs" role="tab" aria-controls="contact" aria-selected="false">Node.js</a>
+    <a class="nav-link" id="dotnet-tab" data-bs-toggle="tab" href="#dotnet" role="tab" aria-controls="contact" aria-selected="false">.NET C#</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="dotnet-tab" data-toggle="tab" href="#dotnet" role="tab" aria-controls="contact" aria-selected="false">.NET C#</a>
+    <a class="nav-link" id="ruby-tab" data-bs-toggle="tab" href="#ruby" role="tab" aria-controls="contact" aria-selected="false">Ruby</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="ruby-tab" data-toggle="tab" href="#ruby" role="tab" aria-controls="contact" aria-selected="false">Ruby</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="php-tab" data-toggle="tab" href="#php" role="tab" aria-controls="contact" aria-selected="false">PHP</a>
+    <a class="nav-link" id="php-tab" data-bs-toggle="tab" href="#php" role="tab" aria-controls="contact" aria-selected="false">PHP</a>
   </li>
 </ul>
 
@@ -197,9 +189,23 @@ SoapUI will process the WSDL file, and generate an example request. On the left 
 Click on the picture to view the full animation that shows how to create a request with SoapUI!
 
 <div class="demo-image">
-  <a href="images/soapui-anim.gif" data-lightbox="learnwebservices">
-    <img src="images/soapui.png" title="Call web service in SoapUI" class="img-fluid"/>
-  </a>
+    <img src="images/soapui.png" title="Call web service in SoapUI" 
+      class="img-fluid" 
+      data-bs-toggle="modal"
+      data-bs-target="#soapui-modal"/>
+</div>
+
+<div class="modal fade" id="soapui-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <img src="images/soapui-anim.gif" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
@@ -211,9 +217,23 @@ Click on the picture to view the full animation that shows how to create a reque
 Click on the picture to view the full animation that shows how to create a Postman project!
 
 <div class="demo-image">
-  <a href="images/postman-anim.gif" data-lightbox="learnwebservices">
-    <img src="images/postman.png" title="Create Postman request" class="img-fluid"/>
-  </a>
+    <img src="images/postman.png" title="Create Postman request" 
+      class="img-fluid" 
+      data-bs-toggle="modal"
+      data-bs-target="#postman-modal"/>
+</div>
+
+<div class="modal fade" id="postman-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <img src="images/postman-anim.gif" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Collection file on GitHub"><i class="fab fa-github"></i></a>
@@ -227,9 +247,23 @@ Apache JMeter may be used to test performance of SOAP web services.
 Click on the picture to view the full animation that shows how to create a JMeter project.
 
 <div class="demo-image">
-  <a href="images/jmeter-anim.gif" data-lightbox="learnwebservices">
-    <img src="images/jmeter.png" title="JMeter for performance testing of SOAP web services" class="img-fluid"/>
-  </a>
+    <img src="images/jmeter.png" title="JMeter for performance testing of SOAP web services" 
+      class="img-fluid" 
+      data-bs-toggle="modal"
+      data-bs-target="#jmeter-modal"/>
+</div>
+
+<div class="modal fade" id="jmeter-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <img src="images/jmeter-anim.gif" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
 </div>
 
 <p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
@@ -440,12 +474,12 @@ You can try this online by pressing the _Call the web service!_ button below.
   A web service is not available!
 </div>
 <form id="hello-form">
- <div class="form-row">
+ <div class="row">
     <div class="col-sm mb-3">
       <input id="hello-name-input" type="text" placeholder="Your name" class="form-control" />
     </div>
     <div class="col-sm mb-3">
-      <input id="hello-message-input" type="text" readonly="readonly" class="form-control" />
+      <input id="hello-message-input" type="text" disabled="disabled" readonly="readonly" class="form-control" />
     </div>    
     <div class="col-sm mb-3">
     <button type="submit" class="btn btn-primary text-nowrap">Call the web service!</button>
