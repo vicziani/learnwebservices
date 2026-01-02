@@ -42,11 +42,11 @@ function checkServerStatus() {
       return response.json();
     })
     .then(function(info) {
-      setStatus("Online (" + info.build.version + ")", "badge-success");
+      setStatus("Online (" + info.build.version + ")", "text-bg-success");
     })
     .catch(function(error) {
       console.log(error);
-      setStatus("Offline", "badge-danger")
+      setStatus("Offline", "text-bg-danger")
     });
 }
 

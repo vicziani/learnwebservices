@@ -29,7 +29,7 @@ webszolgáltatás:
         </button>
     </div>  
     <div>
-      <span id="health-check-badge" class="badge d-none ml-2">Ismeretlen</span>
+      <span id="health-check-badge" class="badge d-none ms-2">Ismeretlen</span>
     </div>
   </div>
 </div>
