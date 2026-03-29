@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.0.1] - 2026-03-29
+
+- Icons and OG image
+
 ## [4.0.0] - 2026-01-02
 
 - Upgrade to Bootstrap 5.3
