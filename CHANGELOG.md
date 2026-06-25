@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.0.2] - 2026-06-25
+
+- Remove Google Analytics
+
 ## [4.0.1] - 2026-03-29
 
 - Icons and OG image
