@@ -129,10 +129,10 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 
 # Szerver alkalmazás {#szerver-alkalmazas}
 
-<p>Egy Spring Boot alkalmazás szolgálja ki a példa webszolgáltatásokat.</p>
+Egy Spring Boot alkalmazás szolgálja ki a példa webszolgáltatásokat.
 
-<p><a href="https://github.com/vicziani/learnwebservices-server/" title="Forráskód a GitHubon" class="github-icon"><i class="fab fa-github"></i></a>
- <a href="https://github.com/vicziani/learnwebservices-server/">Forráskód</a></p>
+<a href="https://github.com/vicziani/learnwebservices-server/" title="Forráskód a GitHubon" class="github-icon"><i class="fab fa-github"></i></a>
+ <a href="https://github.com/vicziani/learnwebservices-server/">Forráskód</a>
 
 Az alkalmazás elérhető a [Docker Hub-on](https://hub.docker.com/r/vicziani/lwsapp) is.
 
@@ -226,8 +226,9 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal 
     </div>
   </div>
 </div>
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Projekt fájl a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project">SoapUI projekt fájl</a></p>
+
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project" title="Projekt fájl a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-soapui-project">SoapUI projekt fájl</a>
 
 </div>
 <div class="tab-pane fade" id="postman" role="tabpanel" aria-labelledby="postman-tab" markdown="1">
@@ -254,8 +255,8 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman
   </div>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Postman Collection a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection">Postman Collection fájl</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection" title="Postman Collection a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-postman-collection">Postman Collection fájl</a>
 
 </div>
 <div class="tab-pane fade" id="jmeter" role="tabpanel" aria-labelledby="jmeter-tab" markdown="1">
@@ -284,8 +285,8 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter 
   </div>
 </div>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Projekt a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project">JMeter projekt fájl</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project" title="Projekt a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jmeter-project">JMeter projekt fájl</a>
 
 </div>
 
@@ -352,11 +353,11 @@ HelloResponse response = port.sayHello(request);
 System.out.println(response.getMessage());
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client">Forráskód JAX-WS RI-vel</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-jaxwsri-client">Forráskód JAX-WS RI-vel</a>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client">Forráskód Java CXF-fel</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-cxf-client">Forráskód Java CXF-fel</a>
 
 </div>
 <div class="tab-pane fade" id="sws" role="tabpanel" aria-labelledby="sws-tab" markdown="1">
@@ -374,8 +375,8 @@ JAXBElement<HelloResponse> response = (JAXBElement<HelloResponse>)
 System.out.println(response.getValue().getMessage());
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client">Forráskód</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-springws-client">Forráskód</a>
 
 </div>
 <div class="tab-pane fade" id="axis2" role="tabpanel" aria-labelledby="axis2-tab" markdown="1">
@@ -405,8 +406,8 @@ System.out.println(sayHelloResponseE
         .getMessage());
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client">Forráskód</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-axis2-client">Forráskód</a>
 
 </div>
 <div class="tab-pane fade" id="groovy" role="tabpanel" aria-labelledby="groovy-tab" markdown="1">
@@ -431,8 +432,8 @@ def response = client.send {
 println(response.HelloResponse.Message)
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client">Forráskód</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-groovy-client">Forráskód</a>
 
 </div>
 <div class="tab-pane fade" id="python" role="tabpanel" aria-labelledby="python-tab" markdown="1">
@@ -446,8 +447,8 @@ request = 'John Doe'
 print(client.service.SayHello(request))
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client">Forráskód</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-python-client">Forráskód</a>
 
 </div>
 <div class="tab-pane fade" id="js" role="tabpanel" aria-labelledby="js-tab" markdown="1">
@@ -508,8 +509,8 @@ Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás
 </div>
 </form>
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" >Forráskód</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-vanillajs-client" >Forráskód</a>
 
 </div>
 <div class="tab-pane fade" id="nodejs" role="tabpanel" aria-labelledby="nodejs-tab" markdown="1">
@@ -527,8 +528,8 @@ soap.createClient(url, function (err, client) {
 });
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client">Forráskód</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-js-client">Forráskód</a>
 
 </div>
 <div class="tab-pane fade" id="dotnet" role="tabpanel" aria-labelledby="dotnet-tab" markdown="1">
@@ -541,8 +542,8 @@ var response = await client.SayHelloAsync(new () { Name = "John Doe" });
 Console.WriteLine(response.HelloResponse.Message);
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-dotnet-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-dotnet-client">Forráskód</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-dotnet-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-dotnet-client">Forráskód</a>
 
 </div>
 <div class="tab-pane fade" id="ruby" role="tabpanel" aria-labelledby="ruby-tab" markdown="1">
@@ -562,8 +563,8 @@ response = client.call(
 puts response.body[:hello_response][:message]
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">Forráskód</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-ruby-client">Forráskód</a>
 
 </div>
 <div class="tab-pane fade" id="php" role="tabpanel" aria-labelledby="php-tab" markdown="1">
@@ -585,8 +586,8 @@ echo $client
 ;
 ```
 
-<p><a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-php-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
-<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-php-client">Forráskód</a></p>
+<a class="github-icon" href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-php-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
+<a href="https://github.com/vicziani/learnwebservices/tree/master/lwsapp-php-client">Forráskód</a>
 
 </div>
 </div>
