@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.1.0] - 2026-08-30
+
+- Fix hover and focus styles
+- Introduce CSS variables
+- Anchors
+- .http file example
+- Postman imports WSDL file
+
 ## [4.0.2] - 2026-06-25
 
 - Remove Google Analytics

@@ -4,7 +4,7 @@ layout: default-hu
 
 <div class="pt-3 text-end">
   Utolsó frissítés dátuma:
-  <span class="text-nowrap fw-bold">2026. január 2.</span>
+  <span class="text-nowrap fw-bold">2026. augusztus 30.</span>
 </div>
 <div class="pt-3 text-end">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
