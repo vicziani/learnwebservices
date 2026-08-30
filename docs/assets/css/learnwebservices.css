@@ -147,7 +147,6 @@ header a:hover {
 
 .container h1 {
   margin-top: 1.5rem;
-  text-align: center;
 }
 
 .btn:focus-visible {
@@ -253,27 +252,32 @@ footer {
   padding: 10px;
 }
 
-.header-link {
-  display: inline-block;
-  margin-left: -20px;
-  padding-right: 8px;
+.lws-anchor-heading {
+  position: relative;
 }
 
-.header-link:hover {
+.lws-heading-anchor {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1em;
+  margin-left: -0.35rem;
+  text-decoration: none;
+  color: var(--lws-color-primary);
+  opacity: 0;
+  transition: opacity .15s ease-in-out;
+}
+
+.lws-heading-anchor:hover {
   color: var(--lws-color-hover);
 }
 
-.header-link svg {
-  visibility: hidden;
-  }
-
-@media(min-width: 576px) {
-h1:hover .header-link svg,
-h2:hover .header-link svg,
-h3:hover .header-link svg,
-h4:hover .header-link svg,
-h5:hover .header-link svg,
-h6:hover .header-link svg {
-  visibility: visible;
-}
+.lws-anchor-heading:hover .lws-heading-anchor,
+.lws-anchor-heading:focus-within .lws-heading-anchor,
+.lws-heading-anchor:focus-visible {
+  opacity: 1;
 }
