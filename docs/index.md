@@ -145,6 +145,9 @@ Then check the `http://localhost:8080` address!
     <a class="nav-link" id="httpie-tab" data-bs-toggle="tab" href="#httpie" role="tab" aria-controls="contact" aria-selected="false">HTTPie</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" id="http-tab" data-bs-toggle="tab" href="#http" role="tab" aria-controls="contact" aria-selected="false">.http file</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" id="jaxws-tab" data-bs-toggle="tab" href="#jaxws" role="tab" aria-controls="contact" aria-selected="false">Java JAX-WS RI/CXF</a>
   </li>
   <li class="nav-item">
@@ -310,6 +313,25 @@ echo '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/
   <HelloRequest xmlns="http://learnwebservices.com/services/hello"><Name>John Doe</Name></HelloRequest> \
   </soapenv:Body></soapenv:Envelope>' | \
   http -b POST https://apps.learnwebservices.com/services/hello  'Content-Type:text/xml;charset=UTF-8'
+```
+
+</div>
+<div class="tab-pane fade" id="http" role="tabpanel" aria-labelledby="http-tab" markdown="1">
+  
+A .http file is a plain text file that contains one or more HTTP requests and can be executed by tools such as Visual Studio Code, JetBrains IDEs, etc.
+
+```
+### Sample request
+POST http://localhost:8080/services/hello
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header/>
+   <soapenv:Body>
+       <HelloRequest xmlns="http://learnwebservices.com/services/hello">
+          <Name>John Doe</Name>
+       </HelloRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
 ```
 
 </div>
