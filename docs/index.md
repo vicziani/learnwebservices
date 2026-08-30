@@ -233,7 +233,9 @@ Click on the picture to view the full animation that shows how to create a Postm
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-0">
-        <img src="images/postman-anim.gif" class="img-fluid rounded">
+        <video class="modal-video" controls muted>
+          <source src="https://video.learnwebservices.com/postman.mp4" type="video/mp4">          
+        </video>
       </div>
     </div>
   </div>

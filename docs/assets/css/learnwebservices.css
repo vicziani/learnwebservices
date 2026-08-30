@@ -252,6 +252,13 @@ footer {
   padding: 10px;
 }
 
+.modal-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+}
+
 .lws-anchor-heading {
   position: relative;
 }

@@ -252,7 +252,9 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezár"></button>
       </div>
       <div class="modal-body p-0">
-        <img src="images/postman-anim.gif" class="img-fluid rounded">
+        <video class="modal-video" controls muted>
+          <source src="https://video.learnwebservices.com/postman.mp4" type="video/mp4">          
+        </video>
       </div>
     </div>
   </div>
