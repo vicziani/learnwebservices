@@ -61,7 +61,7 @@ SOAP is a messaging protocol specifying an XML-based message format. This is cal
 Sometime the SOAP web services are considered legacy solutions today, because the RESTful web services are becoming increasingly popular. Also this is true, but the SOAP web services will be along for a long time.
 
 <div class="text-center">
-  <img src="images/request-response.svg" title="Request and response" />
+  <img src="images/request-response.svg" title="Request and response" class="img-fluid"/>
 </div>
 
 # Details

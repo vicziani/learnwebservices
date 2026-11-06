@@ -78,7 +78,7 @@ jelleggel sok helyen találhatóak SOAP webszolgáltatások, melyekhez
 modern alkalmazásokból is csatlakozni kell.
 
 <div class="text-center">
-  <img src="images/request-response.svg" title="Kérés és válasz" />
+  <img src="images/request-response.svg" title="Kérés és válasz" class="img-fluid"/>
 </div>
 
 # Részletek {#reszletek}
