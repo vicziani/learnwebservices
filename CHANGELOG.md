@@ -1,5 +1,10 @@
 # Changelog
 
+## [4.2.0] - 2026-11-06
+
+- Animation about request and response
+- WSDL structure view on main page
+
 ## [4.1.0] - 2026-08-30
 
 - Fix hover and focus styles

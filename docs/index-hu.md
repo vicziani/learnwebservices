@@ -77,6 +77,10 @@ RESTful webszolgáltatások kezdik kiszorítani. Azonban még történeti
 jelleggel sok helyen találhatóak SOAP webszolgáltatások, melyekhez
 modern alkalmazásokból is csatlakozni kell.
 
+<div class="text-center">
+  <img src="images/request-response.svg" title="Kérés és válasz" />
+</div>
+
 # Részletek {#reszletek}
 
 ## Kérés és válasz {#keres-es-valasz}

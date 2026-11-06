@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 84 1000 596" width="1000" height="596" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">SOAP communication</title>
+  <desc id="svg-desc">Animation: the client sends a SOAP Request to the server, and the server answers with a SOAP Response. Both messages are XML envelopes containing a Header and a Body.</desc>
+
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #212529; }
+    .body { font-size: 16px; }
+    .wordmark { font-size: 20px; font-weight: 700; }
+    .brand { fill: #ed6646; }
+    .tag { font-size: 13px; font-weight: 500; }
+    .code { font-size: 12px; }
+  </style>
+
+  <defs>
+    <!-- Közös ikon a kliensnek és a szervernek: narancs háttér, fehér körvonalas rack -->
+    <g id="device">
+      <rect x="-48" y="-48" width="96" height="96" rx="6" fill="#ed6646"/>
+      <g fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="-30" y="-32" width="60" height="18" rx="4"/>
+        <rect x="-30" y="-9" width="60" height="18" rx="4"/>
+        <rect x="-30" y="14" width="60" height="18" rx="4"/>
+        <line x1="8" y1="-23" x2="22" y2="-23"/>
+        <line x1="8" y1="0" x2="22" y2="0"/>
+        <line x1="8" y1="23" x2="22" y2="23"/>
+      </g>
+      <g fill="#ffffff">
+        <circle cx="-20" cy="-23" r="2.5"/>
+        <circle cx="-20" cy="0" r="2.5"/>
+        <circle cx="-20" cy="23" r="2.5"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- Felület -->
+  <rect x="0" y="84" width="1000" height="596" fill="#ffffff"/>
+
+  <!-- Kliens: csak az ikon és a felirata -->
+  <use xlink:href="#device" x="100" y="382"/>
+  <text x="100" y="458" text-anchor="middle" class="wordmark">Client</text>
+
+  <!-- Szerver: csak az ikon és a felirata -->
+  <use xlink:href="#device" x="900" y="382"/>
+  <text x="900" y="458" text-anchor="middle" class="wordmark">Server</text>
+
+  <!-- Szerver: feldolgozás jelző -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3929;0.4072;0.5357;0.5500;1" dur="14s" repeatCount="indefinite"/>
+    <circle cx="876" cy="492" r="5" fill="#ed6646" opacity="0.25">
+      <animate attributeName="opacity" values="0.25;1;0.25" dur="0.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="492" r="5" fill="#ed6646" opacity="0.25">
+      <animate attributeName="opacity" values="0.25;1;0.25" dur="0.9s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="924" cy="492" r="5" fill="#ed6646" opacity="0.25">
+      <animate attributeName="opacity" values="0.25;1;0.25" dur="0.9s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <text x="900" y="522" text-anchor="middle" class="body">Processing</text>
+  </g>
+
+  <!-- 1. nyíl (Request, kliens -> szerver): alapállapot, szállítás közben eltűnik -->
+  <g>
+    <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.1429;0.1572;0.3929;0.4072;1" dur="14s" repeatCount="indefinite"/>
+    <line x1="160" y1="360" x2="826" y2="360" stroke="#595959" stroke-width="2"/>
+    <polygon points="824,351 840,360 824,369" fill="#595959"/>
+  </g>
+
+  <!-- 2. nyíl (Response, szerver -> kliens): alapállapot, szállítás közben eltűnik -->
+  <g>
+    <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.6786;0.6929;0.9286;0.9429;1" dur="14s" repeatCount="indefinite"/>
+    <line x1="840" y1="404" x2="174" y2="404" stroke="#595959" stroke-width="2"/>
+    <polygon points="176,395 160,404 176,413" fill="#595959"/>
+  </g>
+
+  <!-- Aktív nyíl: Request, narancs szaggatott -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1429;0.1572;0.3929;0.4072;1" dur="14s" repeatCount="indefinite"/>
+    <line x1="160" y1="360" x2="826" y2="360" stroke="#ed6646" stroke-width="3" stroke-dasharray="12 8">
+      <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <polygon points="824,351 840,360 824,369" fill="#ed6646"/>
+  </g>
+
+  <!-- Aktív nyíl: Response, narancs szaggatott -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.6786;0.6929;0.9286;0.9429;1" dur="14s" repeatCount="indefinite"/>
+    <line x1="840" y1="404" x2="174" y2="404" stroke="#ed6646" stroke-width="3" stroke-dasharray="12 8">
+      <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.6s" repeatCount="indefinite"/>
+    </line>
+    <polygon points="176,395 160,404 176,413" fill="#ed6646"/>
+  </g>
+
+  <!-- SOAP Request: a felső nyíl fölött utazik, mindkét végén 28 px hely marad -->
+  <g transform="translate(338 226)">
+    <animateTransform attributeName="transform" type="translate" values="338 226;338 226;662 226;662 226" keyTimes="0;0.1429;0.3571;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.3571;0.3929;1" dur="14s" repeatCount="indefinite"/>
+
+    <g>
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.0357;1" dur="14s" repeatCount="indefinite"/>
+      <rect x="-150" y="-96" width="300" height="192" rx="6" fill="#ffffff" stroke="#ed6646" stroke-width="2"/>
+      <text x="-138" y="-78" class="tag">&lt;soapenv:Envelope&gt;</text>
+      <text x="-138" y="86" class="tag">&lt;/soapenv:Envelope&gt;</text>
+      <text x="0" y="-108" text-anchor="middle" class="wordmark brand">SOAP Request</text>
+    </g>
+
+    <g>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0357;0.0714;1" dur="14s" repeatCount="indefinite"/>
+      <rect x="-138" y="-66" width="276" height="28" rx="6" fill="#ffffff" stroke="#595959" stroke-width="1"/>
+      <text x="-128" y="-48" class="tag">&lt;soapenv:Header/&gt;</text>
+    </g>
+
+    <g>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.0714;0.1071;1" dur="14s" repeatCount="indefinite"/>
+      <rect x="-138" y="-30" width="276" height="100" rx="6" fill="#ffffff" stroke="#595959" stroke-width="1"/>
+      <text x="-128" y="-13" class="tag">&lt;soapenv:Body&gt;</text>
+      <text x="-116" y="5" class="code">&lt;HelloRequest&gt;</text>
+      <text x="-104" y="23" class="code">&lt;Name&gt;John Doe&lt;/Name&gt;</text>
+      <text x="-116" y="41" class="code">&lt;/HelloRequest&gt;</text>
+      <text x="-128" y="59" class="tag">&lt;/soapenv:Body&gt;</text>
+    </g>
+
+    <g>
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.1429;0.1643;1" dur="14s" repeatCount="indefinite"/>
+      <text x="0" y="116" text-anchor="middle" class="body">HTTP POST</text>
+    </g>
+  </g>
+
+  <!-- SOAP Response: az alsó nyíl alatt utazik -->
+  <g transform="translate(662 536)" opacity="0">
+    <animateTransform attributeName="transform" type="translate" values="662 536;662 536;338 536;338 536" keyTimes="0;0.6786;0.8929;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.5350;0.5357;0.8929;0.9286;1" dur="14s" repeatCount="indefinite"/>
+
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5357;0.5714;1" dur="14s" repeatCount="indefinite"/>
+      <rect x="-150" y="-96" width="300" height="192" rx="6" fill="#ffffff" stroke="#ed6646" stroke-width="2"/>
+      <text x="-138" y="-78" class="tag">&lt;soap:Envelope&gt;</text>
+      <text x="-138" y="86" class="tag">&lt;/soap:Envelope&gt;</text>
+      <text x="0" y="124" text-anchor="middle" class="wordmark brand">SOAP Response</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5714;0.6071;1" dur="14s" repeatCount="indefinite"/>
+      <rect x="-138" y="-66" width="276" height="28" rx="6" fill="#ffffff" stroke="#595959" stroke-width="1"/>
+      <text x="-128" y="-48" class="tag">&lt;soap:Header/&gt;</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6071;0.6429;1" dur="14s" repeatCount="indefinite"/>
+      <rect x="-138" y="-30" width="276" height="100" rx="6" fill="#ffffff" stroke="#595959" stroke-width="1"/>
+      <text x="-128" y="-13" class="tag">&lt;soap:Body&gt;</text>
+      <text x="-116" y="5" class="code">&lt;HelloResponse&gt;</text>
+      <text x="-104" y="23" class="code">&lt;Message&gt;Hello John Doe!&lt;/Message&gt;</text>
+      <text x="-116" y="41" class="code">&lt;/HelloResponse&gt;</text>
+      <text x="-128" y="59" class="tag">&lt;/soap:Body&gt;</text>
+    </g>
+
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6786;0.7000;1" dur="14s" repeatCount="indefinite"/>
+      <text x="0" y="-108" text-anchor="middle" class="body">HTTP 200 OK</text>
+    </g>
+  </g>
+</svg>
