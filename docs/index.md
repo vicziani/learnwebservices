@@ -106,6 +106,104 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
 </soap:Envelope>
 ```
 
+### WSDL
+
+<div class="row wsdl-explorer">
+<div class="col-lg-8 wsdl-source" markdown="1">
+
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions 
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+    xmlns:tns="http://learnwebservices.com/services/hello" 
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    targetNamespace="http://learnwebservices.com/services/hello"
+    name="HelloEndpointService">
+  <wsdl:types>
+    <xs:schema 
+        xmlns="http://learnwebservices.com/services/hello" 
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"         
+        targetNamespace="http://learnwebservices.com/services/hello"
+        attributeFormDefault="unqualified" 
+        elementFormDefault="qualified">
+      <xs:complexType name="helloRequest">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="helloResponse">
+        <xs:sequence>
+          <xs:element name="Message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="HelloRequest" nillable="true" type="helloRequest"/>
+      <xs:element name="HelloResponse" nillable="true" type="helloResponse"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SayHelloResponse">
+    <wsdl:part element="tns:HelloResponse" name="HelloResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SayHello">
+    <wsdl:part element="tns:HelloRequest" name="HelloRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HelloEndpoint">
+    <wsdl:operation name="SayHello">
+      <wsdl:input message="tns:SayHello" name="SayHello">
+    </wsdl:input>
+      <wsdl:output message="tns:SayHelloResponse" name="SayHelloResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloEndpointServiceSoapBinding" type="tns:HelloEndpoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SayHello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SayHello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SayHelloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloEndpointService">
+    <wsdl:port binding="tns:HelloEndpointServiceSoapBinding" name="HelloEndpointPort">
+      <soap:address location="https://apps.learnwebservices.com/services/hello"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+```
+
+</div>
+<div class="col-lg-4 order-first order-lg-last">
+  <div class="wsdl-diagram">
+    <div class="wsdl-diagram-title">Structure of the WSDL</div>
+    <div class="wsdl-diagram-part" data-wsdl-part="wsdl:types" tabindex="0">
+      <div class="wsdl-diagram-name">types</div>
+      <div class="wsdl-diagram-child" data-wsdl-part="wsdl:types/xs:schema" tabindex="0">schema</div>
+    </div>
+    <div class="wsdl-diagram-part" data-wsdl-part="wsdl:message" tabindex="0">
+      <div class="wsdl-diagram-name">message</div>
+      <div class="wsdl-diagram-child" data-wsdl-part="wsdl:message/wsdl:part" tabindex="0">part</div>
+    </div>
+    <div class="wsdl-diagram-part" data-wsdl-part="wsdl:portType" tabindex="0">
+      <div class="wsdl-diagram-name">portType</div>
+      <div class="wsdl-diagram-child" data-wsdl-part="wsdl:portType/wsdl:operation" tabindex="0">operation</div>
+    </div>
+    <div class="wsdl-diagram-part" data-wsdl-part="wsdl:binding" tabindex="0">
+      <div class="wsdl-diagram-name">binding</div>
+      <div class="wsdl-diagram-child" data-wsdl-part="wsdl:binding/wsdl:operation" tabindex="0">operation</div>
+    </div>
+    <div class="wsdl-diagram-part" data-wsdl-part="wsdl:service" tabindex="0">
+      <div class="wsdl-diagram-name">service</div>
+      <div class="wsdl-diagram-child" data-wsdl-part="wsdl:service/wsdl:port" tabindex="0">port</div>
+    </div>
+  </div>
+</div>
+</div>
+
 # Server application
 
 A Spring Boot server application serves the sample web services.

@@ -20,6 +20,8 @@ function registerWsdlExplorer() {
     wrapWsdlElements(code, diagramItem.dataset.wsdlPart);
   });
 
+  registerWsdlReferenceArrows(code);
+
   function setActivePart(part) {
     explorer.querySelectorAll("[data-wsdl-part]").forEach(function(element) {
       element.classList.toggle("wsdl-active", element.dataset.wsdlPart === part);
@@ -51,7 +53,7 @@ function wrapWsdlElements(code, part) {
 
   containers.forEach(function(container) {
     findElementLines(container.textContent, tag).forEach(function(lines) {
-      wrapLines(container, lines, part);
+      wrapLines(container, lines, "wsdl-section").dataset.wsdlPart = part;
     });
   });
 }
@@ -69,17 +71,166 @@ function findElementLines(text, tag) {
 }
 
 // Wraps whole lines, keeping the syntax highlighted spans intact.
-function wrapLines(container, lines, part) {
+function wrapLines(container, lines, className) {
   const range = document.createRange();
   range.setStart(...findTextPosition(container, lines.start));
   // Locate the newline itself: the offset after it can already be inside the next tag's span.
   const [endNode, endOffset] = findTextPosition(container, lines.lastNewline);
   range.setEnd(endNode, endOffset + 1);
 
-  const section = document.createElement("span");
-  section.className = "wsdl-section";
-  section.dataset.wsdlPart = part;
-  range.surroundContents(section);
+  const wrapper = document.createElement("span");
+  wrapper.className = className;
+  range.surroundContents(wrapper);
+  return wrapper;
+}
+
+const WSDL_REFERENCES = [
+  { from: "wsdl:part", attribute: "element", to: "xs:element" },
+  { from: "xs:element", attribute: "type", to: "xs:complexType" },
+  { from: "wsdl:input", attribute: "message", to: "wsdl:message" },
+  { from: "wsdl:output", attribute: "message", to: "wsdl:message" },
+  { from: "wsdl:binding", attribute: "type", to: "wsdl:portType" },
+  // These tags of a binding refer to the portType tags with the same name.
+  { from: "wsdl:operation", attribute: "name", to: "wsdl:operation" },
+  { from: "wsdl:input", attribute: "name", to: "wsdl:input" },
+  { from: "wsdl:output", attribute: "name", to: "wsdl:output" },
+  { from: "wsdl:port", attribute: "binding", to: "wsdl:binding" }
+];
+
+const WSDL_ARROW_LANE_WIDTH = 8;
+const WSDL_ARROW_CORNER_RADIUS = 4;
+const WSDL_ARROW_HEAD_SIZE = 5;
+
+function registerWsdlReferenceArrows(code) {
+  const text = code.textContent;
+  const references = findWsdlReferences(text);
+  const laneCount = assignArrowLanes(references);
+  const gutter = (laneCount + 1) * WSDL_ARROW_LANE_WIDTH;
+  code.style.paddingLeft = gutter + "px";
+
+  const codeHeight = code.getBoundingClientRect().height;
+  const lineHeight = codeHeight / text.trimEnd().split("\n").length;
+
+  function lineCenter(line) {
+    return (line + 0.5) * lineHeight;
+  }
+
+  const lineHighlight = document.createElement("span");
+  lineHighlight.className = "wsdl-line-highlight";
+  lineHighlight.style.left = gutter + "px";
+  lineHighlight.style.height = lineHeight + "px";
+  code.appendChild(lineHighlight);
+
+  const svg = createSvgElement("svg", {
+    "class": "wsdl-arrows",
+    "aria-hidden": "true",
+    width: gutter,
+    height: codeHeight
+  });
+
+  const arrows = references.map(function(reference) {
+    const x = gutter - (reference.lane + 1) * WSDL_ARROW_LANE_WIDTH;
+    const element = createArrow(x, gutter, lineCenter(reference.from), lineCenter(reference.to));
+    svg.appendChild(element);
+    return { element: element, source: reference.from };
+  });
+
+  code.appendChild(svg);
+
+  function setActiveLine(line) {
+    lineHighlight.classList.toggle("wsdl-line-highlight-active", line !== null);
+    lineHighlight.style.top = line * lineHeight + "px";
+
+    arrows.forEach(function(arrow) {
+      const active = arrow.source === line;
+      arrow.element.classList.toggle("wsdl-arrow-active", active);
+      if (active) {
+        svg.appendChild(arrow.element);
+      }
+    });
+  }
+
+  code.addEventListener("mousemove", function(event) {
+    const top = code.getBoundingClientRect().top;
+    setActiveLine(Math.floor((event.clientY - top) / lineHeight));
+  });
+  code.addEventListener("mouseleave", function() {
+    setActiveLine(null);
+  });
+}
+
+function findWsdlReferences(text) {
+  const lines = text.split("\n");
+  const references = [];
+
+  lines.forEach(function(line, from) {
+    WSDL_REFERENCES.forEach(function(rule) {
+      const pattern = "<" + rule.from + "\\s.*\\b" + rule.attribute + '="(?:tns:)?([^"]+)"';
+      const match = line.match(new RegExp(pattern));
+      if (!match) {
+        return;
+      }
+
+      const definition = new RegExp("<" + rule.to + '\\s.*\\bname="' + match[1] + '"');
+      const to = lines.findIndex(function(candidate) {
+        return definition.test(candidate);
+      });
+      if (to >= 0 && to < from) {
+        references.push({ from: from, to: to });
+      }
+    });
+  });
+
+  return references;
+}
+
+// Every reference points upwards. Shorter arrows get the lanes closer to the code,
+// and arrows sharing a lane must not touch. Returns the number of lanes.
+function assignArrowLanes(references) {
+  const lanes = [];
+  const byLength = references.slice().sort(function(a, b) {
+    return (a.from - a.to) - (b.from - b.to);
+  });
+
+  byLength.forEach(function(reference) {
+    let lane = lanes.findIndex(function(taken) {
+      return taken.every(function(other) {
+        return reference.from < other.to || reference.to > other.from;
+      });
+    });
+    if (lane < 0) {
+      lane = lanes.push([]) - 1;
+    }
+    lanes[lane].push(reference);
+    reference.lane = lane;
+  });
+
+  return lanes.length;
+}
+
+function createArrow(x, gutter, fromY, toY) {
+  const radius = WSDL_ARROW_CORNER_RADIUS;
+  const head = WSDL_ARROW_HEAD_SIZE;
+
+  const arrow = createSvgElement("g", { "class": "wsdl-arrow" });
+  arrow.appendChild(createSvgElement("path", {
+    "class": "wsdl-arrow-line",
+    d: `M ${gutter} ${fromY} H ${x + radius} Q ${x} ${fromY} ${x} ${fromY - radius}`
+      + ` V ${toY + radius} Q ${x} ${toY} ${x + radius} ${toY} H ${gutter - head}`
+  }));
+  arrow.appendChild(createSvgElement("path", {
+    "class": "wsdl-arrow-head",
+    d: `M ${gutter} ${toY} L ${gutter - head} ${toY - head / 2 - 1} V ${toY + head / 2 + 1} Z`
+  }));
+  return arrow;
+}
+
+function createSvgElement(name, attributes) {
+  const element = document.createElementNS("http://www.w3.org/2000/svg", name);
+  Object.keys(attributes).forEach(function(attribute) {
+    element.setAttribute(attribute, attributes[attribute]);
+  });
+  return element;
 }
 
 function findTextPosition(root, offset) {

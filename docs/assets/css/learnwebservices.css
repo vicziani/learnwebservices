@@ -241,9 +241,52 @@ footer {
   vertical-align: middle;
 }
 
+.wsdl-source pre.highlight {
+  padding-left: 5px;
+}
+
 .wsdl-source code {
   display: inline-block;
+  position: relative;
   min-width: 100%;
+}
+
+.wsdl-line-highlight {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--lws-color-glow);
+  opacity: .35;
+  pointer-events: none;
+}
+
+.wsdl-line-highlight-active {
+  display: block;
+}
+
+.wsdl-arrows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.wsdl-arrow {
+  color: var(--lws-color-glow);
+}
+
+.wsdl-arrow-active {
+  color: var(--lws-color-primary);
+}
+
+.wsdl-arrow-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.wsdl-arrow-head {
+  fill: currentColor;
 }
 
 .wsdl-section {
