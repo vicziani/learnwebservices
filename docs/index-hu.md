@@ -129,6 +129,9 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 
 ### WSDL {#wsdl}
 
+<div class="row wsdl-explorer">
+<div class="col-lg-8 wsdl-source" markdown="1">
+
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions 
@@ -193,6 +196,34 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
   </wsdl:service>
 </wsdl:definitions>
 ```
+
+</div>
+<div class="col-lg-4 order-first order-lg-last">
+  <div class="wsdl-diagram">
+    <div class="wsdl-diagram-title">A WSDL felépítése</div>
+    <div class="wsdl-diagram-part" data-wsdl-part="wsdl:types" tabindex="0">
+      <div class="wsdl-diagram-name">types</div>
+      <div class="wsdl-diagram-child" data-wsdl-part="wsdl:types/xs:schema" tabindex="0">schema</div>
+    </div>
+    <div class="wsdl-diagram-part" data-wsdl-part="wsdl:message" tabindex="0">
+      <div class="wsdl-diagram-name">message</div>
+      <div class="wsdl-diagram-child" data-wsdl-part="wsdl:message/wsdl:part" tabindex="0">part</div>
+    </div>
+    <div class="wsdl-diagram-part" data-wsdl-part="wsdl:portType" tabindex="0">
+      <div class="wsdl-diagram-name">portType</div>
+      <div class="wsdl-diagram-child" data-wsdl-part="wsdl:portType/wsdl:operation" tabindex="0">operation</div>
+    </div>
+    <div class="wsdl-diagram-part" data-wsdl-part="wsdl:binding" tabindex="0">
+      <div class="wsdl-diagram-name">binding</div>
+      <div class="wsdl-diagram-child" data-wsdl-part="wsdl:binding/wsdl:operation" tabindex="0">operation</div>
+    </div>
+    <div class="wsdl-diagram-part" data-wsdl-part="wsdl:service" tabindex="0">
+      <div class="wsdl-diagram-name">service</div>
+      <div class="wsdl-diagram-child" data-wsdl-part="wsdl:service/wsdl:port" tabindex="0">port</div>
+    </div>
+  </div>
+</div>
+</div>
 
 # Szerver alkalmazás {#szerver-alkalmazas}
 

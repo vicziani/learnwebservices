@@ -241,6 +241,83 @@ footer {
   vertical-align: middle;
 }
 
+.wsdl-source code {
+  display: inline-block;
+  min-width: 100%;
+}
+
+.wsdl-section {
+  display: block;
+}
+
+/* Centered on the edge, so the frames of adjacent sections overlap into a single line. */
+.wsdl-section.wsdl-active {
+  outline: 2px solid var(--lws-color-primary);
+  outline-offset: -1px;
+}
+
+.wsdl-diagram {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--lws-color-background-highlight);
+}
+
+@media(min-width: 992px) {
+  .wsdl-diagram {
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+.wsdl-diagram-title {
+  font-weight: 700;
+  margin-bottom: .75rem;
+}
+
+.wsdl-diagram-part {
+  padding: .5rem .75rem;
+  margin-top: .5rem;
+  background-color: var(--lws-color-background);
+  border: 1px solid var(--lws-color-primary);
+  border-radius: 2px;
+  cursor: default;
+}
+
+.wsdl-diagram-part:focus-visible,
+.wsdl-diagram-child:focus-visible {
+  outline: none;
+}
+
+.wsdl-diagram-part.wsdl-active,
+.wsdl-diagram-child.wsdl-active {
+  box-shadow: 0 0 0 1px var(--lws-color-primary);
+  background-color: var(--lws-color-glow);
+}
+
+.wsdl-diagram-name {
+  font-family: var(--bs-font-monospace);
+  font-weight: 700;
+  color: var(--lws-color-primary);
+}
+
+.wsdl-diagram-part.wsdl-active .wsdl-diagram-name {
+  color: var(--lws-color-hover);
+}
+
+.wsdl-diagram-child {
+  font-family: var(--bs-font-monospace);
+  font-size: .875rem;
+  padding: .125rem .5rem;
+  margin-top: .25rem;
+  border: 1px dashed var(--lws-color-primary);
+  border-radius: 2px;
+  cursor: default;
+}
+
+.wsdl-diagram-child.wsdl-active {
+  border-style: solid;
+}
+
 .demo-image {
   text-align: center;
   padding: 20px;

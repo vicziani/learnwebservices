@@ -1,9 +1,100 @@
 window.onload = function() {
   registerHeadingAnchors();
+  registerWsdlExplorer();
   registerCopy();
   registerOnSubmit();
   checkServerStatus();
   registerTabAnchorSync();
+}
+
+function registerWsdlExplorer() {
+  const explorer = document.querySelector(".wsdl-explorer");
+  if (!explorer) {
+    return;
+  }
+
+  const code = explorer.querySelector(".wsdl-source code");
+
+  // Parents precede their children in the diagram, so the parent sections already exist.
+  explorer.querySelectorAll(".wsdl-diagram [data-wsdl-part]").forEach(function(diagramItem) {
+    wrapWsdlElements(code, diagramItem.dataset.wsdlPart);
+  });
+
+  function setActivePart(part) {
+    explorer.querySelectorAll("[data-wsdl-part]").forEach(function(element) {
+      element.classList.toggle("wsdl-active", element.dataset.wsdlPart === part);
+    });
+  }
+
+  function activateClosestPart(event) {
+    const element = event.target.closest("[data-wsdl-part]");
+    setActivePart(element ? element.dataset.wsdlPart : null);
+  }
+
+  function clearActivePart() {
+    setActivePart(null);
+  }
+
+  explorer.addEventListener("mouseover", activateClosestPart);
+  explorer.addEventListener("mouseleave", clearActivePart);
+  explorer.addEventListener("focusin", activateClosestPart);
+  explorer.addEventListener("focusout", clearActivePart);
+}
+
+// A part is a tag name, or "parent/child" for a tag inside the sections of its parent.
+function wrapWsdlElements(code, part) {
+  const separator = part.lastIndexOf("/");
+  const tag = part.slice(separator + 1);
+  const containers = separator < 0
+    ? [code]
+    : code.querySelectorAll('.wsdl-section[data-wsdl-part="' + part.slice(0, separator) + '"]');
+
+  containers.forEach(function(container) {
+    findElementLines(container.textContent, tag).forEach(function(lines) {
+      wrapLines(container, lines, part);
+    });
+  });
+}
+
+function findElementLines(text, tag) {
+  const closingTag = "</" + tag + ">";
+  const matches = text.matchAll(new RegExp("<" + tag + "[\\s>]", "g"));
+
+  return Array.from(matches, function(match) {
+    return {
+      start: text.lastIndexOf("\n", match.index) + 1,
+      lastNewline: text.indexOf("\n", text.indexOf(closingTag, match.index))
+    };
+  });
+}
+
+// Wraps whole lines, keeping the syntax highlighted spans intact.
+function wrapLines(container, lines, part) {
+  const range = document.createRange();
+  range.setStart(...findTextPosition(container, lines.start));
+  // Locate the newline itself: the offset after it can already be inside the next tag's span.
+  const [endNode, endOffset] = findTextPosition(container, lines.lastNewline);
+  range.setEnd(endNode, endOffset + 1);
+
+  const section = document.createElement("span");
+  section.className = "wsdl-section";
+  section.dataset.wsdlPart = part;
+  range.surroundContents(section);
+}
+
+function findTextPosition(root, offset) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  let remaining = offset;
+
+  while (walker.nextNode()) {
+    const length = walker.currentNode.length;
+    if (remaining < length) {
+      return [walker.currentNode, remaining];
+    }
+    remaining -= length;
+  }
+
+  throw new Error("Offset out of range: " + offset);
 }
 
 function registerHeadingAnchors() {
