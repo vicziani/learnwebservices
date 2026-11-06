@@ -34,8 +34,7 @@ webszolgáltatás:
   </div>
 </div>
 
-(A WSDL dokumentum egy XML dokumentum, melyet a Firefox nem jelenít meg, csak a _View Page Source_ menüpontra kattintva. A WSDL állomány
-olvasható formában [itt található](wsdl-hu.html).
+(A WSDL dokumentum egy XML dokumentum, melyet a Firefox nem jelenít meg, csak a _View Page Source_ menüpontra kattintva.)
 
 <div class="alert alert-danger" role="alert">
     <h3 class="alert-heading">Figyelem!</h3>
@@ -47,13 +46,13 @@ olvasható formában [itt található](wsdl-hu.html).
 ## Az oldal célja {#az-oldal-celja}
 
 Ez az oldal azért jött létre, hogy egy ingyenes, publikus példa SOAP
-webszolgáltatásokat biztosítson tanuláshoz, oktatáshoz,
+webszolgáltatást biztosítson tanuláshoz, oktatáshoz,
 kísérletezéshez. Az itt található webszolgáltatás kitűnő a
-technológia bemutatásához és megismeréséhez, különböző eszközök és
+technológia bemutatásához és megismeréséhez, különböző eszközök, könyvtárak és
 keretrendszerek teszteléséhez. Ezt a webszolgáltatást lehet használni
 dokumentációkban, példákban, tutoriálokban, videókban, hisz célom, hogy
 hosszú távon megmaradjon.
-Az oldalon ezen kívül megtalálhatóak
+Az oldalon ezen kívül megtalálhatóak egy Java nyelvű szerver és
 különböző programozási nyelven implementált kliens programok
 (forráskóddal együtt), melyek jó kiindulási alapot biztosíthatnak a
 technológia használatba vételéhez. Gyakran frissítem ezeket, ahogy kijönnek
@@ -72,19 +71,19 @@ webszolgáltatások az OASIS és W3C szabványügyi szervezetek által
 karbantartott szabványokon nyugszanak. WS-I szervezet több profilt
 fejlesztett ki a különböző implementációk együttműködésének segítségére.
 A SOAP egy XML alapú üzenetformátum, mely egy SOAP borítékot definiál,
-melyben az üzenetek utaznak. A WSDL szintén egy XML alapú interfészleíró
-nyelv. A SOAP webszolgáltatásokat a modernebb, egyszerűbben használható
+melyben az üzenetek utaznak. A webszolgáltatást egy WSDL dokumentum írja le, 
+mely szintén XML alapú. A SOAP webszolgáltatásokat a modernebb, egyszerűbben használható
 RESTful webszolgáltatások kezdik kiszorítani. Azonban még történeti
 jelleggel sok helyen találhatóak SOAP webszolgáltatások, melyekhez
-modern programokból is csatlakozni kell.
+modern alkalmazásokból is csatlakozni kell.
 
 # Részletek {#reszletek}
 
-## Egy példa webszolgáltatás {#egy-pelda-webszolgaltatas}
+## Kérés és válasz {#keres-es-valasz}
 
 A webszolgáltatás egy nevet vár, és egy üdvözlőszöveget ad vissza.
 
-A címre a következő formátumban kell posztolni egy XML dokumentumot (a WSDL-ben leírtaknak megfelelően).
+A címre a következő formátumban kell posztolni egy XML dokumentumot.
 A `Name` tag értéke tetszőlegesen módosítható.
 
 ```xml
@@ -111,7 +110,7 @@ A név alapján változó üzenetet a `Message` tag tartalmazza.
 </soap:Envelope>
 ```
 
-### Hibakezelés {#hibakezeles}
+## Hibakezelés {#hibakezeles}
 
 Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üzenetet küldünk be, ún. SOAP faultot kapunk.
 
@@ -127,7 +126,12 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 </soap:Envelope>
 ```
 
-### WSDL {#wsdl}
+## WSDL {#wsdl}
+
+A WSDL dokumentum írja le a webszolgáltatást. Géppel feldolgozható formában
+rögzíti, hogy milyen protokollon, címen elérhető a webszolgáltatás, milyen
+üzeneteket vár és ad vissza. A kérés és válasz üzenetnek meg kell felelnie
+a WSDL-ben leírtaknak.
 
 <div class="row wsdl-explorer">
 <div class="col-lg-8 wsdl-source" markdown="1">
@@ -714,7 +718,7 @@ echo $client
 </div>
 </div>
 
-## Közreműködők {#kozremukodok}
+# Közreműködők {#kozremukodok}
 
 - Kuti Rita
 - Mauro Chojrin ([mchojrin](https://github.com/mchojrin))

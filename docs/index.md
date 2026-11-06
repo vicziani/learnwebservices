@@ -33,7 +33,7 @@ If you want a simple, online web service, here is a WSDL for it:
   </div>
 </div>
 
-Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document. The WSDL document is [available here](wsdl.html) in readable format.
+Firefox browser does not show us the WSDL document, just a blank page, so it is better to use the _View Page Source_ menu to view the document.
 
 <div class="alert alert-danger" role="alert">
     <h3 class="alert-heading">Warning!</h3>
@@ -44,9 +44,9 @@ Firefox browser does not show us the WSDL document, just a blank page, so it is 
 
 ## Purpose of this site
 
-Creating this site has two purposes. One is to provide a free, public, SOAP web service examples for learning, prototyping, teaching, testing, demonstrating tools, libraries or technologies. You may use these web service in blog posts, tutorials, videos. I would like to operate this website for reference in the long run.
+Creating this site has two purposes. One is to provide a free, public example SOAP web service for learning, prototyping, teaching, testing, demonstrating tools, libraries or technologies. You may use this web service in blog posts, tutorials, videos. I would like to operate this website for reference in the long run.
 
-The second purpose is to present client applications examples in different programming languages, using with different libraries. You can find the source code of the examples on GitHub what I am going to update regularly for the latest versions.
+The second purpose is to present a Java server and example client applications in different programming languages, using different libraries. You can find the source code of the examples on GitHub what I am going to update regularly for the latest versions.
 
 If you have a question, [open an issue](https://github.com/vicziani/learnwebservices/issues).
 
@@ -56,15 +56,17 @@ SOAP web services may be considered as best practices to exchange data between d
 
 SOAP web services are based on OASIS and W3C standards, and the WS-I organization provides some useful profiles to increase interoperability.
 
-SOAP is a messaging protocol specifying an XML-based message format. This is called the SOAP envelope, encapsulating the message content. The WSDL format is based on XML as well, and specifies the interface - how to call the service, and what are the input and output formats.
+SOAP is a messaging protocol specifying an XML-based message format. This is called the SOAP envelope, encapsulating the message content. The web service is described by a WSDL document, which is based on XML as well.
 
 Sometime the SOAP web services are considered legacy solutions today, because the RESTful web services are becoming increasingly popular. Also this is true, but the SOAP web services will be along for a long time.
 
 # Details
 
+## Request and response
+
 The web service accepts a name, and gives back a welcome message. (The service accepts only POST HTTP requests so you may not use it in a browser directly.)
 
-The WSDL specifies the format of the request message. The content of the `Name` tag may be freely rewritten.
+Post an XML document to the service address in the following format. The content of the `Name` tag may be freely rewritten.
 
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
@@ -90,7 +92,7 @@ response message based on the request.
 </soap:Envelope>
 ```
 
-### Error handling
+## Error handling
 
 In case a web service fails to process the SOAP message, it returns a SOAP fault.
 
@@ -106,7 +108,11 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
 </soap:Envelope>
 ```
 
-### WSDL
+## WSDL
+
+The WSDL document describes the web service. In a machine-readable form, it specifies the protocol and address
+of the web service, and the messages it accepts and returns. The request and response messages must conform
+to the WSDL.
 
 <div class="row wsdl-explorer">
 <div class="col-lg-8 wsdl-source" markdown="1">
@@ -691,7 +697,7 @@ echo $client
 </div>
 </div>
 
-## Contributors
+# Contributors
 
 - Rita Kuti
 - Mauro Chojrin ([mchojrin](https://github.com/mchojrin))
