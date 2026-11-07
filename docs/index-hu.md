@@ -452,7 +452,7 @@ A .http fájl egy egyszerű szöveges fájl, melyben egy vagy több HTTP kérés
 
 ```
 ### Sample request
-POST http://localhost:8080/services/hello
+POST https://apps.learnwebservices.com/services/hello
 
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
    <soapenv:Header/>

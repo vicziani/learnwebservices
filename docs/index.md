@@ -432,7 +432,7 @@ A .http file is a plain text file that contains one or more HTTP requests and ca
 
 ```
 ### Sample request
-POST http://localhost:8080/services/hello
+POST https://apps.learnwebservices.com/services/hello
 
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
    <soapenv:Header/>
