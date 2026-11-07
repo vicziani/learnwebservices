@@ -494,3 +494,28 @@ footer {
 .quiz-result {
   font-weight: 600;
 }
+
+.playground-request,
+.playground-request:focus {
+  color: var(--bs-body-color);
+  font-family: var(--bs-font-monospace);
+  font-size: .875em;
+  resize: none;
+}
+
+/* The request and the response have the same height, the content scrolls inside. */
+.playground-request,
+.playground-response {
+  height: 20rem;
+}
+
+.playground-response {
+  overflow: auto;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+}
+
+.playground-placeholder {
+  color: var(--bs-secondary-color);
+  white-space: normal;
+}

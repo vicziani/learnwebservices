@@ -7,6 +7,7 @@
 - Enhance SEO and accessibility
 - Add llms.txt and JSON-LD structured data
 - Add knowledge check quiz
+- Playground
 
 ## [4.1.0] - 2026-08-30
 

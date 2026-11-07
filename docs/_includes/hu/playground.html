@@ -1,0 +1,36 @@
+<div class="playground" id="playground"
+  data-network-error="A webszolgáltatás nem elérhető!"
+  data-empty-response="(üres válasz)">
+  <div class="row">
+    <div class="col-lg-6 mb-3">
+      <label for="playground-request" class="form-label fw-bold">Kérés</label>
+      <textarea id="playground-request" class="form-control playground-request" rows="12"
+        spellcheck="false" autocapitalize="off" autocomplete="off">
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;HelloRequest xmlns="http://learnwebservices.com/services/hello"&gt;
+         &lt;Name&gt;John Doe&lt;/Name&gt;
+      &lt;/HelloRequest&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</textarea>
+      <div class="mt-2 d-flex flex-wrap gap-2">
+        <button type="button" class="btn btn-primary playground-send">
+          <i class="fas fa-paper-plane"></i> Küldés
+        </button>
+        <button type="button" class="btn btn-outline-secondary playground-reset">
+          <i class="fas fa-undo"></i> Alapértelmezett kérés visszaállítása
+        </button>
+      </div>
+    </div>
+    <div class="col-lg-6 mb-3">
+      <div class="form-label d-flex align-items-center gap-2">
+        <span class="fw-bold">Válasz</span>
+        <span class="playground-status badge d-none"></span>
+      </div>
+      <div class="highlight">
+        <pre class="highlight playground-response mb-0" aria-live="polite"><code class="playground-placeholder">A válasz a Küldés gomb megnyomása után jelenik meg itt.</code></pre>
+      </div>
+    </div>
+  </div>
+</div>

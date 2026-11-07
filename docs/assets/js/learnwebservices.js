@@ -1,9 +1,9 @@
 window.onload = function() {
   registerHeadingAnchors();
   registerWsdlExplorer();
+  registerPlayground();
   registerQuiz();
   registerCopy();
-  registerOnSubmit();
   checkServerStatus();
   registerTabAnchorSync();
   registerNavbarCollapse();
@@ -392,6 +392,147 @@ function activateTabFromHash(smoothScroll) {
   }
 }
 
+function registerPlayground() {
+  const playground = document.getElementById("playground");
+  if (!playground) {
+    return;
+  }
+
+  const request = playground.querySelector(".playground-request");
+  const send = playground.querySelector(".playground-send");
+  const reset = playground.querySelector(".playground-reset");
+  const response = playground.querySelector(".playground-response");
+  const status = playground.querySelector(".playground-status");
+
+  function showStatus(text, success) {
+    status.textContent = text;
+    status.classList.remove("d-none", "text-bg-success", "text-bg-danger");
+    status.classList.add(success ? "text-bg-success" : "text-bg-danger");
+  }
+
+  function showResponse(html) {
+    const code = document.createElement("code");
+    code.innerHTML = html;
+    response.replaceChildren(code);
+  }
+
+  reset.addEventListener("click", function() {
+    request.value = request.defaultValue;
+    request.focus();
+  });
+
+  send.addEventListener("click", function() {
+    send.disabled = true;
+    const start = performance.now();
+
+    // No Content-Type header, so the browser does not need a CORS preflight request.
+    fetch(apiUrl + "/services/hello", {
+      method: "POST",
+      body: request.value
+    })
+      .then(function(httpResponse) {
+        return httpResponse.text().then(function(text) {
+          const elapsed = Math.round(performance.now() - start);
+          showStatus("HTTP " + httpResponse.status + " · " + elapsed + " ms", httpResponse.ok);
+          showResponse(text.trim() ? highlightXml(text) : escapeHtml(playground.dataset.emptyResponse));
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+        showStatus(playground.dataset.networkError, false);
+        response.replaceChildren();
+      })
+      .finally(function() {
+        send.disabled = false;
+      });
+  });
+}
+
+// Returns the XML indented and highlighted with the classes of the Rouge syntax highlighter.
+// Text which is not well-formed XML is returned as is, only escaped.
+function highlightXml(text) {
+  const xmlDoc = new DOMParser().parseFromString(text, "application/xml");
+  if (xmlDoc.getElementsByTagName("parsererror").length) {
+    return escapeHtml(text);
+  }
+
+  const declaration = text.trim().match(/^<\?xml[^>]*\?>/);
+  const lines = declaration ? ['<span class="cp">' + escapeHtml(declaration[0]) + "</span>"] : [];
+  xmlDoc.childNodes.forEach(function(node) {
+    formatXmlNode(node, "", lines);
+  });
+  return lines.join("\n");
+}
+
+const XML_INDENT = "   ";
+
+function formatXmlNode(node, indent, lines) {
+  switch (node.nodeType) {
+    case Node.ELEMENT_NODE:
+      formatXmlElement(node, indent, lines);
+      break;
+    case Node.TEXT_NODE:
+    case Node.CDATA_SECTION_NODE:
+      if (node.textContent.trim()) {
+        lines.push(indent + formatXmlText(node));
+      }
+      break;
+    case Node.COMMENT_NODE:
+      lines.push(indent + '<span class="c">' + escapeHtml("<!--" + node.data + "-->") + "</span>");
+      break;
+    case Node.PROCESSING_INSTRUCTION_NODE:
+      lines.push(indent + '<span class="cp">' + escapeHtml("<?" + node.target + " " + node.data + "?>") + "</span>");
+      break;
+  }
+}
+
+function formatXmlElement(element, indent, lines) {
+  const attributes = Array.from(element.attributes, function(attribute) {
+    return ' <span class="na">' + escapeHtml(attribute.name) + "</span>="
+      + '<span class="s">"' + escapeHtml(attribute.value) + '"</span>';
+  }).join("");
+  const openTag = '<span class="nt">&lt;' + escapeHtml(element.tagName) + "</span>" + attributes;
+  const closeTag = '<span class="nt">&lt;/' + escapeHtml(element.tagName) + "&gt;</span>";
+
+  const children = Array.from(element.childNodes).filter(function(child) {
+    return child.nodeType !== Node.TEXT_NODE || child.textContent.trim();
+  });
+
+  if (!children.length) {
+    lines.push(indent + openTag + '<span class="nt">/&gt;</span>');
+    return;
+  }
+
+  const textOnly = children.every(function(child) {
+    return child.nodeType === Node.TEXT_NODE || child.nodeType === Node.CDATA_SECTION_NODE;
+  });
+  if (textOnly) {
+    lines.push(indent + openTag + '<span class="nt">&gt;</span>'
+      + Array.from(element.childNodes, formatXmlText).join("") + closeTag);
+    return;
+  }
+
+  lines.push(indent + openTag + '<span class="nt">&gt;</span>');
+  children.forEach(function(child) {
+    formatXmlNode(child, indent + XML_INDENT, lines);
+  });
+  lines.push(indent + closeTag);
+}
+
+function formatXmlText(node) {
+  if (node.nodeType === Node.CDATA_SECTION_NODE) {
+    return '<span class="cp">' + escapeHtml("<![CDATA[" + node.data + "]]>") + "</span>";
+  }
+  // Shows the characters which must be escaped in XML text the way they appear in the source.
+  return escapeHtml(node.textContent.trim().replace(/&/g, "&amp;").replace(/</g, "&lt;"));
+}
+
+function escapeHtml(text) {
+  return text.replace(/[<>&"]/g, function(c) {
+    return { "<": "&lt;", ">": "&gt;", "&": "&amp;", '"': "&quot;" }[c];
+  });
+}
+
 function registerQuiz() {
   const form = document.getElementById("quiz-form");
   if (!form) {
@@ -489,15 +630,6 @@ function registerCopy() {
   });
 }
 
-function registerOnSubmit() {
-  const form = document.getElementById("hello-form");
-  if (!form) {
-    return;
-  }
-
-  form.onsubmit = submitHandler;
-}
-
 function checkServerStatus() {
   if (!document.getElementById("health-check-badge")) {
     return;
@@ -520,27 +652,6 @@ function checkServerStatus() {
     });
 }
 
-function submitHandler() {
-    callWebservice(readName(), function(message) {
-      hideErrorMessage();
-      writeMessage(message);
-    },
-    function(error) {
-      showErrorMessage();
-    });
-    return false;
-}
-
-function showErrorMessage() {
-  const div = document.getElementById("webservice-error-div");
-  div.classList.remove("d-none");
-}
-
-function hideErrorMessage() {
-  const div = document.getElementById("webservice-error-div");
-  div.classList.add("d-none");
-}
-
 function setStatus(text, cssClass) {
   setStatusForElement("health-check-badge", text, cssClass);
 }
@@ -550,60 +661,4 @@ function setStatusForElement(elementId, text, ccsClass) {
   badge.innerHTML = text;
   badge.classList.remove("d-none");
   badge.classList.add(ccsClass);
-}
-
-function readName() {
-    return escapeXml(document.getElementById("hello-name-input").value);
-}
-
-function writeMessage(message) {
-    document.getElementById("hello-message-input").value = message;
-}
-
-function callWebservice(name, onSuccess, onError) {
-  const url = apiUrl + "/services/hello";
-  const request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-     <soapenv:Header/>
-     <soapenv:Body>
-        <HelloRequest xmlns="http://learnwebservices.com/services/hello">
-          <Name>${name}</Name>
-        </HelloRequest>
-     </soapenv:Body>
-  </soapenv:Envelope>`;
-
-  const fetchData = {
-     method: "POST",
-     body: request
-  };
-
-  fetch(url, fetchData)
-    .then(function(response) {
-        if (response.status != 200) {
-          throw new Error(`Status: ${response.status}`);
-        }
-        return response.text();
-    })
-    .then(function(xml) {
-        const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
-        const message = xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent;
-        onSuccess(message);
-    })
-    .catch(function(error) {
-      console.log(error);
-      onError(error);
-    });
-
-  return false;
-}
-
-function escapeXml(unsafe) {
-  return unsafe.replace(/[<>&'"]/g, function (c) {
-      switch (c) {
-          case "<": return "&lt;";
-          case ">": return "&gt;";
-          case "&": return "&amp;";
-          case "'": return "&apos;";
-          case '"': return "&quot;";
-      }
-  });
 }

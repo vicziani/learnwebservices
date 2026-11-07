@@ -112,6 +112,14 @@ In case a web service fails to process the SOAP message, it returns a SOAP fault
 </soap:Envelope>
 ```
 
+## Playground
+
+Try the web service right here in your browser. Edit the request on the left,
+then press the _Send_ button to see the response of the web service on the right.
+Also try what happens if you send an invalid request!
+
+{% include playground.html %}
+
 ## WSDL
 
 The WSDL document describes the web service. In a machine-readable form, it specifies the protocol and address
@@ -566,25 +574,6 @@ fetch(url, fetchData)
     console.log("Error calling webservice: " + error);
   });
 ```
-
-You can try this online by pressing the _Call the web service!_ button below.
-
-<div id="webservice-error-div" class="alert alert-danger d-none" role="alert">
-  A web service is not available!
-</div>
-<form id="hello-form">
- <div class="row">
-    <div class="col-sm mb-3">
-      <input id="hello-name-input" type="text" placeholder="Your name" class="form-control" />
-    </div>
-    <div class="col-sm mb-3">
-      <input id="hello-message-input" type="text" disabled="disabled" readonly="readonly" class="form-control" />
-    </div>    
-    <div class="col-sm mb-3">
-    <button type="submit" class="btn btn-primary text-nowrap">Call the web service!</button>
-  </div>    
-</div>
-</form>
 
 <a class="github-icon" href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-vanillajs-client" title="Source code on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-vanillajs-client">Source code</a>

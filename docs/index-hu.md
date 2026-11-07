@@ -132,6 +132,14 @@ Amennyiben hiba történik a webszolgáltatás hívása közben, pl. hibás üze
 </soap:Envelope>
 ```
 
+## Játszótér {#jatszoter}
+
+Itt közvetlenül a böngészőből kipróbálhatod a webszolgáltatást. A bal oldalon
+módosíthatod a kérést, majd a _Küldés_ gombra kattintva a jobb oldalon megjelenik
+a webszolgáltatás válasza. Próbáld ki azt is, mi történik, ha hibás kérést küldesz!
+
+{% include hu/playground.html %}
+
 ## WSDL {#wsdl}
 
 A WSDL dokumentum írja le a webszolgáltatást. Géppel feldolgozható formában
@@ -591,25 +599,6 @@ fetch(url, fetchData)
     console.log("Error calling webservice: " + error);
   });
 ```
-
-Az alábbi űrlapon a gombra kattintva megtörténik a webszolgáltatás hívás.
-
-<div id="webservice-error-div" class="alert alert-danger d-none" role="alert">
-  A webszolgáltatás nem elérhető!
-</div>
-<form id="hello-form">
- <div class="row">
-    <div class="col-sm mb-3">
-      <input id="hello-name-input" type="text" placeholder="Írd be a neved!" class="form-control" />
-    </div>
-    <div class="col-sm mb-3">
-      <input id="hello-message-input" type="text" disabled="disabled" readonly="readonly" class="form-control" />
-    </div>    
-    <div class="col-sm mb-3">
-    <button type="submit" class="btn btn-primary text-nowrap">Hívd meg a webszolgáltatást!</button>
-  </div>    
-</div>
-</form>
 
 <a class="github-icon" href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-vanillajs-client" title="Forráskód a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-vanillajs-client" >Forráskód</a>
