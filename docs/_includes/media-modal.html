@@ -1,0 +1,37 @@
+{% comment %}
+A preview image that opens a modal with an animation or a video.
+
+Parameters:
+  id: id of the modal
+  preview: path of the preview image
+  preview_alt: alternative text of the preview image
+  preview_title: tooltip of the preview image
+  image: path of the image in the modal, with alt as its alternative text
+  video: URL of the video in the modal, used instead of the image
+  close_label: accessible name of the close button, by default "Close"
+{% endcomment -%}
+<div class="demo-image">
+    <img src="{{ include.preview }}" alt="{{ include.preview_alt }}" title="{{ include.preview_title }}"
+      class="img-fluid"
+      data-bs-toggle="modal"
+      data-bs-target="#{{ include.id }}"/>
+</div>
+
+<div class="modal fade" id="{{ include.id }}" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ include.close_label | default: 'Close' }}"></button>
+      </div>
+      <div class="modal-body p-0">
+        {%- if include.video %}
+        <video class="modal-video" controls muted>
+          <source src="{{ include.video }}" type="video/mp4">
+        </video>
+        {%- else %}
+        <img src="{{ include.image }}" alt="{{ include.alt }}" class="img-fluid rounded">
+        {%- endif %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -299,25 +299,13 @@ SoapUI will process the WSDL file, and generate an example request. On the left 
 
 Click on the picture to view the full animation that shows how to create a request with SoapUI!
 
-<div class="demo-image">
-    <img src="images/soapui.png" alt="SoapUI window with the SayHello request on the left and the HelloResponse on the right" title="Call web service in SoapUI" 
-      class="img-fluid" 
-      data-bs-toggle="modal"
-      data-bs-target="#soapui-modal"/>
-</div>
-
-<div class="modal fade" id="soapui-modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-0">
-        <img src="images/soapui-anim.gif" alt="Animation showing how to create and send a request in SoapUI" class="img-fluid rounded">
-      </div>
-    </div>
-  </div>
-</div>
+{% include media-modal.html
+  id="soapui-modal"
+  preview="images/soapui.png"
+  preview_alt="SoapUI window with the SayHello request on the left and the HelloResponse on the right"
+  preview_title="Call web service in SoapUI"
+  image="images/soapui-anim.gif"
+  alt="Animation showing how to create and send a request in SoapUI" %}
 
 <a class="github-icon" href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-soapui-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-soapui-project">SoapUI project file</a>
@@ -327,27 +315,12 @@ Click on the picture to view the full animation that shows how to create a reque
 
 Click on the picture to view the full animation that shows how to create a Postman project!
 
-<div class="demo-image">
-    <img src="images/postman.png" alt="Postman window with the body of the SayHello POST request and the HelloResponse with status 200 OK" title="Create Postman request" 
-      class="img-fluid" 
-      data-bs-toggle="modal"
-      data-bs-target="#postman-modal"/>
-</div>
-
-<div class="modal fade" id="postman-modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-0">
-        <video class="modal-video" controls muted>
-          <source src="https://video.learnwebservices.com/postman.mp4" type="video/mp4">          
-        </video>
-      </div>
-    </div>
-  </div>
-</div>
+{% include media-modal.html
+  id="postman-modal"
+  preview="images/postman.png"
+  preview_alt="Postman window with the body of the SayHello POST request and the HelloResponse with status 200 OK"
+  preview_title="Create Postman request"
+  video="https://video.learnwebservices.com/postman.mp4" %}
 
 <a class="github-icon" href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-postman-collection" title="Collection file on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-postman-collection">Postman Collection file</a>
@@ -359,25 +332,13 @@ Apache JMeter may be used to test performance of SOAP web services.
 
 Click on the picture to view the full animation that shows how to create a JMeter project.
 
-<div class="demo-image">
-    <img src="images/jmeter.png" alt="JMeter test plan with an HTTP Request element that posts a SOAP envelope to /services/hello" title="JMeter for performance testing of SOAP web services" 
-      class="img-fluid" 
-      data-bs-toggle="modal"
-      data-bs-target="#jmeter-modal"/>
-</div>
-
-<div class="modal fade" id="jmeter-modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-0">
-        <img src="images/jmeter-anim.gif" alt="Animation showing how to create a JMeter test plan for the web service" class="img-fluid rounded">
-      </div>
-    </div>
-  </div>
-</div>
+{% include media-modal.html
+  id="jmeter-modal"
+  preview="images/jmeter.png"
+  preview_alt="JMeter test plan with an HTTP Request element that posts a SOAP envelope to /services/hello"
+  preview_title="JMeter for performance testing of SOAP web services"
+  image="images/jmeter-anim.gif"
+  alt="Animation showing how to create a JMeter test plan for the web service" %}
 
 <a class="github-icon" href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-jmeter-project" title="Project on GitHub"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-jmeter-project">JMeter project file</a>

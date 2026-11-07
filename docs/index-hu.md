@@ -318,25 +318,14 @@ megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit reques
 
 Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal kérést létrehozni!
 
-<div class="demo-image">
-    <img src="images/soapui.png" alt="SoapUI ablak, bal oldalon a SayHello kéréssel, jobb oldalon a HelloResponse válasszal" title="Kérés SoapUI-ban" 
-      class="img-fluid" 
-      data-bs-toggle="modal"
-      data-bs-target="#soapui-modal"/>
-</div>
-
-<div class="modal fade" id="soapui-modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezár"></button>
-      </div>
-      <div class="modal-body p-0">
-        <img src="images/soapui-anim.gif" alt="Animáció arról, hogyan lehet kérést létrehozni és elküldeni SoapUI-ban" class="img-fluid rounded">
-      </div>
-    </div>
-  </div>
-</div>
+{% include media-modal.html
+  id="soapui-modal"
+  preview="images/soapui.png"
+  preview_alt="SoapUI ablak, bal oldalon a SayHello kéréssel, jobb oldalon a HelloResponse válasszal"
+  preview_title="Kérés SoapUI-ban"
+  image="images/soapui-anim.gif"
+  alt="Animáció arról, hogyan lehet kérést létrehozni és elküldeni SoapUI-ban"
+  close_label="Bezár" %}
 
 <a class="github-icon" href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-soapui-project" title="Projekt fájl a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-soapui-project">SoapUI projekt fájl</a>
@@ -346,27 +335,13 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal 
 
 Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman kérést létrehozni!
 
-<div class="demo-image">
-    <img src="images/postman.png" alt="Postman ablak a SayHello POST kérés törzsével és a 200 OK státuszú HelloResponse válasszal" title="Postman kérés" 
-      class="img-fluid" 
-      data-bs-toggle="modal"
-      data-bs-target="#postman-modal"/>
-</div>
-
-<div class="modal fade" id="postman-modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezár"></button>
-      </div>
-      <div class="modal-body p-0">
-        <video class="modal-video" controls muted>
-          <source src="https://video.learnwebservices.com/postman.mp4" type="video/mp4">          
-        </video>
-      </div>
-    </div>
-  </div>
-</div>
+{% include media-modal.html
+  id="postman-modal"
+  preview="images/postman.png"
+  preview_alt="Postman ablak a SayHello POST kérés törzsével és a 200 OK státuszú HelloResponse válasszal"
+  preview_title="Postman kérés"
+  video="https://video.learnwebservices.com/postman.mp4"
+  close_label="Bezár" %}
 
 <a class="github-icon" href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-postman-collection" title="Postman Collection a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-postman-collection">Postman Collection fájl</a>
@@ -378,25 +353,14 @@ Az Apache JMeter használható SOAP webszolgáltatások terheléses tesztelésé
 
 Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter projektet létrehozni!
 
-<div class="demo-image">
-    <img src="images/jmeter.png" alt="JMeter tesztterv HTTP Request elemmel, amely SOAP borítékot küld POST kéréssel a /services/hello címre" title="Webszolgáltatás hívás JMeterrel" 
-      class="img-fluid" 
-      data-bs-toggle="modal"
-      data-bs-target="#jmeter-modal"/>
-</div>
-
-<div class="modal fade" id="jmeter-modal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-0">
-        <img src="images/jmeter-anim.gif" alt="Animáció arról, hogyan lehet JMeter teszttervet létrehozni a webszolgáltatáshoz" class="img-fluid rounded">
-      </div>
-    </div>
-  </div>
-</div>
+{% include media-modal.html
+  id="jmeter-modal"
+  preview="images/jmeter.png"
+  preview_alt="JMeter tesztterv HTTP Request elemmel, amely SOAP borítékot küld POST kéréssel a /services/hello címre"
+  preview_title="Webszolgáltatás hívás JMeterrel"
+  image="images/jmeter-anim.gif"
+  alt="Animáció arról, hogyan lehet JMeter teszttervet létrehozni a webszolgáltatáshoz"
+  close_label="Bezár" %}
 
 <a class="github-icon" href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-jmeter-project" title="Projekt a GitHubon"><i class="fab fa-github"></i></a>
 <a href="https://github.com/vicziani/learnwebservices-clients/tree/master/lwsapp-jmeter-project">JMeter projekt fájl</a>
