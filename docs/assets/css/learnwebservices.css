@@ -4,7 +4,18 @@
   --lws-color-hover: #000000A6;
   --lws-color-background: #ffffff;
   --lws-color-background-highlight: #fafafa;
+  --lws-color-divider: #00000012;
+  --lws-navbar-height: 4.75rem;
+}
 
+/* Keeps anchor targets from ending up behind the sticky menu. */
+html {
+  scroll-padding-top: var(--lws-navbar-height);
+}
+
+.navbar-sticky {
+  background-color: var(--lws-color-background);
+  border-bottom: 1px solid var(--lws-color-divider);
 }
 
 .navbar .nav-link:hover {
@@ -39,10 +50,11 @@
   font-weight: 700;
   color: var(--lws-color-primary);
   font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+  transition: color .15s ease-in-out;
 }
 
 .navbar-light .navbar-brand:hover {
-  color: var(--lws-color-primary);
+  color: var(--lws-color-hover);
 }
 
 
@@ -117,23 +129,19 @@ a:focus-visible {
 
 header {
   background-color: var(--lws-color-primary);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   color: var(--lws-color-background);
   text-align: center;
 }
 
-header h1 {
-  text-transform: uppercase;
+header .container h1 {
+  margin: 0;
+  font-size: 1.75rem;
 }
 
 header hr {
   border-color: var(--lws-color-background);
-}
-
-header p {
-  color: var(--lws-color-glow);
-  font-size: 1.5rem;
 }
 
 header a {
@@ -308,7 +316,7 @@ footer {
 @media(min-width: 992px) {
   .wsdl-diagram {
     position: sticky;
-    top: 1rem;
+    top: calc(var(--lws-navbar-height) + 1rem);
   }
 }
 

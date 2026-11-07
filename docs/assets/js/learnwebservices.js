@@ -5,6 +5,25 @@ window.onload = function() {
   registerOnSubmit();
   checkServerStatus();
   registerTabAnchorSync();
+  registerNavbarCollapse();
+}
+
+// The sticky menu would otherwise stay open on small screens, covering the section just navigated to.
+// Navigation waits for the menu to close, because the position of the target changes while it collapses.
+function registerNavbarCollapse() {
+  const menu = document.querySelector(".navbar-sticky .navbar-collapse");
+  menu.querySelectorAll('a.nav-link[href^="#"]').forEach(function(link) {
+    link.addEventListener("click", function(event) {
+      if (!menu.classList.contains("show")) {
+        return;
+      }
+      event.preventDefault();
+      menu.addEventListener("hidden.bs.collapse", function() {
+        link.click();
+      }, { once: true });
+      bootstrap.Collapse.getOrCreateInstance(menu).hide();
+    });
+  });
 }
 
 function registerWsdlExplorer() {
