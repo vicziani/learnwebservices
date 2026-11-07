@@ -214,6 +214,12 @@ to the WSDL.
 </div>
 </div>
 
+# Knowledge check
+
+Use the following three questions to check how well you know SOAP web services. You can find the answers in the sections above.
+
+{% include quiz.html %}
+
 # Server application
 
 A Spring Boot server application serves the sample web services.

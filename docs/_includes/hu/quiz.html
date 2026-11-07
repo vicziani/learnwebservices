@@ -1,0 +1,71 @@
+<form id="quiz-form" class="quiz" novalidate
+  data-correct-label="Helyes válasz."
+  data-incorrect-label="Nem jó válasz."
+  data-result-template="Eredmény: {total} kérdésből {score} helyes válasz.">
+
+  <fieldset class="quiz-question" data-correct="b">
+    <legend>1. Mit kap a kliens, ha hibás üzenetet küld a webszolgáltatásnak?</legend>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-1" id="quiz-1-a" value="a">
+      <label class="form-check-label" for="quiz-1-a">Üres választ, a hibáról nem kap értesítést.</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-1" id="quiz-1-b" value="b">
+      <label class="form-check-label" for="quiz-1-b">SOAP faultot, vagyis egy <code>Fault</code> elemet tartalmazó SOAP üzenetet.</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-1" id="quiz-1-c" value="c">
+      <label class="form-check-label" for="quiz-1-c">Egy <code>HelloResponse</code> elemet üres <code>Message</code> taggel.</label>
+    </div>
+    <div class="quiz-feedback d-none">
+      <p class="quiz-verdict"></p>
+      <p>Hiba esetén a válasz egy SOAP fault, melynek <code>faultcode</code> és <code>faultstring</code> eleme írja le a hibát. Lásd a <a href="#hibakezeles">Hibakezelés</a> fejezetet.</p>
+    </div>
+  </fieldset>
+
+  <fieldset class="quiz-question" data-correct="c">
+    <legend>2. A SOAP boríték melyik elemébe kerül a <code>HelloRequest</code> elem?</legend>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-2" id="quiz-2-a" value="a">
+      <label class="form-check-label" for="quiz-2-a"><code>Header</code></label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-2" id="quiz-2-b" value="b">
+      <label class="form-check-label" for="quiz-2-b"><code>Message</code></label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-2" id="quiz-2-c" value="c">
+      <label class="form-check-label" for="quiz-2-c"><code>Body</code></label>
+    </div>
+    <div class="quiz-feedback d-none">
+      <p class="quiz-verdict"></p>
+      <p>Az üzenet tartalma az <code>Envelope</code> elemen belüli <code>Body</code> elembe kerül. Lásd a <a href="#keres-es-valasz">Kérés és válasz</a> fejezetet.</p>
+    </div>
+  </fieldset>
+
+  <fieldset class="quiz-question" data-correct="a">
+    <legend>3. A WSDL dokumentum melyik része tartalmazza a webszolgáltatás címét?</legend>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-3" id="quiz-3-a" value="a">
+      <label class="form-check-label" for="quiz-3-a"><code>service</code></label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-3" id="quiz-3-b" value="b">
+      <label class="form-check-label" for="quiz-3-b"><code>types</code></label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-3" id="quiz-3-c" value="c">
+      <label class="form-check-label" for="quiz-3-c"><code>portType</code></label>
+    </div>
+    <div class="quiz-feedback d-none">
+      <p class="quiz-verdict"></p>
+      <p>A címet a <code>service</code> elemen belüli <code>port</code> tartalmazza, a <code>soap:address</code> elem <code>location</code> attribútumában. Lásd a <a href="#wsdl">WSDL</a> fejezetet.</p>
+    </div>
+  </fieldset>
+
+  <div class="quiz-incomplete alert alert-warning d-none" role="alert">Az ellenőrzéshez mindhárom kérdésre válaszolj!</div>
+  <div class="quiz-result alert alert-light d-none" role="status" tabindex="-1"></div>
+
+  <button type="submit" class="quiz-check btn btn-primary">Ellenőrzés</button>
+  <button type="button" class="quiz-retry btn btn-outline-primary d-none">Újrakezdés</button>
+</form>

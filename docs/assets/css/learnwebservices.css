@@ -416,3 +416,81 @@ footer {
 .lws-heading-anchor:focus-visible {
   opacity: 1;
 }
+
+.quiz-question {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--lws-color-divider);
+  border-left-width: 4px;
+  border-radius: 4px;
+}
+
+.quiz-question legend {
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.quiz-question .form-check {
+  margin-bottom: .5rem;
+}
+
+.quiz-question code {
+  color: inherit;
+  overflow-wrap: anywhere;
+}
+
+/* Bootstrap fades the labels of disabled inputs, but the evaluated answers have to stay readable. */
+.quiz-question .form-check-input:disabled ~ .form-check-label {
+  opacity: 1;
+}
+
+.quiz-correct {
+  border-left-color: var(--bs-success);
+}
+
+.quiz-incorrect {
+  border-left-color: var(--bs-danger);
+}
+
+.quiz-option-correct .form-check-label {
+  color: var(--bs-success);
+  font-weight: 600;
+}
+
+.quiz-option-incorrect .form-check-label {
+  color: var(--bs-danger);
+}
+
+.quiz-option-correct .form-check-label::after {
+  content: " \2713";
+}
+
+.quiz-option-incorrect .form-check-label::after {
+  content: " \2717";
+}
+
+.quiz-feedback {
+  margin-top: 1rem;
+}
+
+.quiz-feedback p:last-child {
+  margin-bottom: 0;
+}
+
+.quiz-verdict {
+  margin-bottom: .25rem;
+  font-weight: 600;
+}
+
+.quiz-correct .quiz-verdict {
+  color: var(--bs-success-text-emphasis);
+}
+
+.quiz-incorrect .quiz-verdict {
+  color: var(--bs-danger-text-emphasis);
+}
+
+.quiz-result {
+  font-weight: 600;
+}

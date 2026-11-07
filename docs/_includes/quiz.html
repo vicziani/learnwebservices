@@ -1,0 +1,71 @@
+<form id="quiz-form" class="quiz" novalidate
+  data-correct-label="Correct answer."
+  data-incorrect-label="Wrong answer."
+  data-result-template="Result: {score} of {total} answers are correct.">
+
+  <fieldset class="quiz-question" data-correct="b">
+    <legend>1. What does the client get if it sends an invalid message to the web service?</legend>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-1" id="quiz-1-a" value="a">
+      <label class="form-check-label" for="quiz-1-a">An empty response, without any notification about the error.</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-1" id="quiz-1-b" value="b">
+      <label class="form-check-label" for="quiz-1-b">A SOAP fault, which is a SOAP message containing a <code>Fault</code> element.</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-1" id="quiz-1-c" value="c">
+      <label class="form-check-label" for="quiz-1-c">A <code>HelloResponse</code> element with an empty <code>Message</code> tag.</label>
+    </div>
+    <div class="quiz-feedback d-none">
+      <p class="quiz-verdict"></p>
+      <p>In case of an error, the response is a SOAP fault, and its <code>faultcode</code> and <code>faultstring</code> elements describe the error. See the <a href="#error-handling">Error handling</a> section.</p>
+    </div>
+  </fieldset>
+
+  <fieldset class="quiz-question" data-correct="c">
+    <legend>2. Which element of the SOAP envelope contains the <code>HelloRequest</code> element?</legend>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-2" id="quiz-2-a" value="a">
+      <label class="form-check-label" for="quiz-2-a"><code>Header</code></label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-2" id="quiz-2-b" value="b">
+      <label class="form-check-label" for="quiz-2-b"><code>Message</code></label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-2" id="quiz-2-c" value="c">
+      <label class="form-check-label" for="quiz-2-c"><code>Body</code></label>
+    </div>
+    <div class="quiz-feedback d-none">
+      <p class="quiz-verdict"></p>
+      <p>The content of the message goes into the <code>Body</code> element inside the <code>Envelope</code> element. See the <a href="#request-and-response">Request and response</a> section.</p>
+    </div>
+  </fieldset>
+
+  <fieldset class="quiz-question" data-correct="a">
+    <legend>3. Which part of the WSDL document contains the address of the web service?</legend>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-3" id="quiz-3-a" value="a">
+      <label class="form-check-label" for="quiz-3-a"><code>service</code></label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-3" id="quiz-3-b" value="b">
+      <label class="form-check-label" for="quiz-3-b"><code>types</code></label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="quiz-3" id="quiz-3-c" value="c">
+      <label class="form-check-label" for="quiz-3-c"><code>portType</code></label>
+    </div>
+    <div class="quiz-feedback d-none">
+      <p class="quiz-verdict"></p>
+      <p>The <code>port</code> inside the <code>service</code> element contains the address, in the <code>location</code> attribute of the <code>soap:address</code> element. See the <a href="#wsdl">WSDL</a> section.</p>
+    </div>
+  </fieldset>
+
+  <div class="quiz-incomplete alert alert-warning d-none" role="alert">Please answer all three questions to check your results.</div>
+  <div class="quiz-result alert alert-light d-none" role="status" tabindex="-1"></div>
+
+  <button type="submit" class="quiz-check btn btn-primary">Check answers</button>
+  <button type="button" class="quiz-retry btn btn-outline-primary d-none">Start over</button>
+</form>

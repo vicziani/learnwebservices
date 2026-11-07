@@ -235,6 +235,12 @@ a WSDL-ben leírtaknak.
 </div>
 </div>
 
+# Tudásellenőrzés {#tudasellenorzes}
+
+Az alábbi három kérdéssel ellenőrizheted, mennyire sikerült megismerned a SOAP webszolgáltatásokat. A válaszokat megtalálod a fenti fejezetekben.
+
+{% include hu/quiz.html %}
+
 # Szerver alkalmazás {#szerver-alkalmazas}
 
 Egy Spring Boot alkalmazás szolgálja ki a példa webszolgáltatásokat.

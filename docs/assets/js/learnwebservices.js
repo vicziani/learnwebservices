@@ -1,6 +1,7 @@
 window.onload = function() {
   registerHeadingAnchors();
   registerWsdlExplorer();
+  registerQuiz();
   registerCopy();
   registerOnSubmit();
   checkServerStatus();
@@ -389,6 +390,80 @@ function activateTabFromHash(smoothScroll) {
   if (tabContent) {
     tabContent.scrollIntoView({ behavior: smoothScroll ? "smooth" : "auto", block: "start" });
   }
+}
+
+function registerQuiz() {
+  const form = document.getElementById("quiz-form");
+  if (!form) {
+    return;
+  }
+
+  const questions = Array.from(form.querySelectorAll(".quiz-question"));
+  const incomplete = form.querySelector(".quiz-incomplete");
+  const result = form.querySelector(".quiz-result");
+  const check = form.querySelector(".quiz-check");
+  const retry = form.querySelector(".quiz-retry");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const answered = questions.every(function(question) {
+      return question.querySelector("input:checked");
+    });
+    incomplete.classList.toggle("d-none", answered);
+    if (!answered) {
+      return;
+    }
+
+    const score = questions.filter(function(question) {
+      return markQuizQuestion(question, form.dataset);
+    }).length;
+
+    result.textContent = form.dataset.resultTemplate
+      .replace("{score}", score)
+      .replace("{total}", questions.length);
+    result.classList.remove("d-none");
+    check.classList.add("d-none");
+    retry.classList.remove("d-none");
+    result.focus();
+  });
+
+  retry.addEventListener("click", function() {
+    questions.forEach(clearQuizQuestion);
+    form.reset();
+    result.classList.add("d-none");
+    retry.classList.add("d-none");
+    check.classList.remove("d-none");
+    questions[0].querySelector("input").focus();
+  });
+}
+
+// Returns whether the selected answer of the question is correct.
+function markQuizQuestion(question, labels) {
+  const selected = question.querySelector("input:checked");
+  const correct = question.querySelector('input[value="' + question.dataset.correct + '"]');
+  const isCorrect = selected === correct;
+
+  question.classList.add(isCorrect ? "quiz-correct" : "quiz-incorrect");
+  correct.closest(".form-check").classList.add("quiz-option-correct");
+  if (!isCorrect) {
+    selected.closest(".form-check").classList.add("quiz-option-incorrect");
+  }
+
+  question.querySelector(".quiz-verdict").textContent = isCorrect ? labels.correctLabel : labels.incorrectLabel;
+  question.querySelector(".quiz-feedback").classList.remove("d-none");
+  question.disabled = true;
+
+  return isCorrect;
+}
+
+function clearQuizQuestion(question) {
+  question.disabled = false;
+  question.classList.remove("quiz-correct", "quiz-incorrect");
+  question.querySelector(".quiz-feedback").classList.add("d-none");
+  question.querySelectorAll(".form-check").forEach(function(option) {
+    option.classList.remove("quiz-option-correct", "quiz-option-incorrect");
+  });
 }
 
 function registerCopy() {
