@@ -690,6 +690,8 @@ echo $client
 
 # Közreműködők {#kozremukodok}
 
+A közreműködést szívesen fogadom. Módosítási javaslataiddal nyugodtan nyiss egy pull requestet.
+
 - Kuti Rita
 - Mauro Chojrin ([mchojrin](https://github.com/mchojrin))
 - Rácz János ([rczjns](https://github.com/rczjns))

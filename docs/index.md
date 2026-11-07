@@ -664,6 +664,8 @@ echo $client
 
 # Contributors
 
+Contributions are welcome. Feel free to open a pull request with changes.
+
 - Rita Kuti
 - Mauro Chojrin ([mchojrin](https://github.com/mchojrin))
 - János Rácz ([rczjns](https://github.com/rczjns))
