@@ -1,0 +1,44 @@
+# Learn web services
+
+> Free, public sample SOAP web service for learning, teaching, prototyping and testing tools or libraries. It needs no authentication and is meant to stay available long term, so it can be referenced in tutorials, blog posts and videos.
+
+The site offers one web service, Hello: it accepts a name and returns a welcome message.
+
+## Service
+
+- WSDL: https://apps.learnwebservices.com/services/hello?WSDL
+- Endpoint: https://apps.learnwebservices.com/services/hello
+
+## Example
+
+```shell
+curl --request POST --header "Content-Type: text/xml;charset=UTF-8" \
+  --data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><HelloRequest xmlns="http://learnwebservices.com/services/hello"><Name>John Doe</Name></HelloRequest></soapenv:Body></soapenv:Envelope>' \
+  https://apps.learnwebservices.com/services/hello
+```
+
+Response:
+
+```xml
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <HelloResponse xmlns="http://learnwebservices.com/services/hello">
+      <Message>Hello John Doe!</Message>
+    </HelloResponse>
+  </soap:Body>
+</soap:Envelope>
+```
+
+## Documentation
+
+- [Learn web services](https://www.learnwebservices.com/): Introduction to SOAP, request and response format, error handling, WSDL structure and client examples
+- [Magyar nyelvű oldal](https://www.learnwebservices.com/index-hu.html): The same documentation in Hungarian
+
+## Server
+
+- [Server source code](https://github.com/vicziani/learnwebservices-server/): Spring Boot application that serves the web service
+- [Docker image](https://hub.docker.com/r/vicziani/lwsapp): Run locally with `docker run -p 8080:8080 --name my-lwsapp vicziani/lwsapp`, then the service is available on `http://localhost:8080`
+
+## Client examples
+
+Available in [learnwebservices-clients](https://github.com/vicziani/learnwebservices-clients) GitHub repository.

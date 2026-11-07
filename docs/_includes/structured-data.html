@@ -1,0 +1,32 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": "Learn web services",
+      "inLanguage": ["en", "hu"],
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "author": { "@id": "{{ site.url }}/#author" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ page.url }}#webpage",
+      "url": "{{ site.url }}{{ page.url }}",
+      "name": "Learn web services",
+      "description": {{ include.description | jsonify }},
+      "inLanguage": {{ include.lang | jsonify }},
+      "isPartOf": { "@id": "{{ site.url }}/#website" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#author",
+      "name": {{ include.author | jsonify }},
+      "url": "https://jtechlog.hu",
+      "sameAs": ["https://github.com/vicziani"]
+    }
+  ]
+}
+</script>
