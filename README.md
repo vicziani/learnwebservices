@@ -25,5 +25,4 @@ The content of the learnwebservices.com site
 is licensed under
 Creative Commons Attribution-ShareAlike 4.0 International License.
 
-See [LICENCE](LICENCE) files for details,
-or the http://creativecommons.org/licenses/by-nc/4.0/ site.
+See [LICENCE](LICENCE) files for details.
