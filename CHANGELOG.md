@@ -4,6 +4,9 @@
 
 - Animation about request and response
 - WSDL structure view on main page
+- Enhance SEO and accessibility
+- Add llms.txt and JSON-LD structured data
+- Add knowledge check quiz
 
 ## [4.1.0] - 2026-08-30
 
