@@ -416,10 +416,18 @@ function registerCopy() {
 
 function registerOnSubmit() {
   const form = document.getElementById("hello-form");
+  if (!form) {
+    return;
+  }
+
   form.onsubmit = submitHandler;
 }
 
 function checkServerStatus() {
+  if (!document.getElementById("health-check-badge")) {
+    return;
+  }
+
   const url = apiUrl + "/actuator/info";
   fetch(url)
     .then(function(response) {

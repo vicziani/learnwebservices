@@ -1,3 +1,5 @@
+{% comment %}The sections are only on the front page, so the 404 page has to link there.{% endcomment %}
+{% if page.url == "/404.html" %}{% assign section_base = "/" %}{% endif %}
 <nav class="navbar navbar-expand-lg navbar-light container">
   <a href="/" class="navbar-brand">Learn web services</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -7,16 +9,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#introduction">Intro</a>
+        <a class="nav-link" href="{{ section_base }}#introduction">Intro</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#details">Details</a>
+        <a class="nav-link" href="{{ section_base }}#details">Details</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#server-application">Server</a>
+        <a class="nav-link" href="{{ section_base }}#server-application">Server</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#client-implementations">Clients</a>
+        <a class="nav-link" href="{{ section_base }}#client-implementations">Clients</a>
       </li>
       <li class="nav-item">
         <a class="nav-link github-icon" href="https://github.com/vicziani/learnwebservices"
