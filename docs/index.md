@@ -4,7 +4,7 @@ layout: default
 
 <div class="pt-3 text-end">
   Last update:
-  <span class="text-nowrap fw-bold">August 30, 2026</span>
+  <span class="text-nowrap fw-bold">{{ site.time | date: "%B %-d, %Y" }}</span>
 </div>
 <div class="pt-3 text-end">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">

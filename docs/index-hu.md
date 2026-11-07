@@ -4,7 +4,9 @@ layout: default-hu
 
 <div class="pt-3 text-end">
   Utolsó frissítés dátuma:
-  <span class="text-nowrap fw-bold">2026. augusztus 30.</span>
+  {%- assign months = "január,február,március,április,május,június,július,augusztus,szeptember,október,november,december" | split: "," -%}
+  {%- assign month_index = site.time | date: "%-m" | minus: 1 %}
+  <span class="text-nowrap fw-bold">{{ site.time | date: "%Y" }}. {{ months[month_index] }} {{ site.time | date: "%-d" }}.</span>
 </div>
 <div class="pt-3 text-end">
   <a href="https://github.com/vicziani/learnwebservices/blob/master/CHANGELOG.md">
