@@ -61,7 +61,7 @@ SOAP is a messaging protocol specifying an XML-based message format. This is cal
 Sometime the SOAP web services are considered legacy solutions today, because the RESTful web services are becoming increasingly popular. Also this is true, but the SOAP web services will be along for a long time.
 
 <div class="text-center">
-  <img src="images/request-response.svg" title="Request and response" class="img-fluid"/>
+  <img src="images/request-response.svg" alt="Diagram: the client sends a SOAP request with the name John Doe in an HTTP POST, and the server returns a SOAP response with the message Hello John Doe! and HTTP 200 OK" title="Request and response" class="img-fluid"/>
 </div>
 
 # Details
@@ -300,7 +300,7 @@ SoapUI will process the WSDL file, and generate an example request. On the left 
 Click on the picture to view the full animation that shows how to create a request with SoapUI!
 
 <div class="demo-image">
-    <img src="images/soapui.png" title="Call web service in SoapUI" 
+    <img src="images/soapui.png" alt="SoapUI window with the SayHello request on the left and the HelloResponse on the right" title="Call web service in SoapUI" 
       class="img-fluid" 
       data-bs-toggle="modal"
       data-bs-target="#soapui-modal"/>
@@ -313,7 +313,7 @@ Click on the picture to view the full animation that shows how to create a reque
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-0">
-        <img src="images/soapui-anim.gif" class="img-fluid rounded">
+        <img src="images/soapui-anim.gif" alt="Animation showing how to create and send a request in SoapUI" class="img-fluid rounded">
       </div>
     </div>
   </div>
@@ -328,7 +328,7 @@ Click on the picture to view the full animation that shows how to create a reque
 Click on the picture to view the full animation that shows how to create a Postman project!
 
 <div class="demo-image">
-    <img src="images/postman.png" title="Create Postman request" 
+    <img src="images/postman.png" alt="Postman window with the body of the SayHello POST request and the HelloResponse with status 200 OK" title="Create Postman request" 
       class="img-fluid" 
       data-bs-toggle="modal"
       data-bs-target="#postman-modal"/>
@@ -360,7 +360,7 @@ Apache JMeter may be used to test performance of SOAP web services.
 Click on the picture to view the full animation that shows how to create a JMeter project.
 
 <div class="demo-image">
-    <img src="images/jmeter.png" title="JMeter for performance testing of SOAP web services" 
+    <img src="images/jmeter.png" alt="JMeter test plan with an HTTP Request element that posts a SOAP envelope to /services/hello" title="JMeter for performance testing of SOAP web services" 
       class="img-fluid" 
       data-bs-toggle="modal"
       data-bs-target="#jmeter-modal"/>
@@ -373,7 +373,7 @@ Click on the picture to view the full animation that shows how to create a JMete
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-0">
-        <img src="images/jmeter-anim.gif" class="img-fluid rounded">
+        <img src="images/jmeter-anim.gif" alt="Animation showing how to create a JMeter test plan for the web service" class="img-fluid rounded">
       </div>
     </div>
   </div>

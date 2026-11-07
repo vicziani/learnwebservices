@@ -80,7 +80,7 @@ jelleggel sok helyen találhatóak SOAP webszolgáltatások, melyekhez
 modern alkalmazásokból is csatlakozni kell.
 
 <div class="text-center">
-  <img src="images/request-response.svg" title="Kérés és válasz" class="img-fluid"/>
+  <img src="images/request-response.svg" alt="Ábra: a kliens HTTP POST kéréssel SOAP üzenetet küld John Doe névvel, a szerver HTTP 200 OK státusszal, SOAP válaszban a Hello John Doe! üzenetet adja vissza" title="Kérés és válasz" class="img-fluid"/>
 </div>
 
 # Részletek {#reszletek}
@@ -319,7 +319,7 @@ megadni a `Name` tagen belül lehet. Majd meg kell nyomni a zöld _Submit reques
 Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal kérést létrehozni!
 
 <div class="demo-image">
-    <img src="images/soapui.png" title="Kérés SoapUI-ban" 
+    <img src="images/soapui.png" alt="SoapUI ablak, bal oldalon a SayHello kéréssel, jobb oldalon a HelloResponse válasszal" title="Kérés SoapUI-ban" 
       class="img-fluid" 
       data-bs-toggle="modal"
       data-bs-target="#soapui-modal"/>
@@ -332,7 +332,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal 
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezár"></button>
       </div>
       <div class="modal-body p-0">
-        <img src="images/soapui-anim.gif" class="img-fluid rounded">
+        <img src="images/soapui-anim.gif" alt="Animáció arról, hogyan lehet kérést létrehozni és elküldeni SoapUI-ban" class="img-fluid rounded">
       </div>
     </div>
   </div>
@@ -347,7 +347,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell SoapUI-jal 
 Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy Postman kérést létrehozni!
 
 <div class="demo-image">
-    <img src="images/postman.png" title="Postman kérés" 
+    <img src="images/postman.png" alt="Postman ablak a SayHello POST kérés törzsével és a 200 OK státuszú HelloResponse válasszal" title="Postman kérés" 
       class="img-fluid" 
       data-bs-toggle="modal"
       data-bs-target="#postman-modal"/>
@@ -379,7 +379,7 @@ Az Apache JMeter használható SOAP webszolgáltatások terheléses tesztelésé
 Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter projektet létrehozni!
 
 <div class="demo-image">
-    <img src="images/jmeter.png" title="Webszolgáltatás hívás JMeterrel" 
+    <img src="images/jmeter.png" alt="JMeter tesztterv HTTP Request elemmel, amely SOAP borítékot küld POST kéréssel a /services/hello címre" title="Webszolgáltatás hívás JMeterrel" 
       class="img-fluid" 
       data-bs-toggle="modal"
       data-bs-target="#jmeter-modal"/>
@@ -392,7 +392,7 @@ Kattints a képre, ha egy animációt néznél meg arról, hogy kell egy JMeter 
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-0">
-        <img src="images/jmeter-anim.gif" class="img-fluid rounded">
+        <img src="images/jmeter-anim.gif" alt="Animáció arról, hogyan lehet JMeter teszttervet létrehozni a webszolgáltatáshoz" class="img-fluid rounded">
       </div>
     </div>
   </div>
