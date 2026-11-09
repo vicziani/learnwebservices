@@ -393,7 +393,7 @@ function activateTabFromHash(smoothScroll) {
 }
 
 function registerPlayground() {
-  const playground = document.getElementById("playground");
+  const playground = document.getElementById("playground-div");
   if (!playground) {
     return;
   }
